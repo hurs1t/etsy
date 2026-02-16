@@ -140,6 +140,7 @@ export class ProductsService {
         if (updateProductDto.price !== undefined) updateData.price = updateProductDto.price;
         if (updateProductDto.status !== undefined) updateData.status = updateProductDto.status;
         if (updateProductDto.shippingProfileId !== undefined) updateData.shipping_profile_id = updateProductDto.shippingProfileId;
+        if (updateProductDto.taxonomyId !== undefined) updateData.taxonomy_id = updateProductDto.taxonomyId;
         if (updateProductDto.images !== undefined) {
             // Handle image updates separately if needed, but for now products table doesn't store images json usually if there is a separate table.
             // But if specific columns exist, map them.
@@ -204,6 +205,7 @@ export class ProductsService {
             price: record.price,
             status: record.status,
             shippingProfileId: record.shipping_profile_id,
+            taxonomyId: record.taxonomy_id,
             createdAt: record.created_at,
             images: record.product_images || [],
             variations: record.product_variations || [],
