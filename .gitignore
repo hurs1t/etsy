@@ -18,4 +18,4 @@ test_*.js
 
 # Frontend/Backend subfolders have their own gitignores, 
 # but we allow them in the root repo.
-# REMOVED /vrene-extension ignore to include it in the repo
+# REMOVED /EtsyAuto-Extension ignore to include it in the repo

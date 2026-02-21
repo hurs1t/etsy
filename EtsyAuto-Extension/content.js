@@ -1,9 +1,9 @@
-// EasyEtsy Extension - Advanced Product Scraper
+// EtsyAuto Extension - Advanced Product Scraper
 // Supports: JSON-LD, Open Graph, Microdata, and site-specific adapters
 // Priority: Site-specific -> JSON-LD -> OG/Meta -> Microdata -> Generic
 
 (function () {
-  console.log("[EasyEtsy] Content Script Loaded - Version: Fix-v3-Final");
+  console.log("[EtsyAuto] Content Script Loaded - Version: Fix-v3-Final");
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === "PING") {
       sendResponse({ status: "ok" });
@@ -22,8 +22,8 @@
   // Listen for data from injected script
   window.addEventListener("message", (event) => {
     if (event.source != window) return;
-    if (event.data.type && (event.data.type == "EASY_ETSY_DATA")) {
-      console.log("[EasyEtsy] Received page data via injection");
+    if (event.data.type && (event.data.type == "ETSY_AUTO_DATA")) {
+      console.log("[EtsyAuto] Received page data via injection");
       injectedData = event.data.payload;
     }
   });
@@ -156,7 +156,7 @@
     };
 
     function log(msg) {
-      console.log(`[EasyEtsy] ${msg}`);
+      console.log(`[EtsyAuto] ${msg}`);
       debugInfo.logs.push(msg);
     }
 
@@ -324,7 +324,7 @@
     debugInfo.counts.images = result.images.length;
     debugInfo.counts.variations = result.variations ? result.variations.length : 0;
 
-    console.log('[EasyEtsy Scraper] Result:', result);
+    console.log('[EtsyAuto Scraper] Result:', result);
     return result;
   }
 
@@ -372,13 +372,13 @@
       try {
         return { data: JSON.parse(jsonStr), nextIndex: jsonEnd };
       } catch (e) {
-        console.log('[EasyEtsy] JSON Parse Error at index ' + startIndex, e.message);
+        console.log('[EtsyAuto] JSON Parse Error at index ' + startIndex, e.message);
         console.log('Snippet:', jsonStr.substring(0, 100)); // Log what broke it
         return { data: null, nextIndex: jsonEnd };
       }
     } else {
       // Log if braces were not balanced
-      console.log('[EasyEtsy] Unbalanced braces starting at ' + startIndex);
+      console.log('[EtsyAuto] Unbalanced braces starting at ' + startIndex);
     }
     return { data: null, nextIndex: startIndex + 1 };
   }
@@ -391,14 +391,14 @@
   }
 
   function extractAliExpressVariations(debugInfo) {
-    console.log('[EasyEtsy] Starting AliExpress Variation Extraction...');
+    console.log('[EtsyAuto] Starting AliExpress Variation Extraction...');
     if (debugInfo) debugInfo.logs.push("Starting Ali Variations (Fallback)");
     let variations = [];
 
     try {
       // Method 1: Use Injected Data (Most Reliable)
       if (injectedData && injectedData.runParams) {
-        console.log('[EasyEtsy] Using injected runParams for variations');
+        console.log('[EtsyAuto] Using injected runParams for variations');
         variations = parseRunParams(injectedData.runParams, debugInfo);
         if (variations.length > 0) return variations;
       }
@@ -454,7 +454,7 @@
 
               const parsed = parseRunParams(result.data, null); // Don't log every attempt
               if (parsed.length > 0) {
-                console.log(`[EasyEtsy] Extracted variations using regex scan`);
+                console.log(`[EtsyAuto] Extracted variations using regex scan`);
                 if (debugInfo) debugInfo.logs.push(`Success with regex scan`);
                 variations = parsed;
                 return variations;
@@ -467,16 +467,16 @@
           }
 
         } catch (e) {
-          console.log('[EasyEtsy] HTML source parse error', e);
+          console.log('[EtsyAuto] HTML source parse error', e);
           if (debugInfo) debugInfo.logs.push(`HTML Parse Error: ${e.message}`);
         }
       }
 
     } catch (e) {
-      console.error('[EasyEtsy] Variation extraction failed:', e);
+      console.error('[EtsyAuto] Variation extraction failed:', e);
       if (debugInfo) debugInfo.logs.push(`Var Extraction Error: ${e.message}`);
     }
-    console.log(`[EasyEtsy] Extracted ${variations.length} variations`);
+    console.log(`[EtsyAuto] Extracted ${variations.length} variations`);
     return variations;
   }
 
@@ -485,7 +485,7 @@
       debugInfo.logs.push(`Parsing keys: ${Object.keys(runParams).join(',')}`);
       if (runParams.data) debugInfo.logs.push(`data keys: ${Object.keys(runParams.data).join(',')}`);
     } else {
-      console.log('[EasyEtsy] Parsing runParams:', Object.keys(runParams));
+      console.log('[EtsyAuto] Parsing runParams:', Object.keys(runParams));
     }
 
     const variations = [];
@@ -669,7 +669,7 @@
         const product = findProductInJsonLd(data);
         if (product) return product;
       } catch (e) {
-        console.log('[EasyEtsy] JSON-LD parse error:', e);
+        console.log('[EtsyAuto] JSON-LD parse error:', e);
       }
     }
     return null;
@@ -794,7 +794,7 @@
       let checkCount = 0;
       const interval = setInterval(() => {
         checkCount++;
-        const dump = document.getElementById('easy-etsy-data-dump');
+        const dump = document.getElementById('etsy-auto-data-dump');
         if (dump) {
           clearInterval(interval);
           try {
@@ -822,7 +822,7 @@
   }
 
   async function extractAliExpressVariations(debugInfo) {
-    console.log('[EasyEtsy] Starting AliExpress Variation Extraction...');
+    console.log('[EtsyAuto] Starting AliExpress Variation Extraction...');
     if (debugInfo) debugInfo.logs.push("Starting Ali Variations (Fallback)");
     let variations = [];
 
@@ -830,13 +830,13 @@
       // Method 0: Main World Scan (New & Powerful)
       const windowData = await scanWindowForData(debugInfo);
       if (windowData) {
-        console.log('[EasyEtsy] Using Window Scan Data');
+        console.log('[EtsyAuto] Using Window Scan Data');
         variations = parseRunParams(windowData, debugInfo);
         if (variations.length > 0) return variations;
       }
       // Method 1: Use Injected Data (Most Reliable)
       if (injectedData && injectedData.runParams) {
-        console.log('[EasyEtsy] Using injected runParams for variations');
+        console.log('[EtsyAuto] Using injected runParams for variations');
         variations = parseRunParams(injectedData.runParams, debugInfo);
         if (variations.length > 0) return variations;
       }
@@ -878,7 +878,7 @@
           keywords.forEach(kw => {
             const idx = html.indexOf(kw);
             if (idx !== -1) {
-              console.log(`[EasyEtsy] GLOBAL SEARCH: Found ${kw} at index ${idx}`);
+              console.log(`[EtsyAuto] GLOBAL SEARCH: Found ${kw} at index ${idx}`);
               if (debugInfo) {
                 const context = html.substring(Math.max(0, idx - 100), Math.min(html.length, idx + 200));
                 debugInfo.logs.push(`GLOBAL FOUND ${kw} @ ${idx}`);
@@ -911,7 +911,7 @@
 
               // Check if this object contains what we are looking for
               if (jsonStr.includes("skuPriceList") || jsonStr.includes("skuActivityAmount") || jsonStr.includes("skuPropertyValues")) {
-                console.log(`[EasyEtsy] FOUND VARIATION DATA at index ${match.index}`);
+                console.log(`[EtsyAuto] FOUND VARIATION DATA at index ${match.index}`);
                 if (debugInfo) debugInfo.logs.push(`*** FOUND VARIATION DATA @ ${match.index} ***`);
                 // Log top level keys to understand structure
                 if (debugInfo) debugInfo.logs.push(`Target Object Keys: ${keys.join(',')}`);
@@ -933,7 +933,7 @@
 
               const parsed = parseRunParams(result.data, null);
               if (parsed.length > 0) {
-                console.log(`[EasyEtsy] Extracted variations using regex scan`);
+                console.log(`[EtsyAuto] Extracted variations using regex scan`);
                 if (debugInfo) debugInfo.logs.push(`Success with regex scan`);
                 variations = parsed;
                 return variations;
@@ -948,29 +948,29 @@
           }
 
         } catch (e) {
-          console.log('[EasyEtsy] HTML source parse error', e);
+          console.log('[EtsyAuto] HTML source parse error', e);
           if (debugInfo) debugInfo.logs.push(`HTML Parse Error: ${e.message}`);
         }
       }
 
     } catch (e) {
-      console.error('[EasyEtsy] Variation extraction failed:', e);
+      console.error('[EtsyAuto] Variation extraction failed:', e);
       if (debugInfo) debugInfo.logs.push(`Var Extraction Error: ${e.message}`);
     }
 
-    console.log(`[EasyEtsy] Extracted ${variations.length} variations`);
+    console.log(`[EtsyAuto] Extracted ${variations.length} variations`);
     return variations;
   }
 
   function extractAliExpressImages(debugInfo) {
     let images = [];
     try {
-      console.log('[EasyEtsy] Starting AliExpress Image Extraction...');
+      console.log('[EtsyAuto] Starting AliExpress Image Extraction...');
       if (debugInfo) debugInfo.logs.push("Starting Ali Images");
 
       // Method 0: Use Injected Data (Best & Fastest)
       if (injectedData?.runParams?.data?.imageModule?.imagePathList) {
-        console.log('[EasyEtsy] Using injected image data');
+        console.log('[EtsyAuto] Using injected image data');
         const injectedImages = injectedData.runParams.data.imageModule.imagePathList;
         if (Array.isArray(injectedImages) && injectedImages.length > 0) {
           return injectedImages;
@@ -1004,14 +1004,14 @@
         const data = findJsonInText(html, 'window.runParams =');
 
         if (data && data.data?.imageModule?.imagePathList) {
-          console.log('[EasyEtsy] Extracted from HTML source');
+          console.log('[EtsyAuto] Extracted from HTML source');
           images.push(...data.data.imageModule.imagePathList);
         }
       } catch (e) { }
 
       // Method 3: "Nuclear Option" - Regex scan entire HTML for Any AliCDN images
       if (images.length < 5) {
-        console.log('[EasyEtsy] JSON extraction yielded few images, using Regex scan...');
+        console.log('[EtsyAuto] JSON extraction yielded few images, using Regex scan...');
         const html = document.documentElement.outerHTML;
 
         // Match any alicdn url
@@ -1023,14 +1023,14 @@
           const validExtensions = /\.(jpg|jpeg|png|webp|avif)($|\?|_)/i;
           const imageMatches = matches.filter(url => validExtensions.test(url));
 
-          console.log('[EasyEtsy] Regex found images:', imageMatches.length);
+          console.log('[EtsyAuto] Regex found images:', imageMatches.length);
           images.push(...imageMatches);
         }
       }
 
       // Method 4: Aggressive DOM Search (Updated)
       if (images.length < 5) {
-        console.log('[EasyEtsy] Using DOM brute force...');
+        console.log('[EtsyAuto] Using DOM brute force...');
         if (debugInfo) debugInfo.logs.push("Using DOM brute force");
 
         const gallerySelectors = [
@@ -1074,7 +1074,7 @@
       }
 
     } catch (e) {
-      console.log('[EasyEtsy] AliExpress extraction failed', e);
+      console.log('[EtsyAuto] AliExpress extraction failed', e);
       if (debugInfo) debugInfo.logs.push(`Extraction Error: ${e.message}`);
     }
 
@@ -1128,7 +1128,7 @@
           }
         }
       } catch (e) {
-        console.log('[EasyEtsy] Selector error:', selector, e);
+        console.log('[EtsyAuto] Selector error:', selector, e);
       }
     }
     return "";
@@ -1148,7 +1148,7 @@
         });
         if (images.length > 0) return images;
       } catch (e) {
-        console.log('[EasyEtsy] Image selector error:', selector, e);
+        console.log('[EtsyAuto] Image selector error:', selector, e);
       }
     }
 
@@ -1347,6 +1347,6 @@
       .substring(0, 5000);
   }
 
-  console.log('[EasyEtsy] Content script loaded successfully');
+  console.log('[EtsyAuto] Content script loaded successfully');
 
 })();

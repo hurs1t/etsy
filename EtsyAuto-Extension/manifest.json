@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "EasyEtsy - Etsy Listing Generator",
+  "name": "EtsyAuto - Etsy Listing Generator",
   "version": "1.0.1",
   "description": "Scrape products from any website and generate optimized Etsy listings with AI",
   "icons": {

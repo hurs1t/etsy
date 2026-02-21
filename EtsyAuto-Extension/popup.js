@@ -1,24 +1,24 @@
-// EasyEtsy Extension Popup Script
+// EtsyAuto Extension Popup Script
 document.addEventListener('DOMContentLoaded', init);
 
 let scrapedData = null;
 const DEFAULT_API_URL = "http://localhost:3001";
 
 async function init() {
-  console.log('EasyEtsy Extension Initializing...');
+  console.log('EtsyAuto Extension Initializing...');
 
   // Load saved API URL
-  const { easyEtsyApiUrl } = await chrome.storage.local.get(['easyEtsyApiUrl']);
+  const { etsyAutoApiUrl } = await chrome.storage.local.get(['etsyAutoApiUrl']);
   const apiUrlElement = document.getElementById('apiUrl');
   if (apiUrlElement) {
-    apiUrlElement.value = easyEtsyApiUrl || DEFAULT_API_URL;
+    apiUrlElement.value = etsyAutoApiUrl || DEFAULT_API_URL;
   }
 
   // Check if user is logged in
-  // We use easyEtsyToken, definitely NOT vreneToken
-  const storage = await chrome.storage.local.get(['easyEtsyToken', 'easyEtsyUser']);
-  const token = storage.easyEtsyToken;
-  const user = storage.easyEtsyUser;
+  // We use etsyAutoToken for authentication
+  const storage = await chrome.storage.local.get(['etsyAutoToken', 'etsyAutoUser']);
+  const token = storage.etsyAutoToken;
+  const user = storage.etsyAutoUser;
 
   console.log('Auth check:', { hasToken: !!token, hasUser: !!user });
 
@@ -59,7 +59,7 @@ async function init() {
       const apiUrlInput = document.getElementById('apiUrl');
       const apiUrl = apiUrlInput.value.trim().replace(/\/$/, '');
       if (apiUrl) {
-        await chrome.storage.local.set({ easyEtsyApiUrl: apiUrl });
+        await chrome.storage.local.set({ etsyAutoApiUrl: apiUrl });
         alert('Ayarlar kaydedildi! Lütfen tekrar giriş yapın.');
         await handleLogout();
       }
@@ -102,11 +102,11 @@ function showMainView(user) {
 // User-friendly error message translations
 const errorMessages = {
   "Password not set. Please set a password on the Extension Setup page first.":
-    "Şifre belirlenmemiş. Lütfen önce EasyEtsy web sitesinde Extension Kurulum sayfasından şifre oluşturun.",
+    "Şifre belirlenmemiş. Lütfen önce EtsyAuto web sitesinde Extension Kurulum sayfasından şifre oluşturun.",
   "Invalid credentials":
     "E-posta veya şifre hatalı. Lütfen kontrol edip tekrar deneyin.",
   "Active subscription required":
-    "Aktif abonelik gerekli. Extension'ı kullanabilmek için EasyEtsy Premium aboneliği satın almanız gerekiyor.",
+    "Aktif abonelik gerekli. Extension'ı kullanabilmek için EtsyAuto Premium aboneliği satın almanız gerekiyor.",
   "Session expired. Please login again.":
     "Oturum süresi doldu. Lütfen tekrar giriş yapın.",
   "Not logged in":
@@ -165,7 +165,7 @@ async function handleLogin(e) {
 }
 
 async function handleLogout() {
-  await chrome.storage.local.remove(['easyEtsyToken', 'easyEtsyUser']);
+  await chrome.storage.local.remove(['etsyAutoToken', 'etsyAutoUser']);
   scrapedData = null;
   showLoginView();
   resetToScrape();
@@ -229,7 +229,7 @@ async function handleScrape() {
     scrapedData = results;
     showPreview(results);
     if (results.debug) {
-      console.log("%c[EasyEtsy] DEBUG BİLGİLERİ:", "color: yellow; font-weight: bold; font-size: 14px;");
+      console.log("%c[EtsyAuto] DEBUG BİLGİLERİ:", "color: yellow; font-weight: bold; font-size: 14px;");
       console.log("Stratejiler:", results.debug.strategies);
       console.log("Varyasyon Sayısı:", results.debug.counts.variations);
       console.log("---- LOGLAR ----");
@@ -316,7 +316,7 @@ async function downloadSingleImage(url, index) {
   try {
     // Use Chrome downloads API to handle CORS properly
     const ext = getExtensionFromUrl(url);
-    const filename = `easyEtsy-gorsel-${index}${ext}`;
+    const filename = `etsyAuto-gorsel-${index}${ext}`;
 
     await chrome.downloads.download({
       url: url,
@@ -332,7 +332,7 @@ async function downloadSingleImage(url, index) {
       const blobUrl = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = blobUrl;
-      a.download = `easyEtsy-gorsel-${index}.jpg`;
+      a.download = `etsyAuto-gorsel-${index}.jpg`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

@@ -54,7 +54,7 @@
 
     function reportSuccess(data, path) {
         const div = document.createElement("div");
-        div.id = "easy-etsy-data-dump";
+        div.id = "etsy-auto-data-dump";
         div.style.display = "none";
         div.textContent = JSON.stringify({ status: "success", path: path, data: data });
         document.body.appendChild(div);
@@ -62,7 +62,7 @@
 
     function reportFailure(keys) {
         const div = document.createElement("div");
-        div.id = "easy-etsy-data-dump";
+        div.id = "etsy-auto-data-dump";
         div.style.display = "none";
         div.textContent = JSON.stringify({ status: "failure", keys: keys });
         document.body.appendChild(div);

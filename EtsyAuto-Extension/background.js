@@ -1,9 +1,9 @@
-// Background service worker for EasyEtsy Extension
+// Background service worker for EtsyAuto Extension
 const DEFAULT_API_BASE = "http://localhost:3001";
 
 async function getApiBase() {
-  const { easyEtsyApiUrl } = await chrome.storage.local.get(['easyEtsyApiUrl']);
-  return easyEtsyApiUrl || DEFAULT_API_BASE;
+  const { etsyAutoApiUrl } = await chrome.storage.local.get(['etsyAutoApiUrl']);
+  return etsyAutoApiUrl || DEFAULT_API_BASE;
 }
 
 // Popup window ID to track if already open
@@ -84,8 +84,8 @@ async function handleLogin(credentials) {
 
     // Save token and user
     await chrome.storage.local.set({
-      easyEtsyToken: data.access_token,
-      easyEtsyUser: {
+      etsyAutoToken: data.access_token,
+      etsyAutoUser: {
         firstName: 'User', // Backend might not return name, use placeholder or extract from email
         email: credentials.email
       }
@@ -100,17 +100,17 @@ async function handleLogin(credentials) {
 async function handleGenerateListing(data) {
   try {
     const API_URL = await getApiBase();
-    const { easyEtsyToken } = await chrome.storage.local.get(['easyEtsyToken']);
+    const { etsyAutoToken } = await chrome.storage.local.get(['etsyAutoToken']);
 
     // Headers with Auth if token exists
     const headers = {
       'Content-Type': 'application/json'
     };
-    if (easyEtsyToken) {
-      headers['Authorization'] = `Bearer ${easyEtsyToken}`;
+    if (etsyAutoToken) {
+      headers['Authorization'] = `Bearer ${etsyAutoToken}`;
     }
 
-    console.log('[EasyEtsy Background] Sending import request with data:', {
+    console.log('[EtsyAuto Background] Sending import request with data:', {
       urlLength: data.sourceUrl?.length,
       originalImagesCount: data.originalImages?.length,
       variationsCount: data.variations?.length,
@@ -150,10 +150,10 @@ async function handleGenerateListing(data) {
 
 async function handleProxyImages(imageUrls) {
   const API_BASE = await getApiBase();
-  const { easyEtsyToken } = await chrome.storage.local.get("easyEtsyToken");
+  const { etsyAutoToken } = await chrome.storage.local.get("etsyAutoToken");
 
   /*
-  if (!easyEtsyToken) {
+  if (!etsyAutoToken) {
     throw new Error("Not logged in");
   }
   */
@@ -162,7 +162,7 @@ async function handleProxyImages(imageUrls) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // "X-Extension-Token": easyEtsyToken
+      // "X-Extension-Token": etsyAutoToken
     },
     body: JSON.stringify({ imageUrls })
   });

@@ -6141,3 +6141,15 @@ JwtStrategy: Validating payload: {
   iat: 1771221517,
   exp: 1771826317
 }
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}

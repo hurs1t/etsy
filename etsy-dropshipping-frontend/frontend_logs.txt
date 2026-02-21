@@ -151,3 +151,4 @@
  GET /products 200 in 15ms (compile: 4ms, render: 11ms)
  GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 97ms (compile: 16ms, render: 82ms)
  GET /products 200 in 16ms (compile: 3ms, render: 13ms)
+ GET /dashboard 200 in 64ms (compile: 13ms, render: 51ms)
