@@ -88,6 +88,29 @@ export class EtsyService {
         }
     }
 
+    async refreshAccessToken(refreshToken: string) {
+        try {
+            const url = 'https://api.etsy.com/v3/public/oauth/token';
+            const body = {
+                grant_type: 'refresh_token',
+                client_id: this.apiKey,
+                refresh_token: refreshToken,
+            };
+
+            const response = await firstValueFrom(
+                this.httpService.post(url, body, {
+                    headers: { 'Content-Type': 'application/json' },
+                })
+            );
+
+            this.logger.log(`Token Refreshed. Keys: ${Object.keys(response.data).join(', ')}`);
+            return response.data;
+        } catch (error) {
+            this.logger.error('Failed to refresh token', error.response?.data || error.message);
+            throw new InternalServerErrorException('Failed to refresh Etsy token');
+        }
+    }
+
     async getShop(accessToken: string) {
         try {
             // Extract User ID from Access Token (Format: userId.randomString)
@@ -162,7 +185,7 @@ export class EtsyService {
             return response.data.results;
         } catch (error) {
             this.logger.error('Failed to fetch shipping profiles', error.response?.data || error.message);
-            // Do not throw, return empty array to prevent frontend crash
+            if (error.response?.status === 401) throw error; // Allow Controller to refresh
             return [];
         }
     }
@@ -188,6 +211,7 @@ export class EtsyService {
             return response.data.results;
         } catch (error) {
             this.logger.error('Failed to fetch readiness states', error.response?.data || error.message);
+            if (error.response?.status === 401) throw error;
             return [];
         }
     }
@@ -214,6 +238,7 @@ export class EtsyService {
             return response.data;
         } catch (error) {
             this.logger.error('Failed to create default readiness state', error.response?.data || error.message);
+            if (error.response?.status === 401) throw error;
             throw new InternalServerErrorException('Could not create readiness state');
         }
     }
@@ -237,18 +262,20 @@ export class EtsyService {
             // Basic mapping
             const payload = {
                 quantity: 999,
-                title: (product.generatedTitle || product.originalTitle).replace(/&/g, ' and ').substring(0, 140),
-                description: (product.generatedDescription || product.originalDescription).substring(0, 5000) || 'No description',
-                price: parseFloat(product.price) || 50.00,
-                who_made: 'i_did', // For simplicity, though 'someone_else' is more accurate for dropshipping
+                title: (product.generatedTitle || product.originalTitle || 'Untitled Product').replace(/&/g, ' and ').substring(0, 140),
+                description: (product.generatedDescription || product.originalDescription || 'No description').substring(0, 5000),
+                price: parseFloat(product.price) || 5.00,
+                who_made: 'i_did',
                 when_made: '2020_2026',
-                taxonomy_id: 1, // Fallback ID - ideally user selects this
-                shipping_profile_id: product.shippingProfileId ? parseInt(product.shippingProfileId) : undefined,
+                taxonomy_id: product.taxonomyId ? parseInt(String(product.taxonomyId)) : 1, // Use selected category or fallback
+                shipping_profile_id: product.shippingProfileId ? parseInt(String(product.shippingProfileId)) : undefined,
                 readiness_state_id: readinessStateId,
                 type: 'physical',
                 non_taxable: false,
                 state: 'draft'
             };
+
+            this.logger.log(`Creating Etsy Listing with Payload: ${JSON.stringify(payload)}`);
 
             // If shipping profile is missing, Etsy might reject. But let's try.
 
@@ -264,6 +291,7 @@ export class EtsyService {
             return response.data;
         } catch (error) {
             this.logger.error('Failed to create draft listing', error.response?.data || error.message);
+            if (error.response?.status === 401) throw error;
             throw new InternalServerErrorException(`Failed to create listing: ${JSON.stringify(error.response?.data || error.message)}`);
         }
     }
@@ -304,6 +332,7 @@ export class EtsyService {
             if (error.response?.data) {
                 this.logger.error(`Etsy Upload Error Details: ${JSON.stringify(error.response.data)}`);
             }
+            if (error.response?.status === 401) throw error;
             // Don't throw, just return null so we can continue with other images
             return null;
         }
@@ -477,6 +506,7 @@ export class EtsyService {
 
         } catch (error) {
             this.logger.error('Failed to update inventory', error.response?.data || error.message);
+            if (error.response?.status === 401) throw error;
             // Non-blocking, listing is created at least
         }
     }
@@ -494,6 +524,7 @@ export class EtsyService {
             return response.data.results;
         } catch (error) {
             this.logger.error('Failed to fetch taxonomy nodes', error.response?.data || error.message);
+            if (error.response?.status === 401) throw error;
             throw new InternalServerErrorException('Failed to fetch categories');
         }
     }
@@ -512,6 +543,7 @@ export class EtsyService {
             return response.data.results;
         } catch (error) {
             this.logger.error(`Failed to fetch properties for taxonomy ${taxonomyId}`, error.response?.data || error.message);
+            if (error.response?.status === 401) throw error;
             return [];
         }
     }

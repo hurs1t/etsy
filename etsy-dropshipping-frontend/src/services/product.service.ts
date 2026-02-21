@@ -42,6 +42,11 @@ export const createProduct = async (data: any) => {
     return response.data;
 };
 
+export const deleteProductsBulk = async (ids: string[]) => {
+    const response = await dataApi.post('/products/bulk-delete', { ids });
+    return response.data;
+};
+
 export const getDashboardStats = async (): Promise<{ total: number; drafts: number; published: number; recent: any[] }> => {
     const response = await dataApi.get('/products/stats');
     return response.data;
@@ -52,7 +57,7 @@ export const scrapeProduct = async (url: string) => {
     return response.data;
 };
 
-export const generateAiContent = async (data: { productTitle: string, productDescription?: string, keywords?: string[] }) => {
+export const generateAiContent = async (data: { productTitle: string, productDescription?: string, keywords?: string[], fields?: string[] }) => {
     const response = await dataApi.post('/ai-content/generate', data);
     return response.data;
 };
@@ -68,6 +73,11 @@ export const getProduct = async (id: string) => {
 
 export const updateProduct = async (id: string, data: any) => {
     const response = await dataApi.patch(`/products/${id}`, data);
+    return response.data;
+};
+
+export const deleteProduct = async (id: string) => {
+    const response = await dataApi.delete(`/products/${id}`);
     return response.data;
 };
 
@@ -107,5 +117,9 @@ export const getTaxonomyProperties = async (taxonomyId: number) => {
 
 export const disconnectEtsy = async () => {
     const response = await dataApi.post('/etsy/disconnect');
+    return response.data;
+};
+export const analyzeSeo = async (data: any) => {
+    const response = await dataApi.post('/ai-content/analyze', data);
     return response.data;
 };

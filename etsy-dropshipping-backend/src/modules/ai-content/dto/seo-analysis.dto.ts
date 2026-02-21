@@ -1,6 +1,6 @@
 import { IsString, IsOptional, IsNotEmpty, IsArray } from 'class-validator';
 
-export class GenerateContentDto {
+export class SeoAnalysisDto {
     @IsString()
     @IsNotEmpty()
     productTitle: string;
@@ -11,9 +11,9 @@ export class GenerateContentDto {
 
     @IsArray()
     @IsOptional()
-    keywords?: string[];
+    tags?: string[];
 
-    @IsArray()
+    @IsString()
     @IsOptional()
-    fields?: ('title' | 'description' | 'tags')[];
+    category?: string;
 }

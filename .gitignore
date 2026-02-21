@@ -1,3 +1,21 @@
-/client_secret_673060848026-qfvudpnjkm1q8evo8hc9bcob43cj8k2m.apps.googleusercontent.com.json
-/etsy-dropshipping-architecture.md
-/vrene-extension
+# Common ignores
+node_modules/
+.DS_Store
+*.log
+logs/
+*.txt
+.env
+.env.local
+dist/
+build/
+.next/
+.gemini/
+
+# Project specific
+/client_secret_*.json
+debug_*.js
+test_*.js
+
+# Frontend/Backend subfolders have their own gitignores, 
+# but we allow them in the root repo.
+# REMOVED /vrene-extension ignore to include it in the repo

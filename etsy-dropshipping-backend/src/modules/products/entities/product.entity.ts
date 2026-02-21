@@ -11,6 +11,7 @@ export class Product {
     price?: number;
     status: 'draft' | 'ready' | 'published' | 'failed';
     taxonomyId?: number;
+    attributes?: Record<string, any>;
     etsyListingId?: string;
     createdAt: string;
     updatedAt: string;

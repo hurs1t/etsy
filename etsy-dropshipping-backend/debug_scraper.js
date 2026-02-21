@@ -19,7 +19,7 @@ async function debugScraper() {
         console.log('Got Access Token');
 
         // 2. Scrape
-        const url = 'https://www.aliexpress.com/item/1005006000000001.html';
+        const url = 'https://www.aliexpress.us/item/3256805003608328.html';
         console.log(`Sending authenticated request for URL: ${url}`);
 
         const response = await axios.post(

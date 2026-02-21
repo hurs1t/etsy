@@ -92,39 +92,124 @@ export function CategorySelector({ value, onChange }: CategorySelectorProps) {
     // Or we leave it empty.
     // Ideally we traverse the tree to find the ID and set level1Id, level2Id, etc.
     useEffect(() => {
-        //  logic to set initial levels based on `value`
-        //  Need a recursive find function.
+        if (!value || nodes.length === 0) return;
+
+        const findPath = (currentNodes: TaxonomyNode[], targetId: number, path: TaxonomyNode[] = []): TaxonomyNode[] | null => {
+            for (const node of currentNodes) {
+                if (node.id === targetId) {
+                    return [...path, node];
+                }
+                if (node.children && node.children.length > 0) {
+                    const found = findPath(node.children, targetId, [...path, node]);
+                    if (found) return found;
+                }
+            }
+            return null;
+        };
+
+        const path = findPath(nodes, Number(value));
+
+        if (path) {
+            if (path.length > 0) setLevel1Id(String(path[0].id));
+            if (path.length > 1) setLevel2Id(String(path[1].id));
+            if (path.length > 2) setLevel3Id(String(path[2].id));
+        }
     }, [value, nodes]);
+
+    // Flatten nodes for search
+    const allCategories = useMemo(() => {
+        const result: { id: number, label: string, path: string }[] = [];
+        const traverse = (node: TaxonomyNode, parentPath: string[]) => {
+            const currentPath = [...parentPath, node.name];
+            result.push({
+                id: node.id,
+                label: node.name,
+                path: currentPath.join(" > ")
+            });
+            if (node.children) {
+                node.children.forEach(child => traverse(child, currentPath));
+            }
+        };
+        nodes.forEach(node => traverse(node, []));
+        return result;
+    }, [nodes]);
+
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchResults, setSearchResults] = useState<{ id: number, label: string, path: string }[]>([]);
+
+    useEffect(() => {
+        if (!searchTerm) {
+            setSearchResults([]);
+            return;
+        }
+        const lowerTerm = searchTerm.toLowerCase();
+        const filtered = allCategories.filter(cat =>
+            cat.label.toLowerCase().includes(lowerTerm) ||
+            cat.path.toLowerCase().includes(lowerTerm)
+        ).slice(0, 50); // Limit results
+        setSearchResults(filtered);
+    }, [searchTerm, allCategories]);
+
+    const handleSearchSelect = (cat: { id: number, path: string }) => {
+        onChange(String(cat.id));
+        setSearchTerm("");
+        setSearchResults([]);
+    };
 
     if (loading) return <div className="text-sm text-muted-foreground">Loading categories...</div>;
 
     return (
-        <div className="space-y-3">
-            <div className="space-y-1">
-                <Label>Category (Level 1)</Label>
-                <Select value={level1Id || ""} onValueChange={handleLevel1Change}>
-                    <SelectTrigger>
-                        <SelectValue placeholder="Select Category" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        {level1Nodes.map(node => (
-                            <SelectItem key={node.id} value={String(node.id)}>
-                                {node.name}
-                            </SelectItem>
-                        ))}
-                    </SelectContent>
-                </Select>
+        <div className="space-y-4">
+
+            {/* Search Bar */}
+            <div className="relative space-y-2">
+                <Label className="text-sm font-semibold flex items-center gap-2">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary text-[10px]">1</span>
+                    Hızlı Kategori Arama
+                </Label>
+                <div className="relative group">
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-primary transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="Örn: Kolye, Yağlı Boya, Pet Gift..."
+                        className="flex h-11 w-full rounded-xl border border-input bg-background pl-10 pr-4 py-2 text-sm ring-offset-background transition-all focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary outline-none"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    {searchResults.length > 0 && (
+                        <div className="absolute z-[100] w-full mt-2 bg-popover text-popover-foreground rounded-xl border shadow-2xl max-h-72 overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
+                            <div className="p-2 text-[10px] font-bold text-muted-foreground uppercase tracking-widest border-b">
+                                Sonuçlar ({searchResults.length})
+                            </div>
+                            {searchResults.map(cat => (
+                                <div
+                                    key={cat.id}
+                                    className="px-4 py-3 text-sm hover:bg-accent hover:text-accent-foreground cursor-pointer border-b last:border-0 transition-colors flex flex-col gap-0.5"
+                                    onClick={() => handleSearchSelect(cat)}
+                                >
+                                    <span className="font-medium">{cat.label}</span>
+                                    <span className="text-[10px] text-muted-foreground line-clamp-1">{cat.path}</span>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+                <p className="text-[11px] text-muted-foreground px-1 italic">
+                    Kategori ismini yazın veya aşağıdan manuel seçin.
+                </p>
             </div>
 
-            {level2Nodes.length > 0 && (
+            <div className="space-y-3 p-4 border rounded-lg bg-slate-50 dark:bg-slate-900/50">
                 <div className="space-y-1">
-                    <Label>Subcategory (Level 2)</Label>
-                    <Select value={level2Id || ""} onValueChange={handleLevel2Change}>
+                    <Label>Hierarchy Selection (Level 1)</Label>
+                    <Select value={level1Id || ""} onValueChange={handleLevel1Change}>
                         <SelectTrigger>
-                            <SelectValue placeholder="Select Subcategory" />
+                            <SelectValue placeholder="Select Category" />
                         </SelectTrigger>
-                        <SelectContent max-h="200px">
-                            {level2Nodes.map(node => (
+                        <SelectContent>
+                            {level1Nodes.map(node => (
                                 <SelectItem key={node.id} value={String(node.id)}>
                                     {node.name}
                                 </SelectItem>
@@ -132,30 +217,50 @@ export function CategorySelector({ value, onChange }: CategorySelectorProps) {
                         </SelectContent>
                     </Select>
                 </div>
-            )}
 
-            {level3Nodes.length > 0 && (
-                <div className="space-y-1">
-                    <Label>Subcategory (Level 3)</Label>
-                    <Select value={level3Id || ""} onValueChange={handleLevel3Change}>
-                        <SelectTrigger>
-                            <SelectValue placeholder="Select Subcategory" />
-                        </SelectTrigger>
-                        <SelectContent max-h="200px">
-                            {level3Nodes.map(node => (
-                                <SelectItem key={node.id} value={String(node.id)}>
-                                    {node.name}
-                                </SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
-                </div>
-            )}
+                {level2Nodes.length > 0 && (
+                    <div className="space-y-1">
+                        <Label>Subcategory (Level 2)</Label>
+                        <Select value={level2Id || ""} onValueChange={handleLevel2Change}>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select Subcategory" />
+                            </SelectTrigger>
+                            <SelectContent max-h="200px">
+                                {level2Nodes.map(node => (
+                                    <SelectItem key={node.id} value={String(node.id)}>
+                                        {node.name}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                )}
+
+                {level3Nodes.length > 0 && (
+                    <div className="space-y-1">
+                        <Label>Subcategory (Level 3)</Label>
+                        <Select value={level3Id || ""} onValueChange={handleLevel3Change}>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select Subcategory" />
+                            </SelectTrigger>
+                            <SelectContent max-h="200px">
+                                {level3Nodes.map(node => (
+                                    <SelectItem key={node.id} value={String(node.id)}>
+                                        {node.name}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                )}
+            </div>
 
             {/* Show Selected ID */}
-            <div className="text-xs text-muted-foreground mt-1">
-                Etsy Taxonomy ID: {value || "None"}
-            </div>
+            {value && (
+                <div className="text-xs text-muted-foreground px-1">
+                    Selected Taxonomy ID: <span className="font-mono font-medium text-primary">{value}</span>
+                </div>
+            )}
         </div>
     );
 }

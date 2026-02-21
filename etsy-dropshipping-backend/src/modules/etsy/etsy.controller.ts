@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Param, UseGuards, Res, Query, Req, Body, Logger, NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import { Controller, Get, Post, Param, UseGuards, Res, Query, Req, Body, Logger, NotFoundException, InternalServerErrorException, UnauthorizedException } from '@nestjs/common';
 import type { Response } from 'express';
 import { EtsyService } from './etsy.service';
 import { UsersService } from '../users/users.service';
@@ -97,51 +97,72 @@ export class EtsyController {
         }
     }
 
-    @UseGuards(JwtAuthGuard)
-    @Get('shipping-profiles')
-    async getShippingProfiles(@Req() req) {
-        this.logger.log(`Fetching shipping profiles for user: ${req.user.email}`);
+    private async executeWithRefresh<T>(req: any, operation: (accessToken: string) => Promise<T>): Promise<T> {
         const user = await this.usersService.findOne(req.user.email);
-
-        if (!user) {
-            this.logger.error('User not found');
-            throw new Error('User not found');
-        }
-
-        this.logger.log(`User found. ShopID: ${user.shop_id}, Has Token: ${!!user.etsy_access_token}`);
-
-        if (!user.etsy_access_token || !user.shop_id) {
-            this.logger.warn('Etsy not connected or Shop ID missing');
-            // Return empty array instead of throwing error to avoid frontend crashing if just not connected
-            return [];
-        }
+        if (!user) throw new Error('User not found');
+        if (!user.etsy_access_token) throw new InternalServerErrorException('Etsy not connected');
 
         try {
-            const profiles = await this.etsyService.getShippingProfiles(user.etsy_access_token, user.shop_id);
-            this.logger.log(`Found ${profiles.length} shipping profiles`);
-            return profiles;
-        } catch (error) {
-            this.logger.error(`Failed to fetch shipping profiles form Etsy: ${error.message}`, error.stack);
+            return await operation(user.etsy_access_token);
+        } catch (error: any) {
+            // Check for 401 or invalid_token
+            if (error.response?.status === 401 || error.response?.data?.error === 'invalid_token' || error.message.includes('expired')) {
+                this.logger.warn(`Access Token expired for user ${user.email}. Refreshing...`);
+
+                if (!user.etsy_refresh_token) {
+                    this.logger.error('No refresh token available');
+                    throw new UnauthorizedException('Etsy session expired. Please reconnect.');
+                }
+
+                try {
+                    const newTokens = await this.etsyService.refreshAccessToken(user.etsy_refresh_token);
+
+                    // Update DB
+                    await this.usersService.updateEtsyTokens(user.id, {
+                        access_token: newTokens.access_token,
+                        refresh_token: newTokens.refresh_token,
+                        expires_in: newTokens.expires_in
+                    });
+                    this.logger.log('Token refreshed and saved. Retrying operation...');
+
+                    // Retry
+                    return await operation(newTokens.access_token);
+
+                } catch (refreshError) {
+                    this.logger.error('Failed to refresh token', refreshError);
+                    throw new UnauthorizedException('Etsy connection lost. Please reconnect in settings.');
+                }
+            }
             throw error;
         }
     }
 
     @UseGuards(JwtAuthGuard)
+    @Get('shipping-profiles')
+    async getShippingProfiles(@Req() req) {
+        return this.executeWithRefresh(req, async (accessToken) => {
+            const user = await this.usersService.findOne(req.user.email);
+            if (!user.shop_id) return [];
+            return this.etsyService.getShippingProfiles(accessToken, user.shop_id);
+        });
+    }
+
+    @UseGuards(JwtAuthGuard)
     @Post('publish/:id')
     async publishProduct(@Param('id') id: string, @Body('imageIds') imageIds: string[], @Req() req) {
-        try {
-            // 1. Get User & Tokens
+        return this.executeWithRefresh(req, async (accessToken) => {
+            // 1. Get User & Shop ID (accessToken is already provided by executeWithRefresh)
             const user = await this.usersService.findOne(req.user.email);
-            if (!user || !user.etsy_access_token || !user.shop_id) {
-                throw new InternalServerErrorException('Etsy not connected');
-            }
+            if (!user.shop_id) throw new InternalServerErrorException('Etsy Shop ID missing');
 
             // 2. Get Product Data
             const product = await this.productsService.findOne(id);
             if (!product) throw new NotFoundException('Product not found');
 
+            this.logger.log(`[EtsyController] Publishing Product ${id}. Shipping Profile ID: ${product.shippingProfileId}`);
+
             // 3. Create Draft Listing
-            const draft = await this.etsyService.createDraftListing(user.shop_id, product, user.etsy_access_token);
+            const draft = await this.etsyService.createDraftListing(user.shop_id, product, accessToken);
             const listingId = draft.listing_id;
 
             // 4. Upload Images (Limit to 10 - Etsy max)
@@ -166,7 +187,7 @@ export class EtsyController {
                     this.logger.log(`Uploading Image. Raw: ${typeof img === 'object' ? JSON.stringify(img) : img}, Extracted URL: ${url}`);
 
                     if (url) {
-                        const result = await this.etsyService.uploadListingImage(user.shop_id, listingId.toString(), url, user.etsy_access_token);
+                        const result = await this.etsyService.uploadListingImage(user.shop_id, listingId.toString(), url, accessToken);
                         this.logger.log(`Upload Result: ${result ? 'Success' : 'Failed'}`);
                     } else {
                         this.logger.warn('Skipping image with no URL');
@@ -176,7 +197,7 @@ export class EtsyController {
 
             // 5. Update Inventory (Variations)
             if (product.variations && product.variations.length > 0) {
-                await this.etsyService.updateInventory(user.shop_id, listingId.toString(), product.variations, parseFloat(product.price), user.etsy_access_token);
+                await this.etsyService.updateInventory(user.shop_id, listingId.toString(), product.variations, parseFloat(product.price), accessToken);
             }
 
             // 6. Save State
@@ -186,11 +207,7 @@ export class EtsyController {
             });
 
             return { success: true, listingId, url: draft.url };
-
-        } catch (error) {
-            this.logger.error(`Failed to publish product ${id}`, error);
-            throw new InternalServerErrorException(error.message || 'Failed to publish to Etsy');
-        }
+        });
     }
 
     @UseGuards(JwtAuthGuard)
@@ -211,20 +228,16 @@ export class EtsyController {
     @UseGuards(JwtAuthGuard)
     @Get('taxonomy')
     async getTaxonomyNodes(@Req() req) {
-        const user = await this.usersService.findOne(req.user.email);
-        if (!user || !user.etsy_access_token) {
-            throw new InternalServerErrorException('Etsy not connected');
-        }
-        return this.etsyService.getTaxonomyNodes(user.etsy_access_token);
+        return this.executeWithRefresh(req, async (accessToken) => {
+            return this.etsyService.getTaxonomyNodes(accessToken);
+        });
     }
 
     @UseGuards(JwtAuthGuard)
     @Get('taxonomy/:id/properties')
     async getTaxonomyProperties(@Param('id') id: string, @Req() req) {
-        const user = await this.usersService.findOne(req.user.email);
-        if (!user || !user.etsy_access_token) {
-            throw new InternalServerErrorException('Etsy not connected');
-        }
-        return this.etsyService.getTaxonomyProperties(parseInt(id), user.etsy_access_token);
+        return this.executeWithRefresh(req, async (accessToken) => {
+            return this.etsyService.getTaxonomyProperties(parseInt(id), accessToken);
+        });
     }
 }

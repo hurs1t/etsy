@@ -1,4 +1,4 @@
-import { IsString, IsOptional, IsNumber, IsUrl, IsEnum, IsArray } from 'class-validator';
+import { IsString, IsOptional, IsNumber, IsUrl, IsEnum, IsArray, IsObject } from 'class-validator';
 
 export class CreateProductDto {
     @IsString()
@@ -37,7 +37,19 @@ export class CreateProductDto {
     @IsOptional()
     shippingProfileId?: string;
 
+    @IsNumber()
+    @IsOptional()
+    taxonomyId?: number;
+
+    @IsObject()
+    @IsOptional()
+    attributes?: Record<string, any>;
+
     @IsArray()
     @IsOptional()
     variations?: any[];
+
+    @IsArray()
+    @IsOptional()
+    images?: string[];
 }

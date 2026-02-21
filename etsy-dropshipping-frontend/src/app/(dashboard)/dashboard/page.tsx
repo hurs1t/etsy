@@ -83,7 +83,7 @@ export default function DashboardPage() {
                             {stats?.recent.map((product) => (
                                 <div key={product.id} className="flex items-center">
                                     <div className="ml-4 space-y-1">
-                                        <p className="text-sm font-medium leading-none">{product.originalTitle.substring(0, 50)}...</p>
+                                        <p className="text-sm font-medium leading-none">{(product.originalTitle || 'No Title').substring(0, 50)}...</p>
                                         <p className="text-sm text-muted-foreground">
                                             {new Date(product.createdAt).toLocaleDateString()}
                                         </p>

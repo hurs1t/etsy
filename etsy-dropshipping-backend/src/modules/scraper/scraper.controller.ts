@@ -26,6 +26,8 @@ export class ScraperController {
     @Post('extension-import')
     async importFromExtension(@Request() req, @Body() dto: ExtensionImportDto) {
         console.log('[ScraperController] Received extension import request');
+        console.log(`[ScraperController] originalImages count: ${dto.originalImages?.length}`);
+
         // Because of JwtAuthGuard, req.user should be populated
         // JwtStrategy returns { userId: ..., email: ... }
         let userId = req.user?.userId;
@@ -41,7 +43,15 @@ export class ScraperController {
         }
 
         // Map DTO to CreateProductDto
-        // Map DTO to CreateProductDto
+        console.log('[ScraperController] Received DTO:', JSON.stringify({
+            ...dto,
+            originalDescription: dto.originalDescription?.substring(0, 50) + '...',
+            originalImages: dto.originalImages?.length,
+            variations: dto.variations?.length
+        }, null, 2));
+
+        // DTO Validation SHOULD work now.
+
         const createProductDto: any = {
             userId: userId,
             sourceUrl: dto.sourceUrl,
@@ -49,6 +59,7 @@ export class ScraperController {
             originalTitle: dto.originalTitle,
             originalDescription: dto.originalDescription,
             price: this.parsePrice(dto.price || ''),
+            variations: dto.variations || [],
         };
 
         // Generate AI Content
@@ -69,13 +80,15 @@ export class ScraperController {
             // Fallback to original content
             createProductDto.generatedTitle = dto.originalTitle;
             createProductDto.generatedDescription = dto.originalDescription;
+            createProductDto.generatedTags = [];
         }
 
 
 
         // UPSCALE IMAGES (AI)
         // Limit to first 5 images to avoid timeout/cost
-        const imagesToUpscale = dto.originalImages?.slice(0, 5) || [];
+        const rawImages = dto.originalImages || [];
+        const imagesToUpscale = rawImages.slice(0, 5);
         const upscaledImages: string[] = [];
 
         if (imagesToUpscale.length > 0) {
@@ -94,21 +107,24 @@ export class ScraperController {
                 upscaledImages.push(...(await Promise.all(upscalePromises)));
 
                 // Add remaining original images
-                if (dto.originalImages.length > 5) {
-                    upscaledImages.push(...dto.originalImages.slice(5));
+                if (rawImages.length > 5) {
+                    upscaledImages.push(...rawImages.slice(5));
                 }
 
                 console.log('[ScraperController] Upscaling complete.');
             } catch (error) {
                 console.error('[ScraperController] Bulk upscaling failed, using originals.', error);
-                upscaledImages.push(...dto.originalImages);
+                upscaledImages.push(...rawImages);
             }
         } else {
-            upscaledImages.push(...(dto.originalImages || []));
+            upscaledImages.push(...rawImages);
         }
 
         try {
             console.log('[ScraperController] Creating product in DB...');
+            console.log(`[ScraperController] FINAL CHECK - Variations: ${createProductDto.variations?.length}, Images: ${upscaledImages.length}`);
+            console.log('[ScraperController] Upscaled Images SAMPLE:', upscaledImages.slice(0, 1));
+
             const token = req.headers.authorization?.split(' ')[1];
             // Use upscaled images
             const product = await this.productsService.createWithImages(createProductDto, upscaledImages, token);

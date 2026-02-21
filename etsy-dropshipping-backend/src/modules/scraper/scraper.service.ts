@@ -9,7 +9,7 @@ export class ScraperService {
     async scrapeProduct(scrapeProductDto: ScrapeProductDto) {
         const { url } = scrapeProductDto;
 
-        if (url.includes('aliexpress.com')) {
+        if (url.includes('aliexpress.com') || url.includes('aliexpress.us')) {
             try {
                 return await this.aliexpressScraper.scrape(url);
             } catch (error) {

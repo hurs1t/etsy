@@ -1,0 +1,707 @@
+
+> etsy-dropshipping-backend@0.0.1 start:dev
+> nest start --watch
+
+[2J[3J[H[[90m12:33:41 p.m.[0m] Starting compilation in watch mode...
+
+[[90m12:33:43 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +6ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[31m[Nest] 29656  - [39m2026-02-16, 12:33:44 p.m. [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3001[39m[38;5;3m +0ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\platform-express\adapters\express-adapter.js:127:32)
+    at C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:178:16)
+    at async bootstrap (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\src\main.ts:24:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.13.0
+[2J[3J[H[[90m12:38:15 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m12:38:15 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:38:16 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(cab7326f-04ce-499f-b073-0400640251f6) result: { data: true, error: null }
+[32m[Nest] 39452  - [39m2026-02-16, 12:42:24 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[31m[Nest] 39452  - [39m2026-02-16, 12:42:24 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39m[31mFailed to fetch shipping profiles[39m
+[31m[Nest] 39452  - [39m2026-02-16, 12:42:24 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39mObject(2) {
+  error: [32m'invalid_token'[39m,
+  error_description: [32m'access token is expired'[39m
+}
+[33m[Nest] 39452  - [39m2026-02-16, 12:42:24 p.m. [33m   WARN[39m [38;5;3m[EtsyController] [39m[33mAccess Token expired for user kursad.basel@gmail.com. Refreshing...[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:42:24 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mToken Refreshed. Keys: access_token, token_type, expires_in, refresh_token, user_id, api_key[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:42:24 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mToken refreshed and saved. Retrying operation...[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:42:25 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:42:25 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 39452  - [39m2026-02-16, 12:42:34 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mgenerateListing called with: {"productTitle":"Personalized Dog Collar Name Carved ID Anti-lost Solid PU Leather Collar For Small Medium Large Dogs Puppy Cat Pet Supplies Pink","productDescription":"Ensure your pet's safety with our personalized heavy duty dog collar, featuring a durable PU leather build and customizable engraving for a secure, stylish fit.","keywords":["etsy","handmade","niche"]}[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:42:34 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mSending request to OpenAI...[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:42:38 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mOpenAI Response: {
+  "title": "Custom Engraved Dog Collar - Durable PU Leather Anti-Lost Personalized ID Collar for Small Medium Large Dogs & Cats - Pink Pet Accessory",
+  "description": "🐾 Make your pet strut in style with our Custom Engraved Dog Collar! 🎀 Crafted from **premium PU leather**, this collar is designed for both durability and comfort, ensuring your furry friend looks fabulous while staying safe! 🌟 Add your pet's name and contact info for extra security and peace of mind. Whether you have a small pup or a large dog, our adjustable sizing has got you covered! Plus, the chic **pink** color is perfect for fashionable pets! 💖  Get ready for compliments during your walks! 🌈",
+  "tags": [
+    "dog collar",
+    "personalized",
+    "pet supplies",
+    "pu leather",
+    "custom dog tag",
+    "pet accessory",
+    "anti-lost collar",
+    "stylish collar",
+    "pink dog gear",
+    "dog identification"
+  ]
+}[39m
+[32m[Nest] 39452  - [39m2026-02-16, 12:42:38 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mGeneration successful[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'scraper_debug_1771271071681@test.com',
+  sub: '953e86fb-704d-432f-acb7-e00b5e09a5fc',
+  iat: 1771271072,
+  exp: 1771875872
+}
+[2J[3J[H[[90m12:44:48 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m12:44:48 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[31m[Nest] 26288  - [39m2026-02-16, 12:44:50 p.m. [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3001[39m[38;5;3m +1ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\platform-express\adapters\express-adapter.js:127:32)
+    at C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:178:16)
+    at async bootstrap (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\src\main.ts:29:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.13.0
+[2J[3J[H[[90m12:47:19 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m12:47:19 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +6ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[31m[Nest] 42472  - [39m2026-02-16, 12:47:20 p.m. [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3001[39m[38;5;3m +1ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\platform-express\adapters\express-adapter.js:127:32)
+    at C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:178:16)
+    at async bootstrap (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\src\main.ts:29:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.13.0
+[2J[3J[H[[90m12:47:21 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m12:47:21 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +7ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 37712  - [39m2026-02-16, 12:47:22 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+[2J[3J[H[[90m12:47:44 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m12:47:44 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+[31m[Nest] 16708  - [39m2026-02-16, 12:47:45 p.m. [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3001[39m[38;5;3m +1ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\platform-express\adapters\express-adapter.js:127:32)
+    at C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:178:16)
+    at async bootstrap (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\src\main.ts:29:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.13.0
+[2J[3J[H[[90m12:47:46 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m12:47:46 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +7ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[31m[Nest] 28448  - [39m2026-02-16, 12:47:47 p.m. [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3001[39m[38;5;3m +1ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\platform-express\adapters\express-adapter.js:127:32)
+    at C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@nestjs\core\nest-application.js:178:16)
+    at async bootstrap (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\src\main.ts:29:3) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.13.0
+[2J[3J[H[[90m12:52:13 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m12:52:13 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +6ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 26888  - [39m2026-02-16, 12:52:14 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m

@@ -1,6 +1,7 @@
 import { Controller, Post, Body, UseGuards, BadRequestException } from '@nestjs/common';
 import { AiContentService } from './ai-content.service';
 import { GenerateContentDto } from './dto/generate-content.dto';
+import { SeoAnalysisDto } from './dto/seo-analysis.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @Controller('ai-content')
@@ -20,5 +21,10 @@ export class AiContentController {
         }
         const newUrl = await this.aiContentService.upscaleImage(body.imageUrl);
         return { url: newUrl };
+    }
+
+    @Post('analyze')
+    analyze(@Body() dto: SeoAnalysisDto) {
+        return this.aiContentService.analyzeSeo(dto);
     }
 }

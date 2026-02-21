@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyEtsy - Etsy Listing Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="logo-text">EasyEtsy</span>
+        <span class="logo-badge">EXTENSION</span>
+      </div>
+    </header>
+
+    <!-- Login View -->
+    <div id="loginView" class="view">
+      <h2>Giriş Yap</h2>
+      <p class="subtitle">EasyEtsy hesabınızla giriş yapın</p>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">E-posta</label>
+          <input type="email" id="email" required placeholder="ornek@email.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Şifre</label>
+          <input type="password" id="password" required placeholder="••••••••">
+        </div>
+        <button type="submit" id="loginBtn" class="btn btn-primary">
+          <span class="btn-text">Giriş Yap</span>
+          <span class="btn-loader hidden"></span>
+        </button>
+      </form>
+
+      <div id="loginError" class="error hidden"></div>
+
+      <p class="footer-text">
+        Hesabınız yok mu? <a href="#" target="_blank">EasyEtsy'ye Kaydolun</a>
+      </p>
+
+      <div class="settings-toggle">
+        <button type="button" id="toggleSettingsBtn" class="btn btn-small btn-secondary">Ayarlar</button>
+      </div>
+
+      <div id="settingsSection" class="hidden settings-box">
+        <label for="apiUrl">API URL</label>
+        <input type="text" id="apiUrl" placeholder="http://localhost:3001">
+        <div style="display:flex; gap:10px; margin-top:10px;">
+          <button type="button" id="saveSettingsBtn" class="btn btn-small btn-primary">Kaydet</button>
+          <button type="button" id="showDebugSectionBtn" class="btn btn-small btn-secondary">Debug</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main View -->
+    <div id="mainView" class="view hidden">
+      <div class="user-info">
+        <span id="userName"></span>
+        <button id="logoutBtn" class="btn btn-small btn-secondary">Çıkış</button>
+      </div>
+
+      <div id="scrapeSection">
+        <h3>Ürün Bilgilerini Çek</h3>
+        <p class="info-text">Bu sayfadan ürün bilgilerini çekmek için aşağıdaki butona tıklayın.</p>
+
+        <button id="scrapeBtn" class="btn btn-primary btn-full">
+          <span class="btn-text">Sayfayı Tara</span>
+          <span class="btn-loader hidden"></span>
+        </button>
+      </div>
+
+      <div id="previewSection" class="hidden">
+        <h3>Çekilen Veriler</h3>
+
+        <div class="preview-box">
+          <label>Başlık:</label>
+          <textarea id="previewTitle" rows="2"></textarea>
+        </div>
+
+        <div class="preview-box">
+          <label>Açıklama:</label>
+          <textarea id="previewDescription" rows="4"></textarea>
+        </div>
+
+        <div class="preview-box">
+          <label>Fiyat:</label>
+          <input type="text" id="previewPrice" placeholder="Örn: $10.00 veya 150 TL">
+        </div>
+
+        <div class="preview-box">
+          <div class="images-header">
+            <label>Görseller (<span id="imageCount">0</span>):</label>
+            <button id="downloadAllBtn" class="btn btn-small btn-secondary download-all-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              Tümü İndir
+            </button>
+          </div>
+          <div id="previewImages" class="image-grid"></div>
+        </div>
+
+        <button id="generateBtn" class="btn btn-primary btn-full">
+          <span class="btn-text">Etsy Listesi Oluştur</span>
+          <span class="btn-loader hidden"></span>
+        </button>
+      </div>
+
+      <!-- Modern Loading Overlay -->
+      <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+          <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-core"></div>
+          </div>
+
+          <div class="loading-progress">
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <div id="progressPercent" class="progress-percent">0%</div>
+          </div>
+
+          <div id="loadingMessage" class="loading-message">
+            Hazırlanıyor...
+          </div>
+
+          <div class="loading-steps">
+            <div id="step1" class="loading-step">
+              <span class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </span>
+              <span class="step-text">Ürün analiz ediliyor</span>
+            </div>
+            <div id="step2" class="loading-step">
+              <span class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+              </span>
+              <span class="step-text">Başlık ve açıklama oluşturuluyor</span>
+            </div>
+            <div id="step3" class="loading-step">
+              <span class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                </svg>
+              </span>
+              <span class="step-text">SEO uyumlu tagler oluşturuluyor</span>
+            </div>
+            <div id="step4" class="loading-step">
+              <span class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                </svg>
+              </span>
+              <span class="step-text">5 dile çevriliyor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resultSection" class="hidden">
+        <h3>Oluşturulan Etsy Listesi</h3>
+
+        <div class="result-box">
+          <div class="result-header">
+            <label>Başlık</label>
+            <button class="copy-btn" data-target="resultTitle">Kopyala</button>
+          </div>
+          <div id="resultTitle" class="result-content"></div>
+        </div>
+
+        <div class="result-box">
+          <div class="result-header">
+            <label>Açıklama</label>
+            <button class="copy-btn" data-target="resultDescription">Kopyala</button>
+          </div>
+          <div id="resultDescription" class="result-content"></div>
+        </div>
+
+        <div class="result-box">
+          <div class="result-header">
+            <label>Etiketler (13)</label>
+            <button class="copy-btn" data-target="resultTags">Kopyala</button>
+          </div>
+          <div id="resultTags" class="result-tags"></div>
+        </div>
+
+        <div class="button-group">
+          <button id="newScrapeBtn" class="btn btn-secondary">Yeni Tarama</button>
+          <a id="viewProductBtn" href="#" target="_blank" class="btn btn-primary">Web Sitesinde Gör</a>
+        </div>
+      </div>
+
+      <div id="debugSection" class="debug-box hidden">
+        <h4>Debug Info</h4>
+        <pre id="debugContent"></pre>
+        <button id="copyDebugBtn" class="btn btn-small btn-secondary">Copy Debug</button>
+      </div>
+
+      <div id="errorSection" class="error hidden"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

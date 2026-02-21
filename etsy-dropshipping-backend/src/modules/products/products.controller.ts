@@ -12,7 +12,8 @@ export class ProductsController {
     @Post()
     create(@Request() req, @Body() createProductDto: CreateProductDto) {
         createProductDto.userId = req.user.userId;
-        return this.productsService.create(createProductDto);
+        const images = createProductDto.images || [];
+        return this.productsService.createWithImages(createProductDto, images);
     }
 
     @Get()
@@ -38,5 +39,10 @@ export class ProductsController {
     @Delete(':id')
     remove(@Param('id') id: string) {
         return this.productsService.remove(id);
+    }
+
+    @Post('bulk-delete')
+    removeBulk(@Body() body: { ids: string[] }, @Request() req) {
+        return this.productsService.removeBulk(body.ids, req.user.userId);
     }
 }

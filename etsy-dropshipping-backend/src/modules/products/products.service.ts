@@ -22,6 +22,9 @@ export class ProductsService {
             generated_tags: createProductDto.generatedTags,
             price: createProductDto.price,
             status: 'draft',
+            shipping_profile_id: createProductDto.shippingProfileId,
+            taxonomy_id: createProductDto.taxonomyId,
+            attributes: createProductDto.attributes || {},
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString(),
         };
@@ -43,7 +46,12 @@ export class ProductsService {
     }
 
     async createWithImages(createProductDto: CreateProductDto, images: string[], token?: string) {
+        console.log('[ProductsService] createWithImages called');
+        console.log(`[ProductsService] Variations Count: ${createProductDto.variations?.length || 0}`);
+        console.log(`[ProductsService] Images Count: ${images?.length || 0}`);
+
         const product = await this.create(createProductDto, token);
+        console.log(`[ProductsService] Product created with ID: ${product.id}`);
 
         if (images && images.length > 0) {
             const imageRecords = images.map((url, index) => ({
@@ -54,8 +62,6 @@ export class ProductsService {
                 created_at: new Date().toISOString()
             }));
 
-
-
             // Use admin client for images too
             const supabase = this.supabaseService.getAdminClient();
             const { error } = await supabase
@@ -63,8 +69,12 @@ export class ProductsService {
                 .insert(imageRecords);
 
             if (error) {
-                console.error('Failed to save images:', error);
+                console.error('[ProductsService] Failed to save images:', error);
+            } else {
+                console.log(`[ProductsService] Saved ${images.length} images.`);
             }
+        } else {
+            console.log('[ProductsService] No images to save.');
         }
 
         if (createProductDto.variations && createProductDto.variations.length > 0) {
@@ -86,8 +96,12 @@ export class ProductsService {
                 .insert(variationRecords);
 
             if (error) {
-                console.error('Failed to save variations:', error);
+                console.error('[ProductsService] Failed to save variations:', error);
+            } else {
+                console.log(`[ProductsService] Saved ${createProductDto.variations.length} variations.`);
             }
+        } else {
+            console.log('[ProductsService] No variations to save.');
         }
 
         return product;
@@ -141,11 +155,13 @@ export class ProductsService {
         if (updateProductDto.status !== undefined) updateData.status = updateProductDto.status;
         if (updateProductDto.shippingProfileId !== undefined) updateData.shipping_profile_id = updateProductDto.shippingProfileId;
         if (updateProductDto.taxonomyId !== undefined) updateData.taxonomy_id = updateProductDto.taxonomyId;
+        if (updateProductDto.attributes !== undefined) updateData.attributes = updateProductDto.attributes;
         if (updateProductDto.images !== undefined) {
-            // Handle image updates separately if needed, but for now products table doesn't store images json usually if there is a separate table.
-            // But if specific columns exist, map them.
+            // Handle image updates separately if needed
         }
 
+
+        console.log(`[ProductsService] Updating product ${id} with Data:`, JSON.stringify(updateData, null, 2));
 
         const { data, error } = await supabase
             .from('products')
@@ -155,12 +171,11 @@ export class ProductsService {
             .single();
 
         if (error) {
+            console.error(`[ProductsService] Update DB Error for ${id}:`, error);
             throw new InternalServerErrorException(error.message);
         }
         return this.mapEntity(data);
     }
-
-    // ... (remove method omitted for brevity if not changing) ...
 
     async remove(id: string) {
         const supabase = this.supabaseService.getClient();
@@ -175,8 +190,21 @@ export class ProductsService {
         return { message: 'Product deleted successfully' };
     }
 
+    async removeBulk(ids: string[], userId: string) {
+        const supabase = this.supabaseService.getClient();
+        const { error } = await supabase
+            .from('products')
+            .delete()
+            .in('id', ids)
+            .eq('user_id', userId);
+
+        if (error) {
+            throw new InternalServerErrorException(error.message);
+        }
+        return { success: true, count: ids.length };
+    }
+
     async getStats(userId: string) {
-        // ... (getStats omitted, same as before) ...
         const supabase = this.supabaseService.getClient();
         const { count: total } = await supabase.from('products').select('*', { count: 'exact', head: true }).eq('user_id', userId);
         const { count: drafts } = await supabase.from('products').select('*', { count: 'exact', head: true }).eq('user_id', userId).eq('status', 'draft');
@@ -206,6 +234,7 @@ export class ProductsService {
             status: record.status,
             shippingProfileId: record.shipping_profile_id,
             taxonomyId: record.taxonomy_id,
+            attributes: record.attributes || {},
             createdAt: record.created_at,
             images: record.product_images || [],
             variations: record.product_variations || [],
