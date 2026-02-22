@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Product Editor - Listing Magic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f1641e",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-background-dark/50 px-6 py-3 lg:px-10">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-8 flex items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined">auto_fix_high</span>
+</div>
+<div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Listing Magic</h2>
+<p class="text-xs font-medium text-slate-500">AI Content Generator</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<nav class="hidden md:flex gap-6 mr-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-semibold text-primary" href="#">Editor</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Integrations</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-1 flex-col overflow-hidden">
+<!-- Split Pane Container -->
+<div class="flex flex-1 flex-col lg:flex-row h-full">
+<!-- Left Side: Original Product Data -->
+<aside class="w-full lg:w-[40%] border-r border-primary/5 bg-white/50 dark:bg-background-dark/20 p-6 lg:p-10 overflow-y-auto">
+<div class="max-w-md mx-auto lg:mx-0">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-slate-400">shopping_cart</span>
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-500">Source: AliExpress</h3>
+</div>
+<!-- Original Image -->
+<div class="relative group mb-8">
+<div class="aspect-square w-full rounded-xl overflow-hidden bg-slate-200 shadow-sm border border-primary/10">
+<img class="h-full w-full object-cover" data-alt="A minimalist white watch on a grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK2_gF0ga82G2tZxtVcgFJVQVISchWmoSx9C8n6hi-TUPyMs-iwR4ARhqYFhpq8IPCrLN51lPoA-E0B1Cyqhc5Hk70Ifuafda-ogDsWAHN5YxEvxHRf3WXpL4l-e5lnoMn4hdSoYIdrDmn1bCYe0tepJEUosE_wKTqdK_c-BUY3r1VsBr9c6DzpS1dmS4x0tY9VMg0sd29SATcqaE8acZxc57lQXIgrW0ucssYrsbVFb527cK-bkRskUvPcYMwFTyje4B30yFvJyL9"/>
+</div>
+<div class="mt-3 grid grid-cols-4 gap-2">
+<div class="aspect-square rounded-lg overflow-hidden border-2 border-primary shadow-sm cursor-pointer">
+<img class="h-full w-full object-cover" data-alt="Close up of minimalist watch dial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZQU9z4rwEkEaptjHa-T3fhgiOQHBe8ixRm6IHvGhV0aUChOBN_IMSTAGmk6QELQQ8YM6sXdBi3aGsL52P2_SPr22Y88sZz2BxDAmENLJP93uCdLd_IM_F-8Zjrk3wTtG7LivHSU6PMYoGWJHdondzTzW7jZCJ0We9cael8nPDyDieMmVfnF2J2TkHt1BVCn63xt3REizJfIyIBaoJWrI9hkhlsXIuRa9TKMNt-rF1sxvxmTNxim1zBRQGQwut6_7-ad4OjHlpTL8W"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-transparent hover:border-primary/50 transition-all cursor-pointer">
+<img class="h-full w-full object-cover" data-alt="Polaroid camera on pink background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwRrtcTP-pP7w7erPoRfOhQUZhNXGi2p7yndqFyIziIWqZcI8fyhS9tDuTex5hb5oEaPNlWqtvLumYMfsnxnYJzgBCnbnFxhN_zm83fPP--DRDmvjU6IO6hE8xbqXcm5gtlqREbCZI5YNnejbUaiLYGBa33Rb97Qka0_EaqyYdB8EorF0u5-2wXFZMT6My95V3nRBlBwV0HQ9zCrmTG31ZNk_4Pc_zcJmqU7513nSKO8ZcHJKBSLT2LGEQZYo46Yeyk_IVis9DEoNG"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-transparent hover:border-primary/50 transition-all cursor-pointer flex items-center justify-center bg-slate-100 text-slate-400">
+<span class="material-symbols-outlined">add</span>
+</div>
+</div>
+</div>
+<!-- Original Title Box -->
+<div class="space-y-4">
+<div>
+<label class="text-xs font-bold text-slate-400 uppercase mb-1 block">Original Title</label>
+<div class="p-4 rounded-lg bg-white border border-primary/5 text-slate-600 text-sm leading-relaxed shadow-sm">
+                                    New Minimalist Men's Watch 2024 Luxury Quartz Steel Strap Casual Fashion Waterproof Clock Male Wristwatch Relogio Masculino Drop Shipping
+                                </div>
+</div>
+<div>
+<label class="text-xs font-bold text-slate-400 uppercase mb-1 block">Source URL</label>
+<div class="flex items-center gap-2 text-xs text-primary font-medium hover:underline cursor-pointer">
+<span class="material-symbols-outlined text-sm">link</span>
+                                    aliexpress.com/item/100500123456789.html
+                                </div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Side: AI Workspace -->
+<section class="flex-1 bg-white dark:bg-background-dark p-6 lg:p-10 overflow-y-auto">
+<div class="max-w-3xl mx-auto">
+<!-- AI Header & Action -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<h1 class="text-2xl font-bold tracking-tight mb-1">Etsy Optimization</h1>
+<p class="text-slate-500 text-sm">Refine and polish your listing with AI-powered suggestions.</p>
+</div>
+<button class="flex items-center justify-center gap-2 px-6 h-12 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">magic_button</span>
+<span>Generate Content</span>
+</button>
+</div>
+<!-- Form Fields -->
+<div class="space-y-8 pb-24">
+<!-- Optimized Title -->
+<div class="group">
+<div class="flex items-center justify-between mb-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-200">Optimized Etsy Title</label>
+<span class="text-xs text-slate-400">124 / 140 chars</span>
+</div>
+<div class="relative">
+<input class="w-full px-4 py-3 rounded-xl border-2 border-primary/10 focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-background-light/30 dark:bg-slate-800/50 font-medium" type="text" value="Minimalist Silver Men's Watch - Luxury Stainless Steel Waterproof Quartz Wristwatch - Perfect Gift for Him, 2024 Edition"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex gap-1">
+<button class="p-1.5 text-primary hover:bg-primary/10 rounded-lg transition-colors" title="Regenerate Title">
+<span class="material-symbols-outlined text-lg">autorenew</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Rich Text Editor -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-200">Product Description</label>
+<div class="flex gap-2 p-1 bg-background-light dark:bg-slate-800 rounded-lg border border-primary/5">
+<button class="p-1 hover:bg-white dark:hover:bg-slate-700 rounded shadow-sm transition-all"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+<button class="p-1 hover:bg-white dark:hover:bg-slate-700 rounded shadow-sm transition-all"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+<button class="p-1 hover:bg-white dark:hover:bg-slate-700 rounded shadow-sm transition-all"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+</div>
+</div>
+<div class="w-full p-5 min-h-[300px] rounded-xl border-2 border-primary/10 bg-background-light/30 dark:bg-slate-800/50 focus-within:border-primary transition-all">
+<p class="mb-4 font-medium text-slate-800 dark:text-slate-200 uppercase tracking-wide text-xs">Elevate your everyday style</p>
+<p class="mb-4 leading-relaxed text-slate-600 dark:text-slate-400">Upgrade your wrist game with our 2024 Minimalist Series. Crafted for the modern man, this timepiece combines sleek Scandinavian design with durable engineering. Whether you're in a boardroom or at a weekend brunch, this watch is your perfect companion.</p>
+<p class="mb-2 font-bold text-slate-800 dark:text-slate-200">Key Features:</p>
+<ul class="list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-400">
+<li>High-precision Japanese Quartz movement</li>
+<li>3ATM Water resistance for daily confidence</li>
+<li>Premium surgical-grade stainless steel strap</li>
+<li>Ultra-thin 8mm profile for comfort</li>
+</ul>
+<p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-400 italic">🎁 Comes in a signature eco-friendly gift box – perfect for birthdays, anniversaries, or graduation gifts.</p>
+</div>
+</div>
+<!-- Hashtags/Tags Section -->
+<div>
+<label class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3 block">Search Tags (SEO)</label>
+<div class="flex flex-wrap gap-2 p-4 rounded-xl border-2 border-primary/10 bg-background-light/30 dark:bg-slate-800/50">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary/20">
+                                        #MensWatch <button class="material-symbols-outlined text-[14px]">close</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary/20">
+                                        #MinimalistDesign <button class="material-symbols-outlined text-[14px]">close</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary/20">
+                                        #GiftForHim <button class="material-symbols-outlined text-[14px]">close</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary/20">
+                                        #LuxuryTimepiece <button class="material-symbols-outlined text-[14px]">close</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary/20">
+                                        #WaterproofWatch <button class="material-symbols-outlined text-[14px]">close</button>
+</span>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 border-2 border-dashed border-primary/30 text-primary/60 text-xs font-bold rounded-full hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[14px]">add</span> Add Tag
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Sticky Footer -->
+<footer class="fixed bottom-0 left-0 right-0 border-t border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-4 z-50">
+<div class="max-w-[1400px] mx-auto flex items-center justify-between">
+<div class="hidden md:flex items-center gap-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Watch thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKSbL0AJlnrpNSW0GKa1m-T3eGHodOPZG2SDTgbRt7aBfEsqyDG6vUcTI7U1QrjuqO5PP1dG4BN1QX0DUOQD6R8GF0PAutm5WqCCAFk7RIjVd-kZ0ChLzvZvtH-xrMoaQ1_A-oeGlasWynpfiDy9-6494Gu0rrMgTmO9Vir_EVyrA2HtbPbjuSZxspPJFeC_Ixk_SnmMpEpiRCF248JrGd22NVGUejFn1bvsEnoFFpIEpF2SabBh05P-r9K1CZl3T7dqe00J7gzUWV"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary flex items-center justify-center text-white text-[10px] font-bold">
+                            +4
+                        </div>
+</div>
+<span class="text-sm font-medium text-slate-500">Ready to publish</span>
+</div>
+<div class="flex gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-6 h-12 rounded-xl border-2 border-primary/20 font-bold hover:bg-primary/5 transition-all">
+                        Discard Changes
+                    </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-8 h-12 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/30 hover:shadow-primary/40 transition-all">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span>Save to Etsy Drafts</span>
+</button>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

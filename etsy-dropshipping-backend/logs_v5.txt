@@ -6153,3 +6153,2440 @@ JwtStrategy: Validating payload: {
   iat: 1771221517,
   exp: 1771826317
 }
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771557159,
+  exp: 1772161959
+}
+[ScraperController] Received extension import request
+[ScraperController] originalImages count: 6
+[ScraperController] User ID from request: 549ca095-5acf-482b-8498-21c6b626d784
+[ScraperController] Received DTO: {
+  "sourceUrl": "https://www.aliexpress.us/item/3256807172691443.html?spm=a2g0o.best.0.0.38502c25ZbKGPr&afTraceInfo=1005007359006195__pc__pcBestMore2Love__TniLVLz__1771707848333&_gl=1*1pq69y1*_gcl_au*MTQzNTUzOTYzMi4xNzY3MzE0OTgw*_ga*MTYxODAwNTkwMC4xNzcxNzA3ODQ4*_ga_VED1YSGNC7*czE3NzE3MDc4NDckbzEkZzAkdDE3NzE3MDc4NDkkajU4JGwwJGgw&gatewayAdapt=glo2usa4itemAdapt",
+  "originalTitle": "New Music Holder Cover For AirPods 4 Pro 2 AirPods Pro3 Pink Clear Bluetooth Earphone Cases For AirPods 2 3 Funda With Keychain",
+  "originalDescription": "Buy New Music Holder Cover For AirPods 4 Pro 2 Air...",
+  "originalImages": 6,
+  "price": "C$7.37",
+  "variations": 2
+}
+[ScraperController] Starting AI generation...
+[32m[Nest] 31640  - [39m2026-02-21, 2:04:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mgenerateListing called with: {"productTitle":"New Music Holder Cover For AirPods 4 Pro 2 AirPods Pro3 Pink Clear Bluetooth Earphone Cases For AirPods 2 3 Funda With Keychain","productDescription":"Buy New Music Holder Cover For AirPods 4 Pro 2 AirPods Pro3 Pink Clear Bluetooth Earphone Cases For AirPods 2 3 Funda With Keychain at Aliexpress for . Find more 44, 200001619 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.","keywords":["etsy style","handmade feel","high quality"]}[39m
+[32m[Nest] 31640  - [39m2026-02-21, 2:04:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mSending request to OpenAI...[39m
+[32m[Nest] 31640  - [39m2026-02-21, 2:04:48 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mOpenAI Response: {
+  "title": "Stylish Pink Clear Music Holder Cover for AirPods Pro 3, 4 & 2 - Custom Bluetooth Earphone Cases with Keychain - Perfect Gift for Music Lovers!",
+  "description": "🎶 Elevate your AirPods game with our Stylish Pink Clear Music Holder Cover! ✨ Designed to fit AirPods Pro 3, 4, and 2, this eye-catching Bluetooth earphone case not only protects your earbuds but also adds a dash of fun to your daily groove! 😍 With a handy keychain, you can keep your music close wherever you go! 🎉 Perfect for gifting to your favorite music lover or as a special treat for yourself! 🛍️💖 Grab yours today and keep the tunes playing in style! 🎧💫",
+  "tags": [
+    "AirPods case",
+    "Bluetooth cover",
+    "Pink earphone case",
+    "Pro 3 accessories",
+    "Music holder",
+    "Keychain holder",
+    "AirPods gift",
+    "Stylish cover",
+    "Clear AirPods case",
+    "Earbuds protection",
+    "Trendy Bluetooth case",
+    "Cute AirPods cover",
+    "Handmade earphone case"
+  ]
+}[39m
+[32m[Nest] 31640  - [39m2026-02-21, 2:04:48 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mGeneration successful[39m
+[ScraperController] AI generation successful
+[ScraperController] Upscaling 5 images...
+[32m[Nest] 31640  - [39m2026-02-21, 2:04:48 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/Sd657446c7b314ee0a4ad6de12c821fd0Q.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 31640  - [39m2026-02-21, 2:04:48 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S7b9fe8aad5fb4520a294dd9afe12a2d1l.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 31640  - [39m2026-02-21, 2:04:48 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S63af0ec62cc74112bf62091ba7ab72daX.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 31640  - [39m2026-02-21, 2:04:48 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S87e142f40c714791a5b5a30539abd3037.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 31640  - [39m2026-02-21, 2:04:48 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/Scfee18b6f476480894e0221644093b75x.jpg. Checking Fal Key: Present[39m
+[31m[Nest] 31640  - [39m2026-02-21, 2:04:49 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S7b9fe8aad5fb4520a294dd9afe12a2d1l.jpg Failed to upscale image
+[31m[Nest] 31640  - [39m2026-02-21, 2:04:49 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S63af0ec62cc74112bf62091ba7ab72daX.jpg Failed to upscale image
+[31m[Nest] 31640  - [39m2026-02-21, 2:04:49 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/Sd657446c7b314ee0a4ad6de12c821fd0Q.jpg Failed to upscale image
+[2J[3J[H[[90m2:04:49 p.m.[0m] File change detected. Starting incremental compilation...
+
+[31m[Nest] 31640  - [39m2026-02-21, 2:04:49 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S87e142f40c714791a5b5a30539abd3037.jpg Failed to upscale image
+[31m[Nest] 31640  - [39m2026-02-21, 2:04:49 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/Scfee18b6f476480894e0221644093b75x.jpg Failed to upscale image
+[ScraperController] Upscaling complete.
+[ScraperController] Creating product in DB...
+[ScraperController] FINAL CHECK - Variations: 2, Images: 6
+[ScraperController] Upscaled Images SAMPLE: [ 'https://ae01.alicdn.com/kf/Sd657446c7b314ee0a4ad6de12c821fd0Q.jpg' ]
+[ProductsService] createWithImages called
+[ProductsService] Variations Count: 2
+[ProductsService] Images Count: 6
+[ProductsService] Inserting product data: {
+  "user_id": "549ca095-5acf-482b-8498-21c6b626d784",
+  "source_url": "https://www.aliexpress.us/item/3256807172691443.html?spm=a2g0o.best.0.0.38502c25ZbKGPr&afTraceInfo=1005007359006195__pc__pcBestMore2Love__TniLVLz__1771707848333&_gl=1*1pq69y1*_gcl_au*MTQzNTUzOTYzMi4xNzY3MzE0OTgw*_ga*MTYxODAwNTkwMC4xNzcxNzA3ODQ4*_ga_VED1YSGNC7*czE3NzE3MDc4NDckbzEkZzAkdDE3NzE3MDc4NDkkajU4JGwwJGgw&gatewayAdapt=glo2usa4itemAdapt",
+  "source_platform": "AliExpress",
+  "original_title": "New Music Holder Cover For AirPods 4 Pro 2 AirPods Pro3 Pink Clear Bluetooth Earphone Cases For AirPods 2 3 Funda With Keychain",
+  "original_description": "Buy New Music Holder Cover For AirPods 4 Pro 2 AirPods Pro3 Pink Clear Bluetooth Earphone Cases For AirPods 2 3 Funda With Keychain at Aliexpress for . Find more 44, 200001619 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.",
+  "generated_title": "Stylish Pink Clear Music Holder Cover for AirPods Pro 3, 4 & 2 - Custom Bluetooth Earphone Cases with Keychain - Perfect Gift for Music L...",
+  "generated_description": "🎶 Elevate your AirPods game with our Stylish Pink Clear Music Holder Cover! ✨ Designed to fit AirPods Pro 3, 4, and 2, this eye-catching Bluetooth earphone case not only protects your earbuds but also adds a dash of fun to your daily groove! 😍 With a handy keychain, you can keep your music close wherever you go! 🎉 Perfect for gifting to your favorite music lover or as a special treat for yourself! 🛍️💖 Grab yours today and keep the tunes playing in style! 🎧💫",
+  "generated_tags": [
+    "AirPods case",
+    "Bluetooth cover",
+    "Pink earphone case",
+    "Pro 3 accessories",
+    "Music holder",
+    "Keychain holder",
+    "AirPods gift",
+    "Stylish cover",
+    "Clear AirPods case",
+    "Earbuds protection",
+    "Cute AirPods cover"
+  ],
+  "price": 7.37,
+  "status": "draft",
+  "attributes": {},
+  "created_at": "2026-02-21T21:04:49.818Z",
+  "updated_at": "2026-02-21T21:04:49.819Z"
+}
+[[90m2:04:50 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[2J[3J[H[[90m2:04:50 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m2:04:51 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[2J[3J[H[[90m2:04:52 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m2:04:52 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[2J[3J[H[[90m2:04:53 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m2:04:53 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[2J[3J[H[[90m2:04:54 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m2:04:54 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +8ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +33ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/bulk-delete, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771557159,
+  exp: 1772161959
+}
+[ScraperController] Received extension import request
+[ScraperController] originalImages count: 6
+[ScraperController] User ID from request: 549ca095-5acf-482b-8498-21c6b626d784
+[ScraperController] Received DTO: {
+  "sourceUrl": "https://www.aliexpress.us/item/3256807172691443.html?spm=a2g0o.best.0.0.38502c25ZbKGPr&afTraceInfo=1005007359006195__pc__pcBestMore2Love__TniLVLz__1771707848333&_gl=1*1pq69y1*_gcl_au*MTQzNTUzOTYzMi4xNzY3MzE0OTgw*_ga*MTYxODAwNTkwMC4xNzcxNzA3ODQ4*_ga_VED1YSGNC7*czE3NzE3MDc4NDckbzEkZzAkdDE3NzE3MDc4NDkkajU4JGwwJGgw&gatewayAdapt=glo2usa4itemAdapt",
+  "originalTitle": "New Music Holder Cover For AirPods 4 Pro 2 AirPods Pro3 Pink Clear Bluetooth Earphone Cases For AirPods 2 3 Funda With Keychain",
+  "originalDescription": "Buy New Music Holder Cover For AirPods 4 Pro 2 Air...",
+  "originalImages": 6,
+  "price": "C$7.37",
+  "variations": 2
+}
+[ScraperController] Starting AI generation...
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mgenerateListing called with: {"productTitle":"New Music Holder Cover For AirPods 4 Pro 2 AirPods Pro3 Pink Clear Bluetooth Earphone Cases For AirPods 2 3 Funda With Keychain","productDescription":"Buy New Music Holder Cover For AirPods 4 Pro 2 AirPods Pro3 Pink Clear Bluetooth Earphone Cases For AirPods 2 3 Funda With Keychain at Aliexpress for . Find more 44, 200001619 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.","keywords":["etsy style","handmade feel","high quality"]}[39m
+[32m[Nest] 46980  - [39m2026-02-21, 2:04:56 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mSending request to OpenAI...[39m
+[2J[3J[H[[90m2:04:56 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m2:04:56 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +8ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +16ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/bulk-delete, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:04:57 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 22440  - [39m2026-02-21, 2:05:08 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[31m[Nest] 22440  - [39m2026-02-21, 2:05:09 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39m[31mFailed to fetch shipping profiles[39m
+[31m[Nest] 22440  - [39m2026-02-21, 2:05:09 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39mObject(2) {
+  error: [32m'invalid_token'[39m,
+  error_description: [32m'access token is expired'[39m
+}
+[33m[Nest] 22440  - [39m2026-02-21, 2:05:09 p.m. [33m   WARN[39m [38;5;3m[EtsyController] [39m[33mAccess Token expired for user kursad.basel@gmail.com. Refreshing...[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:05:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mToken Refreshed. Keys: access_token, token_type, expires_in, refresh_token, user_id, api_key[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:05:09 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mToken refreshed and saved. Retrying operation...[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:05:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:05:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 22440  - [39m2026-02-21, 2:06:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mgenerateListing called with: {"productTitle":"Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts","productDescription":"Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.","keywords":["etsy","handmade","niche"],"fields":["title"]}[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:06:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mSending request to OpenAI...[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:06:43 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mOpenAI Response: {
+  "title": "Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Women - Unique Mom Gift and Pet Memorial Keepsake"
+}[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:06:43 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mGeneration successful[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 22440  - [39m2026-02-21, 2:06:48 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mgenerateListing called with: {"productTitle":"Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts","productDescription":"Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.","keywords":["etsy","handmade","niche"],"fields":["tags"]}[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:06:48 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mSending request to OpenAI...[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:06:50 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mOpenAI Response: {
+  "tags": [
+    "custom pet portrait",
+    "personalized bracelet",
+    "double chain jewelry",
+    "round pendant gift",
+    "women's jewelry gift",
+    "mom gift idea",
+    "pet memorial gift",
+    "unique pet jewelry",
+    "custom animal art",
+    "handmade pet gift",
+    "engraved pet charm",
+    "animal lover gift",
+    "gifts for pet owners"
+  ]
+}[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:06:50 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mGeneration successful[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] Updating product 6c5d44b4-bac5-4751-9bf6-bf036d174b76 with Data: {
+  "updated_at": "2026-02-21T21:06:56.233Z",
+  "original_title": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "generated_title": "Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Women - Unique Mom Gift and Pet Memorial Keepsake",
+  "original_description": "Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.",
+  "generated_description": "🐾✨ Cherish your furry friend forever with our Personalized Custom Pet Portrait Bracelet! \n|This stunning double chain bracelet features a beautiful round pendant that showcases your beloved pet's portrait, making it the perfect piece of jewelry for any pet lover. 💖🐶 \nWhether you're celebrating Mother’s Day or honoring the memory of a cherished companion, this exquisite bracelet is a heartfelt gift that will be treasured forever. \n🌈🎁 Made with love and high-quality materials, it's a unique statement piece that adds a touch of handmade charm to any outfit. \nTreat yourself or surprise a special someone today - they’ll absolutely adore this keepsake! 🥰💍",
+  "generated_tags": [
+    "custom pet portrait",
+    "double chain jewelry",
+    "round pendant gift",
+    "women's jewelry gift",
+    "mom gift idea",
+    "pet memorial gift",
+    "unique pet jewelry",
+    "custom animal art",
+    "handmade pet gift",
+    "engraved pet charm",
+    "animal lover gift",
+    "gifts for pet owners"
+  ],
+  "price": 9.24,
+  "shipping_profile_id": "285711909502",
+  "attributes": {}
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] Updating product 6c5d44b4-bac5-4751-9bf6-bf036d174b76 with Data: {
+  "updated_at": "2026-02-21T21:07:04.299Z",
+  "original_title": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "generated_title": "Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Women - Unique Mom Gift and Pet Memorial Keepsake",
+  "original_description": "Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.",
+  "generated_description": "🐾✨ Cherish your furry friend forever with our Personalized Custom Pet Portrait Bracelet! \n|This stunning double chain bracelet features a beautiful round pendant that showcases your beloved pet's portrait, making it the perfect piece of jewelry for any pet lover. 💖🐶 \nWhether you're celebrating Mother’s Day or honoring the memory of a cherished companion, this exquisite bracelet is a heartfelt gift that will be treasured forever. \n🌈🎁 Made with love and high-quality materials, it's a unique statement piece that adds a touch of handmade charm to any outfit. \nTreat yourself or surprise a special someone today - they’ll absolutely adore this keepsake! 🥰💍",
+  "generated_tags": [
+    "custom pet portrait",
+    "double chain jewelry",
+    "round pendant gift",
+    "women's jewelry gift",
+    "mom gift idea",
+    "pet memorial gift",
+    "unique pet jewelry",
+    "custom animal art",
+    "handmade pet gift",
+    "engraved pet charm",
+    "animal lover gift",
+    "gifts for pet owners"
+  ],
+  "price": 9.24,
+  "shipping_profile_id": "285711909502",
+  "attributes": {}
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:05 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32m[EtsyController] Publishing Product 6c5d44b4-bac5-4751-9bf6-bf036d174b76. Shipping Profile ID: 285711909502[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:05 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mUsing Readiness State ID: 1445407616809[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:05 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mCreating Etsy Listing with Payload: {"quantity":999,"title":"Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Women - Unique Mom Gift and Pet Memorial Keepsake","description":"🐾✨ Cherish your furry friend forever with our Personalized Custom Pet Portrait Bracelet! \n|This stunning double chain bracelet features a beautiful round pendant that showcases your beloved pet's portrait, making it the perfect piece of jewelry for any pet lover. 💖🐶 \nWhether you're celebrating Mother’s Day or honoring the memory of a cherished companion, this exquisite bracelet is a heartfelt gift that will be treasured forever. \n🌈🎁 Made with love and high-quality materials, it's a unique statement piece that adds a touch of handmade charm to any outfit. \nTreat yourself or surprise a special someone today - they’ll absolutely adore this keepsake! 🥰💍","price":9.24,"who_made":"i_did","when_made":"2020_2026","taxonomy_id":1,"shipping_profile_id":285711909502,"readiness_state_id":1445407616809,"type":"physical","non_taxable":false,"state":"draft"}[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:06 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading 6 images.[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:06 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"3a411a7a-0c17-4eba-8c37-0db357c69a5b","image_url":"https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png","created_at":"2026-02-21T02:09:19.135+00:00","is_primary":true,"product_id":"6c5d44b4-bac5-4751-9bf6-bf036d174b76","order_index":0}, Extracted URL: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:06 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:06 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 40846 bytes[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:06 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461029003/images[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:07 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:07 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:07 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"61bf6461-0f02-4fcc-816e-ed68eb2e4de6","image_url":"https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg","created_at":"2026-02-21T02:09:19.135+00:00","is_primary":false,"product_id":"6c5d44b4-bac5-4751-9bf6-bf036d174b76","order_index":1}, Extracted URL: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:07 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:07 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 195238 bytes[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:07 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461029003/images[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:08 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:08 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:08 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"fb025434-e443-4204-9dcb-d45f16974e7d","image_url":"https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg","created_at":"2026-02-21T02:09:19.135+00:00","is_primary":false,"product_id":"6c5d44b4-bac5-4751-9bf6-bf036d174b76","order_index":2}, Extracted URL: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:08 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:08 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 248742 bytes[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:08 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461029003/images[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:09 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:09 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"68e1fd74-9bd4-478c-bdbf-65e3117c67c0","image_url":"https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg","created_at":"2026-02-21T02:09:19.135+00:00","is_primary":false,"product_id":"6c5d44b4-bac5-4751-9bf6-bf036d174b76","order_index":3}, Extracted URL: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 185942 bytes[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461029003/images[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:10 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:10 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:10 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"360aab6d-176e-439c-9a98-cb86a3d653cc","image_url":"https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png","created_at":"2026-02-21T02:09:19.135+00:00","is_primary":false,"product_id":"6c5d44b4-bac5-4751-9bf6-bf036d174b76","order_index":4}, Extracted URL: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:10 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:10 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 66146 bytes[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:10 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461029003/images[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:11 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:11 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:11 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"69182d9a-cfea-4f99-8935-2869d2dd5a0e","image_url":"https://ae01.alicdn.com/kf/Sdedfde063a684981b648af49c94add37j.png","created_at":"2026-02-21T02:09:19.135+00:00","is_primary":false,"product_id":"6c5d44b4-bac5-4751-9bf6-bf036d174b76","order_index":5}, Extracted URL: https://ae01.alicdn.com/kf/Sdedfde063a684981b648af49c94add37j.png[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:11 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/Sdedfde063a684981b648af49c94add37j.png[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:11 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 165036 bytes[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:11 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461029003/images[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:12 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:07:12 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[31m[Nest] 22440  - [39m2026-02-21, 2:07:12 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39m[31mFailed to update inventory[39m
+[31m[Nest] 22440  - [39m2026-02-21, 2:07:12 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39mObject(1) {
+  error: [32m'Array contains invalid keys: readiness_state_id'[39m
+}
+[ProductsService] Updating product 6c5d44b4-bac5-4751-9bf6-bf036d174b76 with Data: {
+  "updated_at": "2026-02-21T21:07:12.581Z",
+  "status": "published"
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 22440  - [39m2026-02-21, 2:08:21 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 22440  - [39m2026-02-21, 2:08:21 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[2J[3J[H[[90m2:57:46 p.m.[0m] File change detected. Starting incremental compilation...
+
+[2J[3J[H[[90m3:25:21 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m3:25:23 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +10ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +41ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +6ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/bulk-delete, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 40040  - [39m2026-02-21, 3:25:26 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+[2J[3J[H[[90m3:25:27 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m3:25:28 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +8ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +15ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/bulk-delete, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:25:29 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:30:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[31m[Nest] 3420  - [39m2026-02-21, 3:30:09 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39m[31mFailed to fetch shipping profiles[39m
+[31m[Nest] 3420  - [39m2026-02-21, 3:30:09 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39mObject(2) {
+  error: [32m'invalid_token'[39m,
+  error_description: [32m'access token is expired'[39m
+}
+[33m[Nest] 3420  - [39m2026-02-21, 3:30:09 p.m. [33m   WARN[39m [38;5;3m[EtsyController] [39m[33mAccess Token expired for user kursad.basel@gmail.com. Refreshing...[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:30:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mToken Refreshed. Keys: access_token, token_type, expires_in, refresh_token, user_id, api_key[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:30:10 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mToken refreshed and saved. Retrying operation...[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:30:10 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:30:10 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:31:20 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:31:20 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:31:29 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:31:30 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:32:54 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:32:54 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:34:29 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:34:29 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:34:30 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:34:30 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:34:36 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:34:36 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:36:09 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:36:10 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:36:25 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:36:25 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:36:49 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:36:49 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 3420  - [39m2026-02-21, 3:37:41 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 3420  - [39m2026-02-21, 3:37:41 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771713427,
+  exp: 1772318227
+}
+[ScraperController] Received extension import request
+[ScraperController] originalImages count: 6
+[ScraperController] User ID from request: 549ca095-5acf-482b-8498-21c6b626d784
+[ScraperController] Received DTO: {
+  "sourceUrl": "https://www.aliexpress.us/item/3256805779660634.html?pvid=82596d91-2532-40d0-baf5-cf34d7372e8f&pdp_ext_f=%7B%22ship_from%22%3A%22US%22%2C%22sku_id%22%3A%2212000035085789857%22%7D&scm=1007.50991.440319.0&scm-url=1007.50991.440319.0&scm_id=1007.50991.440319.0&pdp_npi=6%40dis%21CAD%21C%24%2016.79%21C%24%209.24%21%21%2111.98%216.59%21%402101c44f17716397295707301e2a0e%2112000035085789857%21gdf%21US%21840496847%21X%211%210%21n_tag%3A-29919%3Bd%3Ab2d82731%3Bm03_new_user%3A-29895&spm=undefined.undefined.undefined.dundefined&aecmd=true&gatewayAdapt=glo2usa",
+  "originalTitle": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "originalDescription": "Buy Custom Pet Portrait Bracelet Personalized Doub...",
+  "originalImages": 6,
+  "price": "C$9.24",
+  "variations": 2
+}
+[ScraperController] Starting AI generation...
+[32m[Nest] 3420  - [39m2026-02-21, 6:22:41 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mgenerateListing called with: {"productTitle":"Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts","productDescription":"Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.","keywords":["etsy style","handmade feel","high quality"]}[39m
+[32m[Nest] 3420  - [39m2026-02-21, 6:22:41 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mSending request to OpenAI...[39m
+[32m[Nest] 3420  - [39m2026-02-21, 6:22:46 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mOpenAI Response: {
+  "title": "Personalized Custom Pet Portrait Bracelet | Double Chain Round Pendant Jewelry | Unique Women’s Gift & Pet Memorial Keepsake",
+  "description": "✨ Say it with style! Your furry friend deserves a special tribute, and our **Custom Pet Portrait Bracelet** is just the thing! 🐶❤️ This beautiful double chain bracelet features a lovely round pendant showcasing a portrait of your beloved pet. Perfect as a thoughtful gift for moms or as a cherished pet memorial keepsake! 🌼💖  Express your love and keep the memories close with a piece that’s crafted with care just for you! 🎁✨ \n\n🌟 Special Features:\n- **Personalized Design:** Showcase your pet’s unique charm! \n- **High-Quality Materials:** Handmade feel that you can count on! ✨\n- **Versatile Style:** Perfect for everyday wear or special occasions. 🎉 \n- **Great Gift Idea:** Ideal for birthdays, anniversaries, or simply because! 🎈\n  \nDon’t miss out on this heartwarming accessory that tells your pet’s story! 🐾💞 Order now and celebrate the bond you share!",
+  "tags": [
+    "pet portrait bracelet",
+    "personalized jewelry",
+    "double chain bracelet",
+    "round pendant gift",
+    "women gift jewelry",
+    "pet memorial gift",
+    "custom pet jewelry",
+    "unique pet gift",
+    "handmade bracelet",
+    "special occasion gift",
+    "mom gift idea",
+    "pet lover jewelry",
+    "high quality gifts"
+  ]
+}[39m
+[32m[Nest] 3420  - [39m2026-02-21, 6:22:46 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mGeneration successful[39m
+[ScraperController] AI generation successful
+[ScraperController] Upscaling 5 images...
+[32m[Nest] 3420  - [39m2026-02-21, 6:22:46 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png. Checking Fal Key: Present[39m
+[32m[Nest] 3420  - [39m2026-02-21, 6:22:46 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 3420  - [39m2026-02-21, 6:22:46 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 3420  - [39m2026-02-21, 6:22:46 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 3420  - [39m2026-02-21, 6:22:46 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png. Checking Fal Key: Present[39m
+[2J[3J[H[[90m6:22:47 p.m.[0m] File change detected. Starting incremental compilation...
+
+[31m[Nest] 3420  - [39m2026-02-21, 6:22:47 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png Failed to upscale image
+[31m[Nest] 3420  - [39m2026-02-21, 6:22:47 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png Failed to upscale image
+[31m[Nest] 3420  - [39m2026-02-21, 6:22:47 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg Failed to upscale image
+[31m[Nest] 3420  - [39m2026-02-21, 6:22:47 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg Failed to upscale image
+[31m[Nest] 3420  - [39m2026-02-21, 6:22:47 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg Failed to upscale image
+[ScraperController] Upscaling complete.
+[ScraperController] Creating product in DB...
+[ScraperController] FINAL CHECK - Variations: 2, Images: 6
+[ScraperController] Upscaled Images SAMPLE: [ 'https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png' ]
+[ProductsService] createWithImages called
+[ProductsService] Variations Count: 2
+[ProductsService] Images Count: 6
+[ProductsService] Inserting product data: {
+  "user_id": "549ca095-5acf-482b-8498-21c6b626d784",
+  "source_url": "https://www.aliexpress.us/item/3256805779660634.html?pvid=82596d91-2532-40d0-baf5-cf34d7372e8f&pdp_ext_f=%7B%22ship_from%22%3A%22US%22%2C%22sku_id%22%3A%2212000035085789857%22%7D&scm=1007.50991.440319.0&scm-url=1007.50991.440319.0&scm_id=1007.50991.440319.0&pdp_npi=6%40dis%21CAD%21C%24%2016.79%21C%24%209.24%21%21%2111.98%216.59%21%402101c44f17716397295707301e2a0e%2112000035085789857%21gdf%21US%21840496847%21X%211%210%21n_tag%3A-29919%3Bd%3Ab2d82731%3Bm03_new_user%3A-29895&spm=undefined.undefined.undefined.dundefined&aecmd=true&gatewayAdapt=glo2usa",
+  "source_platform": "AliExpress",
+  "original_title": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "original_description": "Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.",
+  "generated_title": "Personalized Custom Pet Portrait Bracelet | Double Chain Round Pendant Jewelry | Unique Women’s Gift & Pet Memorial Keepsake",
+  "generated_description": "✨ Say it with style! Your furry friend deserves a special tribute, and our **Custom Pet Portrait Bracelet** is just the thing! 🐶❤️ This beautiful double chain bracelet features a lovely round pendant showcasing a portrait of your beloved pet. Perfect as a thoughtful gift for moms or as a cherished pet memorial keepsake! 🌼💖  Express your love and keep the memories close with a piece that’s crafted with care just for you! 🎁✨ \n\n🌟 Special Features:\n- **Personalized Design:** Showcase your pet’s unique charm! \n- **High-Quality Materials:** Handmade feel that you can count on! ✨\n- **Versatile Style:** Perfect for everyday wear or special occasions. 🎉 \n- **Great Gift Idea:** Ideal for birthdays, anniversaries, or simply because! 🎈\n  \nDon’t miss out on this heartwarming accessory that tells your pet’s story! 🐾💞 Order now and celebrate the bond you share!",
+  "generated_tags": [
+    "personalized jewelry",
+    "round pendant gift",
+    "women gift jewelry",
+    "pet memorial gift",
+    "custom pet jewelry",
+    "unique pet gift",
+    "handmade bracelet",
+    "mom gift idea",
+    "pet lover jewelry",
+    "high quality gifts"
+  ],
+  "price": 9.24,
+  "status": "draft",
+  "attributes": {},
+  "created_at": "2026-02-22T01:22:47.421Z",
+  "updated_at": "2026-02-22T01:22:47.421Z"
+}
+[[90m6:22:47 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[2J[3J[H[[90m6:22:48 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m6:22:48 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[2J[3J[H[[90m6:22:50 p.m.[0m] File change detected. Starting incremental compilation...
+
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +8ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +21ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/bulk-delete, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 9712  - [39m2026-02-21, 6:22:50 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[[90m6:22:50 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[2J[3J[H[[90m6:22:51 p.m.[0m] File change detected. Starting incremental compilation...
+
+[[90m6:22:51 p.m.[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +10ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+AuthModule: Registering JwtModule with secret: secret
+[33m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [33m   WARN[39m [38;5;3m[AirtableService] [39m[33mAirtable API Key or Base ID not configured[39m
+JwtStrategy: Initialized with secret: secret
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[SupabaseService] [39m[32mSupabase client initialized[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAirtableModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupabaseModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScraperModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiContentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEtsyModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mImagesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +19ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/update-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProductsController {/products}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/products/bulk-delete, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiContentController {/ai-content}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ai-content/analyze, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScraperController {/scraper}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/scrape, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scraper/extension-import, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mImagesController {/images}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/upload-url, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/reorder, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/images/:id/upscale, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEtsyController {/etsy}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/auth, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/shipping-profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/publish/:id, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/disconnect, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/etsy/taxonomy/:id/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:22:53 p.m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771713427,
+  exp: 1772318227
+}
+[ScraperController] Received extension import request
+[ScraperController] originalImages count: 6
+[ScraperController] User ID from request: 549ca095-5acf-482b-8498-21c6b626d784
+[ScraperController] Received DTO: {
+  "sourceUrl": "https://www.aliexpress.us/item/3256805779660634.html?pvid=82596d91-2532-40d0-baf5-cf34d7372e8f&pdp_ext_f=%7B%22ship_from%22%3A%22US%22%2C%22sku_id%22%3A%2212000035085789857%22%7D&scm=1007.50991.440319.0&scm-url=1007.50991.440319.0&scm_id=1007.50991.440319.0&pdp_npi=6%40dis%21CAD%21C%24%2016.79%21C%24%209.24%21%21%2111.98%216.59%21%402101c44f17716397295707301e2a0e%2112000035085789857%21gdf%21US%21840496847%21X%211%210%21n_tag%3A-29919%3Bd%3Ab2d82731%3Bm03_new_user%3A-29895&spm=undefined.undefined.undefined.dundefined&aecmd=true&gatewayAdapt=glo2usa",
+  "originalTitle": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "originalDescription": "Buy Custom Pet Portrait Bracelet Personalized Doub...",
+  "originalImages": 6,
+  "price": "C$9.24",
+  "variations": 2
+}
+[ScraperController] Starting AI generation...
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:37 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mgenerateListing called with: {"productTitle":"Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts","productDescription":"Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.","keywords":["etsy style","handmade feel","high quality"]}[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:37 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mSending request to OpenAI...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mOpenAI Response: {
+  "title": "Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Women - Unique Mom Gift & Pet Memorial Keepsake",
+  "description": "🌟 Wear your furry friend close to your heart with our stunning Personalized Custom Pet Portrait Bracelet! 🐾 This exquisite double chain bracelet features a beautifully crafted round pendant, making it the perfect piece of jewelry for pet lovers. 💖✨ Whether you're celebrating a special bond or honoring a cherished memory, this bracelet is a heartfelt gift for any mom or pet owner. Gift it for birthdays, anniversaries, or just because! 🌈 Add a touch of love and style to your everyday look while keeping your pet's spirit alive. Order yours today and let your creativity shine! 🎉",
+  "tags": [
+    "pet portrait bracelet",
+    "custom jewelry",
+    "bracelet for women",
+    "personalized gifts",
+    "mom jewelry",
+    "pet memorial gift",
+    "double chain bracelet",
+    "round pendant",
+    "handmade gifts",
+    "furry friend keepsake",
+    "unique pet gift",
+    "animal lover jewelry",
+    "custom keepsake"
+  ]
+}[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mGeneration successful[39m
+[ScraperController] AI generation successful
+[ScraperController] Upscaling 5 images...
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:42 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png. Checking Fal Key: Present[39m
+[31m[Nest] 50540  - [39m2026-02-21, 6:31:43 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 6:31:43 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 6:31:43 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 6:31:43 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 6:31:43 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png Failed to upscale image
+[ScraperController] Upscaling complete.
+[ScraperController] Creating product in DB...
+[ScraperController] FINAL CHECK - Variations: 2, Images: 6
+[ScraperController] Upscaled Images SAMPLE: [ 'https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png' ]
+[ProductsService] createWithImages called
+[ProductsService] Variations Count: 2
+[ProductsService] Images Count: 6
+[ProductsService] Inserting product data: {
+  "user_id": "549ca095-5acf-482b-8498-21c6b626d784",
+  "source_url": "https://www.aliexpress.us/item/3256805779660634.html?pvid=82596d91-2532-40d0-baf5-cf34d7372e8f&pdp_ext_f=%7B%22ship_from%22%3A%22US%22%2C%22sku_id%22%3A%2212000035085789857%22%7D&scm=1007.50991.440319.0&scm-url=1007.50991.440319.0&scm_id=1007.50991.440319.0&pdp_npi=6%40dis%21CAD%21C%24%2016.79%21C%24%209.24%21%21%2111.98%216.59%21%402101c44f17716397295707301e2a0e%2112000035085789857%21gdf%21US%21840496847%21X%211%210%21n_tag%3A-29919%3Bd%3Ab2d82731%3Bm03_new_user%3A-29895&spm=undefined.undefined.undefined.dundefined&aecmd=true&gatewayAdapt=glo2usa",
+  "source_platform": "AliExpress",
+  "original_title": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "original_description": "Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.",
+  "generated_title": "Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Women - Unique Mom Gift & Pet Memorial Keepsake",
+  "generated_description": "🌟 Wear your furry friend close to your heart with our stunning Personalized Custom Pet Portrait Bracelet! 🐾 This exquisite double chain bracelet features a beautifully crafted round pendant, making it the perfect piece of jewelry for pet lovers. 💖✨ Whether you're celebrating a special bond or honoring a cherished memory, this bracelet is a heartfelt gift for any mom or pet owner. Gift it for birthdays, anniversaries, or just because! 🌈 Add a touch of love and style to your everyday look while keeping your pet's spirit alive. Order yours today and let your creativity shine! 🎉",
+  "generated_tags": [
+    "custom jewelry",
+    "bracelet for women",
+    "personalized gifts",
+    "mom jewelry",
+    "pet memorial gift",
+    "round pendant",
+    "handmade gifts",
+    "unique pet gift",
+    "animal lover jewelry",
+    "custom keepsake"
+  ],
+  "price": 9.24,
+  "status": "draft",
+  "attributes": {},
+  "created_at": "2026-02-22T01:31:43.179Z",
+  "updated_at": "2026-02-22T01:31:43.179Z"
+}
+[ProductsService] Product created with ID: 9ba6e01e-0f21-4668-aa4f-0dd1bf046d28
+[ProductsService] Saved 6 images.
+[ProductsService] Saved 2 variations.
+[ScraperController] Product created successfully
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(9ba6e01e-0f21-4668-aa4f-0dd1bf046d28) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:49 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[31m[Nest] 50540  - [39m2026-02-21, 6:31:49 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39m[31mFailed to fetch shipping profiles[39m
+[31m[Nest] 50540  - [39m2026-02-21, 6:31:49 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39mObject(2) {
+  error: [32m'invalid_token'[39m,
+  error_description: [32m'access token is expired'[39m
+}
+[33m[Nest] 50540  - [39m2026-02-21, 6:31:49 p.m. [33m   WARN[39m [38;5;3m[EtsyController] [39m[33mAccess Token expired for user kursad.basel@gmail.com. Refreshing...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:49 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mToken Refreshed. Keys: access_token, token_type, expires_in, refresh_token, user_id, api_key[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:49 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mToken refreshed and saved. Retrying operation...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:49 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:31:50 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(9ba6e01e-0f21-4668-aa4f-0dd1bf046d28) result: { data: true, error: null }
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(9ba6e01e-0f21-4668-aa4f-0dd1bf046d28) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 6:43:20 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:43:20 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 50540  - [39m2026-02-21, 6:43:21 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:43:21 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(9ba6e01e-0f21-4668-aa4f-0dd1bf046d28) result: { data: true, error: null }
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(9ba6e01e-0f21-4668-aa4f-0dd1bf046d28) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 6:45:31 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:45:32 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 50540  - [39m2026-02-21, 6:45:32 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:45:33 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771713427,
+  exp: 1772318227
+}
+[ScraperController] Received extension import request
+[ScraperController] originalImages count: 6
+[ScraperController] User ID from request: 549ca095-5acf-482b-8498-21c6b626d784
+[ScraperController] Received DTO: {
+  "sourceUrl": "https://www.aliexpress.us/item/3256805779660634.html?pvid=82596d91-2532-40d0-baf5-cf34d7372e8f&pdp_ext_f=%7B%22ship_from%22%3A%22US%22%2C%22sku_id%22%3A%2212000035085789857%22%7D&scm=1007.50991.440319.0&scm-url=1007.50991.440319.0&scm_id=1007.50991.440319.0&pdp_npi=6%40dis%21CAD%21C%24%2016.79%21C%24%209.24%21%21%2111.98%216.59%21%402101c44f17716397295707301e2a0e%2112000035085789857%21gdf%21US%21840496847%21X%211%210%21n_tag%3A-29919%3Bd%3Ab2d82731%3Bm03_new_user%3A-29895&spm=undefined.undefined.undefined.dundefined&aecmd=true&gatewayAdapt=glo2usa",
+  "originalTitle": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "originalDescription": "Buy Custom Pet Portrait Bracelet Personalized Doub...",
+  "originalImages": 6,
+  "price": "C$9.24",
+  "variations": 2
+}
+[ScraperController] Starting AI generation...
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:24 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mgenerateListing called with: {"productTitle":"Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts","productDescription":"Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.","keywords":["etsy style","handmade feel","high quality"]}[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:24 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mSending request to OpenAI...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mOpenAI Response: {
+  "title": "Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Pet Lovers, Ideal Gift for Moms & Pet Memorials",
+  "description": "🌟 Celebrate your furry friend with our Personalized Custom Pet Portrait Bracelet! 🐾 This stunning double chain bracelet features a beautiful round pendant, perfect for showcasing your beloved pet's portrait. Whether it’s a gift for a special mom in your life or a heartfelt pet memorial keepsake, this unique jewelry piece radiates love and memories. 💖 Crafted with care to ensure a high-quality finish, it’s not just a bracelet, it’s a cherished memory!✨  Wear it proudly and keep your pet close to your heart every day. 🌈🦮",
+  "tags": [
+    "pet portrait jewelry",
+    "custom jewelry gift",
+    "double chain bracelet",
+    "personalized pet gift",
+    "memorial pet bracelet",
+    "cat dog portrait",
+    "unique mom jewelry",
+    "handmade pet gift",
+    "pet lover accessories",
+    "round pendant charm",
+    "gift for pet owner",
+    "custom charmed gift",
+    "womens personalized gift"
+  ]
+}[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mGeneration successful[39m
+[ScraperController] AI generation successful
+[ScraperController] Upscaling 5 images...
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png. Checking Fal Key: Present[39m
+[31m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 6:52:30 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png Failed to upscale image
+[ScraperController] Upscaling complete.
+[ScraperController] Creating product in DB...
+[ScraperController] FINAL CHECK - Variations: 2, Images: 6
+[ScraperController] Upscaled Images SAMPLE: [ 'https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png' ]
+[ProductsService] createWithImages called
+[ProductsService] Variations Count: 2
+[ProductsService] Images Count: 6
+[ProductsService] Inserting product data: {
+  "user_id": "549ca095-5acf-482b-8498-21c6b626d784",
+  "source_url": "https://www.aliexpress.us/item/3256805779660634.html?pvid=82596d91-2532-40d0-baf5-cf34d7372e8f&pdp_ext_f=%7B%22ship_from%22%3A%22US%22%2C%22sku_id%22%3A%2212000035085789857%22%7D&scm=1007.50991.440319.0&scm-url=1007.50991.440319.0&scm_id=1007.50991.440319.0&pdp_npi=6%40dis%21CAD%21C%24%2016.79%21C%24%209.24%21%21%2111.98%216.59%21%402101c44f17716397295707301e2a0e%2112000035085789857%21gdf%21US%21840496847%21X%211%210%21n_tag%3A-29919%3Bd%3Ab2d82731%3Bm03_new_user%3A-29895&spm=undefined.undefined.undefined.dundefined&aecmd=true&gatewayAdapt=glo2usa",
+  "source_platform": "AliExpress",
+  "original_title": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "original_description": "Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.",
+  "generated_title": "Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Pet Lovers, Ideal Gift for Moms & Pet Memorials",
+  "generated_description": "🌟 Celebrate your furry friend with our Personalized Custom Pet Portrait Bracelet! 🐾 This stunning double chain bracelet features a beautiful round pendant, perfect for showcasing your beloved pet's portrait. Whether it’s a gift for a special mom in your life or a heartfelt pet memorial keepsake, this unique jewelry piece radiates love and memories. 💖 Crafted with care to ensure a high-quality finish, it’s not just a bracelet, it’s a cherished memory!✨  Wear it proudly and keep your pet close to your heart every day. 🌈🦮",
+  "generated_tags": [
+    "pet portrait jewelry",
+    "custom jewelry gift",
+    "cat dog portrait",
+    "unique mom jewelry",
+    "handmade pet gift",
+    "round pendant charm",
+    "gift for pet owner",
+    "custom charmed gift"
+  ],
+  "price": 9.24,
+  "status": "draft",
+  "attributes": {},
+  "created_at": "2026-02-22T01:52:30.841Z",
+  "updated_at": "2026-02-22T01:52:30.841Z"
+}
+[ProductsService] Product created with ID: 093b5871-7103-40d7-85d4-44e50b622a25
+[ProductsService] Saved 6 images.
+[ProductsService] Saved 2 variations.
+[ScraperController] Product created successfully
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:36 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:36 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:36 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:37 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] Updating product 093b5871-7103-40d7-85d4-44e50b622a25 with Data: {
+  "updated_at": "2026-02-22T01:52:54.262Z",
+  "original_title": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "generated_title": "Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Pet Lovers, Ideal Gift for Moms & Pet Memorials",
+  "original_description": "Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.",
+  "generated_description": "🌟 Celebrate your furry friend with our Personalized Custom Pet Portrait Bracelet! 🐾 This stunning double chain bracelet features a beautiful round pendant, perfect for showcasing your beloved pet's portrait. Whether it’s a gift for a special mom in your life or a heartfelt pet memorial keepsake, this unique jewelry piece radiates love and memories. 💖 Crafted with care to ensure a high-quality finish, it’s not just a bracelet, it’s a cherished memory!✨  Wear it proudly and keep your pet close to your heart every day. 🌈🦮",
+  "generated_tags": [
+    "pet portrait jewelry",
+    "custom jewelry gift",
+    "cat dog portrait",
+    "unique mom jewelry",
+    "handmade pet gift",
+    "round pendant charm",
+    "gift for pet owner",
+    "custom charmed gift"
+  ],
+  "price": 39.24,
+  "shipping_profile_id": "285711909502",
+  "attributes": {}
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:54 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32m[EtsyController] Publishing Product 093b5871-7103-40d7-85d4-44e50b622a25. Shipping Profile ID: 285711909502[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:55 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mUsing Readiness State ID: 1445407616809[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:55 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mCreating Etsy Listing with Payload: {"quantity":999,"title":"Personalized Custom Pet Portrait Bracelet - Double Chain Round Pendant Jewelry for Pet Lovers, Ideal Gift for Moms  and  Pet Memorials","description":"🌟 Celebrate your furry friend with our Personalized Custom Pet Portrait Bracelet! 🐾 This stunning double chain bracelet features a beautiful round pendant, perfect for showcasing your beloved pet's portrait. Whether it’s a gift for a special mom in your life or a heartfelt pet memorial keepsake, this unique jewelry piece radiates love and memories. 💖 Crafted with care to ensure a high-quality finish, it’s not just a bracelet, it’s a cherished memory!✨  Wear it proudly and keep your pet close to your heart every day. 🌈🦮","price":39.24,"who_made":"i_did","when_made":"2020_2026","taxonomy_id":1,"shipping_profile_id":285711909502,"readiness_state_id":1445407616809,"type":"physical","non_taxable":false,"state":"draft"}[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:55 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mFiltering images. Selected IDs: 6[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:55 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading 6 images.[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:55 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"d2159ddb-058b-401c-9741-0e232dfd1cf6","image_url":"https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png","created_at":"2026-02-22T01:52:31.226+00:00","is_primary":true,"product_id":"093b5871-7103-40d7-85d4-44e50b622a25","order_index":0}, Extracted URL: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:55 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:56 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 40846 bytes[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:56 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461134848/images[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:56 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:56 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:56 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"639a80ff-4e35-4e58-917d-ef61346e5c19","image_url":"https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg","created_at":"2026-02-22T01:52:31.226+00:00","is_primary":false,"product_id":"093b5871-7103-40d7-85d4-44e50b622a25","order_index":1}, Extracted URL: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:56 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:56 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 195238 bytes[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:56 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461134848/images[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:57 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:57 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:57 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"9ee493c6-7d58-44ef-b8d3-16d3697eb80f","image_url":"https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg","created_at":"2026-02-22T01:52:31.226+00:00","is_primary":false,"product_id":"093b5871-7103-40d7-85d4-44e50b622a25","order_index":2}, Extracted URL: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:57 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:57 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 248742 bytes[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:57 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461134848/images[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:58 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:58 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:58 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"5cf76a73-a142-47c3-8e74-b8df05f2eba6","image_url":"https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg","created_at":"2026-02-22T01:52:31.226+00:00","is_primary":false,"product_id":"093b5871-7103-40d7-85d4-44e50b622a25","order_index":3}, Extracted URL: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:58 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:58 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 185942 bytes[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:58 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461134848/images[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:59 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:59 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:59 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"21fcd94c-c4c9-4760-90ec-6d7c24e2cc93","image_url":"https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png","created_at":"2026-02-22T01:52:31.226+00:00","is_primary":false,"product_id":"093b5871-7103-40d7-85d4-44e50b622a25","order_index":4}, Extracted URL: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:59 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:59 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 66146 bytes[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:52:59 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461134848/images[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:53:00 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:53:00 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:53:00 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUploading Image. Raw: {"id":"025421c6-12da-4953-88d3-d7a94b7c9833","image_url":"https://ae01.alicdn.com/kf/Sdedfde063a684981b648af49c94add37j.png","created_at":"2026-02-22T01:52:31.226+00:00","is_primary":false,"product_id":"093b5871-7103-40d7-85d4-44e50b622a25","order_index":5}, Extracted URL: https://ae01.alicdn.com/kf/Sdedfde063a684981b648af49c94add37j.png[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:53:00 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloading image for upload: https://ae01.alicdn.com/kf/Sdedfde063a684981b648af49c94add37j.png[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:53:00 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mDownloaded image buffer. Size: 165036 bytes[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:53:00 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mPosting to Etsy Image Upload Endpoint: https://api.etsy.com/v3/application/shops/37582558/listings/4461134848/images[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:53:01 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mImage uploaded successfully to Etsy[39m
+[32m[Nest] 50540  - [39m2026-02-21, 6:53:01 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mUpload Result: Success[39m
+[31m[Nest] 50540  - [39m2026-02-21, 6:53:01 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39m[31mFailed to update inventory[39m
+[31m[Nest] 50540  - [39m2026-02-21, 6:53:01 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39mObject(1) {
+  error: [32m'Array contains invalid keys: readiness_state_id'[39m
+}
+[ProductsService] Updating product 093b5871-7103-40d7-85d4-44e50b622a25 with Data: {
+  "updated_at": "2026-02-22T01:53:01.478Z",
+  "status": "published"
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 7:31:41 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 50540  - [39m2026-02-21, 7:31:41 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 7:31:41 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 7:31:41 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 50540  - [39m2026-02-21, 7:31:42 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 7:31:42 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 50540  - [39m2026-02-21, 7:36:52 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+[31m[Nest] 50540  - [39m2026-02-21, 7:36:53 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39m[31mFailed to fetch shipping profiles[39m
+[31m[Nest] 50540  - [39m2026-02-21, 7:36:53 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39mObject(2) {
+  error: [32m'invalid_token'[39m,
+  error_description: [32m'access token is expired'[39m
+}
+[33m[Nest] 50540  - [39m2026-02-21, 7:36:53 p.m. [33m   WARN[39m [38;5;3m[EtsyController] [39m[33mAccess Token expired for user kursad.basel@gmail.com. Refreshing...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 7:36:53 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mToken Refreshed. Keys: access_token, token_type, expires_in, refresh_token, user_id, api_key[39m
+[32m[Nest] 50540  - [39m2026-02-21, 7:36:53 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mToken refreshed and saved. Retrying operation...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 7:36:53 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 7:36:53 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[32m[Nest] 50540  - [39m2026-02-21, 7:36:54 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 7:36:54 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 7:41:13 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 7:41:13 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771221517,
+  exp: 1771826317
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 8:29:40 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 8:29:41 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:14 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[31m[Nest] 50540  - [39m2026-02-21, 8:37:15 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39m[31mFailed to fetch shipping profiles[39m
+[31m[Nest] 50540  - [39m2026-02-21, 8:37:15 p.m. [31m  ERROR[39m [38;5;3m[EtsyService] [39mObject(2) {
+  error: [32m'invalid_token'[39m,
+  error_description: [32m'access token is expired'[39m
+}
+[33m[Nest] 50540  - [39m2026-02-21, 8:37:15 p.m. [33m   WARN[39m [38;5;3m[EtsyController] [39m[33mAccess Token expired for user kursad.basel@gmail.com. Refreshing...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:15 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mToken Refreshed. Keys: access_token, token_type, expires_in, refresh_token, user_id, api_key[39m
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:15 p.m. [32m    LOG[39m [38;5;3m[EtsyController] [39m[32mToken refreshed and saved. Retrying operation...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:15 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:15 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+[ProductsService] findOne(6c5d44b4-bac5-4751-9bf6-bf036d174b76) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:22 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:22 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+[ProductsService] findOne(9ba6e01e-0f21-4668-aa4f-0dd1bf046d28) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:25 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:25 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+[ProductsService] findOne(093b5871-7103-40d7-85d4-44e50b622a25) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:27 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 8:37:28 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771730717,
+  exp: 1772335517
+}
+Login failed: Password mismatch for user kursad.basel@gmail.com
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771713427,
+  exp: 1772318227
+}
+[ScraperController] Received extension import request
+[ScraperController] originalImages count: 6
+[ScraperController] User ID from request: 549ca095-5acf-482b-8498-21c6b626d784
+[ScraperController] Received DTO: {
+  "sourceUrl": "https://www.aliexpress.us/item/3256805779660634.html?pvid=82596d91-2532-40d0-baf5-cf34d7372e8f&pdp_ext_f=%7B%22ship_from%22%3A%22US%22%2C%22sku_id%22%3A%2212000035085789857%22%7D&scm=1007.50991.440319.0&scm-url=1007.50991.440319.0&scm_id=1007.50991.440319.0&pdp_npi=6%40dis%21CAD%21C%24%2016.79%21C%24%209.24%21%21%2111.98%216.59%21%402101c44f17716397295707301e2a0e%2112000035085789857%21gdf%21US%21840496847%21X%211%210%21n_tag%3A-29919%3Bd%3Ab2d82731%3Bm03_new_user%3A-29895&spm=undefined.undefined.undefined.dundefined&aecmd=true&gatewayAdapt=glo2usa",
+  "originalTitle": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "originalDescription": "Buy Custom Pet Portrait Bracelet Personalized Doub...",
+  "originalImages": 6,
+  "price": "C$9.24",
+  "variations": 2
+}
+[ScraperController] Starting AI generation...
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:31 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mgenerateListing called with: {"productTitle":"Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts","productDescription":"Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.","keywords":["etsy style","handmade feel","high quality"]}[39m
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:31 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mSending request to OpenAI...[39m
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mOpenAI Response: {
+  "title": "Personalized Custom Pet Portrait Bracelet | Double Chain Round Pendant Jewelry for Pet Lovers | Unique Gift for Moms & Memorial Keepsakes",
+  "description": "🐾✨ Adorn your wrist with our stunning Personalized Custom Pet Portrait Bracelet! This beautiful double chain bracelet features a round pendant, perfect for showcasing your beloved fur baby's portrait. A heartfelt gift for moms, pet lovers, or as a touching memorial keepsake 🐶💕. Each piece is handmade with love, ensuring a unique touch in every bracelet. Whether it's for a birthday, holiday, or just because, this bracelet is sure to bring a smile to any pet owner's face! 🌟✨ Order now to cherish those precious pet memories forever!",
+  "tags": [
+    "pet portrait jewelry",
+    "custom pet bracelet",
+    "double chain bracelet",
+    "personalized jewelry",
+    "gift for pet lovers",
+    "pet memorial gift",
+    "women's bracelet",
+    "unique pet gift",
+    "handmade jewelry",
+    "birthday gift mom",
+    "fur baby gift",
+    "custom pendant gift",
+    "lovely pet keepsake"
+  ]
+}[39m
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mGeneration successful[39m
+[ScraperController] AI generation successful
+[ScraperController] Upscaling 5 images...
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg. Checking Fal Key: Present[39m
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [32m    LOG[39m [38;5;3m[AiContentService] [39m[32mUpscaling image: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png. Checking Fal Key: Present[39m
+[31m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S5490da9a192046ff8ec7ac68e5bfdcd17.jpg Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/H6954f3122e8e49de9dddc36ada2a1ca8n.png Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S40810fc1335647a6ab5f6ff2a63c3372B.jpg Failed to upscale image
+[31m[Nest] 50540  - [39m2026-02-21, 9:35:35 p.m. [31m  ERROR[39m [38;5;3m[AiContentService] [39m[31mFal.ai Upscaling failed: Forbidden[39m
+ApiError: Forbidden
+    at <anonymous> (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\libs\client\src\response.ts:64:13)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\y2kma\Downloads\Burhan\etsy\etsy-dropshipping-backend\node_modules\@fal-ai\serverless-client\src\response.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Failed to upscale image: https://ae01.alicdn.com/kf/S0332e1d79156473c927059d17bd29787S.jpg Failed to upscale image
+[ScraperController] Upscaling complete.
+[ScraperController] Creating product in DB...
+[ScraperController] FINAL CHECK - Variations: 2, Images: 6
+[ScraperController] Upscaled Images SAMPLE: [ 'https://ae01.alicdn.com/kf/Acacb5cd48f8e46139e0b8b58d69a4186D.png' ]
+[ProductsService] createWithImages called
+[ProductsService] Variations Count: 2
+[ProductsService] Images Count: 6
+[ProductsService] Inserting product data: {
+  "user_id": "549ca095-5acf-482b-8498-21c6b626d784",
+  "source_url": "https://www.aliexpress.us/item/3256805779660634.html?pvid=82596d91-2532-40d0-baf5-cf34d7372e8f&pdp_ext_f=%7B%22ship_from%22%3A%22US%22%2C%22sku_id%22%3A%2212000035085789857%22%7D&scm=1007.50991.440319.0&scm-url=1007.50991.440319.0&scm_id=1007.50991.440319.0&pdp_npi=6%40dis%21CAD%21C%24%2016.79%21C%24%209.24%21%21%2111.98%216.59%21%402101c44f17716397295707301e2a0e%2112000035085789857%21gdf%21US%21840496847%21X%211%210%21n_tag%3A-29919%3Bd%3Ab2d82731%3Bm03_new_user%3A-29895&spm=undefined.undefined.undefined.dundefined&aecmd=true&gatewayAdapt=glo2usa",
+  "source_platform": "AliExpress",
+  "original_title": "Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts",
+  "original_description": "Buy Custom Pet Portrait Bracelet Personalized Double Chain Bracelet Round Pendant Women Jewelry For Mom Gift Pet Memorial Gifts at Aliexpress for . Find more 36, 201236108 and products. Enjoy ✓Free Shipping Worldwide! ✓Limited Time Sale ✓Easy Return.",
+  "generated_title": "Personalized Custom Pet Portrait Bracelet | Double Chain Round Pendant Jewelry for Pet Lovers | Unique Gift for Moms & Memorial Keepsakes",
+  "generated_description": "🐾✨ Adorn your wrist with our stunning Personalized Custom Pet Portrait Bracelet! This beautiful double chain bracelet features a round pendant, perfect for showcasing your beloved fur baby's portrait. A heartfelt gift for moms, pet lovers, or as a touching memorial keepsake 🐶💕. Each piece is handmade with love, ensuring a unique touch in every bracelet. Whether it's for a birthday, holiday, or just because, this bracelet is sure to bring a smile to any pet owner's face! 🌟✨ Order now to cherish those precious pet memories forever!",
+  "generated_tags": [
+    "pet portrait jewelry",
+    "custom pet bracelet",
+    "personalized jewelry",
+    "gift for pet lovers",
+    "pet memorial gift",
+    "women's bracelet",
+    "unique pet gift",
+    "handmade jewelry",
+    "birthday gift mom",
+    "fur baby gift",
+    "custom pendant gift",
+    "lovely pet keepsake"
+  ],
+  "price": 9.24,
+  "status": "draft",
+  "attributes": {},
+  "created_at": "2026-02-22T04:35:35.681Z",
+  "updated_at": "2026-02-22T04:35:35.682Z"
+}
+[ProductsService] Product created with ID: 65b3f572-3081-4c45-ac16-04efde55e7c5
+[ProductsService] Saved 6 images.
+[ProductsService] Saved 2 variations.
+[ScraperController] Product created successfully
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+[ProductsService] findOne(65b3f572-3081-4c45-ac16-04efde55e7c5) result: { data: true, error: null }
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:39 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetching shipping profiles for Shop: 37582558[39m
+[32m[Nest] 50540  - [39m2026-02-21, 9:35:39 p.m. [32m    LOG[39m [38;5;3m[EtsyService] [39m[32mFetched 4 shipping profiles[39m
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771734914,
+  exp: 1772339714
+}
+[2J[3J[H[[90m9:10:23 a.m.[0m] File change detected. Starting incremental compilation...
+
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771777697,
+  exp: 1772382497
+}
+JwtStrategy: Validating payload: {
+  email: 'kursad.basel@gmail.com',
+  sub: '549ca095-5acf-482b-8498-21c6b626d784',
+  iat: 1771777697,
+  exp: 1772382497
+}

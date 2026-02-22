@@ -152,3 +152,329 @@
  GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 97ms (compile: 16ms, render: 82ms)
  GET /products 200 in 16ms (compile: 3ms, render: 13ms)
  GET /dashboard 200 in 64ms (compile: 13ms, render: 51ms)
+ GET /products 200 in 65ms (compile: 16ms, render: 49ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 75ms (compile: 10ms, render: 65ms)
+ GET /dashboard 200 in 18ms (compile: 4ms, render: 15ms)
+ GET /products 200 in 12ms (compile: 1781µs, render: 11ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 35ms (compile: 6ms, render: 29ms)
+✓ Compiled in 342ms
+⨯ ReferenceError: geistSans is not defined
+    at RootLayout (src\app\layout.tsx:29:23)
+  27 |     <html lang="en" suppressHydrationWarning>
+  28 |       <body
+> 29 |         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+     |                       ^
+  30 |         suppressHydrationWarning
+  31 |       >
+  32 |         {children} {
+  digest: '2903393907'
+}
+⨯ ReferenceError: geistSans is not defined
+    at RootLayout (src\app\layout.tsx:29:23)
+  27 |     <html lang="en" suppressHydrationWarning>
+  28 |       <body
+> 29 |         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+     |                       ^
+  30 |         suppressHydrationWarning
+  31 |       >
+  32 |         {children} {
+  digest: '2903393907'
+}
+✓ Compiled in 882ms
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 500 in 448ms (compile: 206ms, render: 242ms)
+⨯ ReferenceError: geistSans is not defined
+    at RootLayout (src\app\layout.tsx:29:23)
+  27 |     <html lang="en" suppressHydrationWarning>
+  28 |       <body
+> 29 |         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+     |                       ^
+  30 |         suppressHydrationWarning
+  31 |       >
+  32 |         {children} {
+  digest: '2903393907'
+}
+⨯ ReferenceError: geistSans is not defined
+    at RootLayout (src\app\layout.tsx:29:23)
+  27 |     <html lang="en" suppressHydrationWarning>
+  28 |       <body
+> 29 |         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+     |                       ^
+  30 |         suppressHydrationWarning
+  31 |       >
+  32 |         {children} {
+  digest: '2903393907'
+}
+⨯ ReferenceError: geistSans is not defined
+    at RootLayout (src\app\layout.tsx:29:23)
+  27 |     <html lang="en" suppressHydrationWarning>
+  28 |       <body
+> 29 |         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+     |                       ^
+  30 |         suppressHydrationWarning
+  31 |       >
+  32 |         {children} {
+  digest: '2903393907'
+}
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 631ms (compile: 177ms, render: 455ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 33ms (compile: 4ms, render: 29ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 140ms (compile: 9ms, render: 131ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 500 in 110ms (compile: 6ms, render: 104ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 323ms (compile: 88ms, render: 235ms)
+✓ Compiled in 76ms
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 48ms (compile: 13ms, render: 35ms)
+✓ Compiled in 89ms
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 318ms (compile: 86ms, render: 232ms)
+✓ Compiled in 77ms
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 272ms (compile: 86ms, render: 187ms)
+✓ Compiled in 96ms
+✓ Compiled in 128ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 37ms
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 298ms (compile: 90ms, render: 208ms)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 40ms
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 255ms (compile: 84ms, render: 171ms)
+✓ Compiled in 110ms
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 168ms (compile: 84ms, render: 84ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 92ms (compile: 4ms, render: 89ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 96ms (compile: 4ms, render: 92ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 90ms (compile: 4ms, render: 86ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 92ms (compile: 4ms, render: 88ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 94ms (compile: 3ms, render: 90ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 100ms (compile: 3ms, render: 96ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 106ms (compile: 3ms, render: 103ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 110ms (compile: 3ms, render: 106ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 111ms (compile: 11ms, render: 100ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 133ms (compile: 4ms, render: 129ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 130ms (compile: 4ms, render: 126ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 96ms (compile: 4ms, render: 92ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 65ms (compile: 3ms, render: 62ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 69ms (compile: 3ms, render: 65ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 98ms (compile: 4ms, render: 94ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 103ms (compile: 5ms, render: 99ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 101ms (compile: 4ms, render: 98ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 103ms (compile: 10ms, render: 93ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 95ms (compile: 3ms, render: 92ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 63ms (compile: 3ms, render: 60ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 30ms (compile: 3ms, render: 26ms)
+✓ Compiled in 38ms
+✓ Compiled in 35ms
+ GET /dashboard 200 in 82ms (compile: 52ms, render: 30ms)
+ GET /products 200 in 131ms (compile: 103ms, render: 28ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 241ms (compile: 56ms, render: 186ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 40ms (compile: 7ms, render: 33ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 32ms (compile: 6ms, render: 26ms)
+ GET /products 200 in 10ms (compile: 1828µs, render: 8ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 35ms (compile: 6ms, render: 29ms)
+ GET /dashboard 200 in 16ms (compile: 3ms, render: 14ms)
+ GET /analytics 404 in 418ms (compile: 396ms, render: 22ms)
+ GET /analytics 404 in 69ms (compile: 5ms, render: 64ms)
+ GET /dashboard 200 in 74ms (compile: 3ms, render: 71ms)
+ GET /sync 404 in 13ms (compile: 3ms, render: 10ms)
+ GET /sync 404 in 32ms (compile: 3ms, render: 29ms)
+ GET /dashboard 200 in 28ms (compile: 1773µs, render: 26ms)
+ GET /ai-generator 404 in 12ms (compile: 2ms, render: 9ms)
+ GET /ai-generator 404 in 24ms (compile: 3ms, render: 21ms)
+ GET /dashboard 200 in 43ms (compile: 1812µs, render: 41ms)
+ GET /products 200 in 11ms (compile: 1775µs, render: 9ms)
+ GET /help 404 in 11ms (compile: 3ms, render: 8ms)
+ GET /help 404 in 20ms (compile: 2ms, render: 18ms)
+ GET /products 200 in 115ms (compile: 1749µs, render: 113ms)
+ GET /products 200 in 37ms (compile: 3ms, render: 35ms)
+ GET /products/9ba6e01e-0f21-4668-aa4f-0dd1bf046d28 200 in 54ms (compile: 10ms, render: 44ms)
+ GET /products 200 in 15ms (compile: 3ms, render: 12ms)
+ GET /products 200 in 235ms (compile: 104ms, render: 130ms)
+ GET /products 200 in 92ms (compile: 3ms, render: 88ms)
+ GET /products 200 in 67ms (compile: 3ms, render: 64ms)
+ GET /products 200 in 37ms (compile: 3ms, render: 33ms)
+✓ Compiled in 202ms
+✓ Compiled in 108ms
+✓ Compiled in 147ms
+ GET /dashboard 200 in 92ms (compile: 61ms, render: 31ms)
+ GET /products 200 in 11ms (compile: 2ms, render: 9ms)
+ GET /products/9ba6e01e-0f21-4668-aa4f-0dd1bf046d28 200 in 403ms (compile: 94ms, render: 310ms)
+ GET /dashboard 200 in 13ms (compile: 3ms, render: 11ms)
+ GET /products 200 in 13ms (compile: 2ms, render: 11ms)
+ GET /products/9ba6e01e-0f21-4668-aa4f-0dd1bf046d28 200 in 41ms (compile: 7ms, render: 34ms)
+ GET /dashboard 200 in 12ms (compile: 1857µs, render: 10ms)
+ GET /analytics 404 in 22ms (compile: 11ms, render: 12ms)
+ GET /analytics 404 in 42ms (compile: 4ms, render: 38ms)
+ GET /dashboard 200 in 85ms (compile: 2ms, render: 83ms)
+ GET /help 404 in 13ms (compile: 3ms, render: 10ms)
+ GET /help 404 in 31ms (compile: 3ms, render: 28ms)
+ GET /dashboard 200 in 31ms (compile: 2ms, render: 29ms)
+ GET /products/093b5871-7103-40d7-85d4-44e50b622a25 200 in 46ms (compile: 8ms, render: 38ms)
+✓ Compiled in 174ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 107ms
+ GET /products/093b5871-7103-40d7-85d4-44e50b622a25 200 in 727ms (compile: 334ms, render: 393ms)
+✓ Compiled in 44ms
+ GET /products 200 in 125ms (compile: 86ms, render: 39ms)
+ GET /sync 404 in 15ms (compile: 4ms, render: 12ms)
+ GET /sync 404 in 39ms (compile: 4ms, render: 35ms)
+ GET /products 200 in 212ms (compile: 3ms, render: 209ms)
+ GET /settings 200 in 167ms (compile: 132ms, render: 35ms)
+ GET /ai-generator 404 in 12ms (compile: 3ms, render: 10ms)
+ GET /ai-generator 404 in 29ms (compile: 3ms, render: 26ms)
+ GET /settings 200 in 137ms (compile: 1893µs, render: 136ms)
+ GET /dashboard 200 in 163ms (compile: 128ms, render: 35ms)
+ GET /products/093b5871-7103-40d7-85d4-44e50b622a25 200 in 103ms (compile: 68ms, render: 35ms)
+ GET /dashboard 200 in 18ms (compile: 3ms, render: 15ms)
+ GET /settings 200 in 16ms (compile: 4ms, render: 13ms)
+ GET /products 200 in 15ms (compile: 3ms, render: 12ms)
+ GET /ai-generator 404 in 15ms (compile: 3ms, render: 12ms)
+ GET /ai-generator 404 in 32ms (compile: 3ms, render: 30ms)
+ GET /products 200 in 30ms (compile: 1855µs, render: 29ms)
+ GET /products/093b5871-7103-40d7-85d4-44e50b622a25 200 in 190ms (compile: 7ms, render: 182ms)
+ GET /login 200 in 1027ms (compile: 998ms, render: 29ms)
+ GET / 200 in 279ms (compile: 156ms, render: 122ms)
+ GET /pricing 200 in 392ms (compile: 374ms, render: 18ms)
+ GET / 200 in 12ms (compile: 3ms, render: 9ms)
+ GET /register 200 in 486ms (compile: 453ms, render: 33ms)
+ GET /pricing 200 in 99ms (compile: 20ms, render: 80ms)
+ GET /login 200 in 31ms (compile: 8ms, render: 24ms)
+ GET /dashboard 200 in 33ms (compile: 7ms, render: 26ms)
+ GET /products 200 in 25ms (compile: 5ms, render: 20ms)
+ GET /products/093b5871-7103-40d7-85d4-44e50b622a25 200 in 1941ms (compile: 1533ms, render: 408ms)
+ GET /products/undefined 200 in 41ms (compile: 7ms, render: 34ms)
+ GET /products/093b5871-7103-40d7-85d4-44e50b622a25 200 in 45ms (compile: 8ms, render: 38ms)
+ GET /dashboard 200 in 14ms (compile: 3ms, render: 11ms)
+ GET /products 200 in 13ms (compile: 1968µs, render: 11ms)
+ GET /products/6c5d44b4-bac5-4751-9bf6-bf036d174b76 200 in 33ms (compile: 6ms, render: 28ms)
+ GET /products 200 in 32ms (compile: 1970µs, render: 30ms)
+ GET /products/9ba6e01e-0f21-4668-aa4f-0dd1bf046d28 200 in 31ms (compile: 6ms, render: 26ms)
+ GET /products 200 in 32ms (compile: 1967µs, render: 30ms)
+ GET /products/093b5871-7103-40d7-85d4-44e50b622a25 200 in 35ms (compile: 7ms, render: 28ms)
+ GET /products 200 in 34ms (compile: 2ms, render: 31ms)
+✓ Compiled in 179ms
+✓ Compiled in 129ms
+ GET /products 200 in 400ms (compile: 209ms, render: 191ms)
+ GET /products 200 in 147ms (compile: 4ms, render: 144ms)
+ GET /products 200 in 136ms (compile: 5ms, render: 132ms)
+ GET /products 200 in 158ms (compile: 4ms, render: 154ms)
+ GET /products 200 in 162ms (compile: 6ms, render: 156ms)
+ GET /products 200 in 142ms (compile: 4ms, render: 138ms)
+ GET /products 200 in 143ms (compile: 4ms, render: 139ms)
+ GET /products 200 in 142ms (compile: 4ms, render: 138ms)
+ GET /products 200 in 156ms (compile: 4ms, render: 152ms)
+ GET /products 200 in 151ms (compile: 4ms, render: 146ms)
+ GET /products 200 in 152ms (compile: 6ms, render: 146ms)
+ GET /products 200 in 146ms (compile: 4ms, render: 142ms)
+ GET /products 200 in 115ms (compile: 3ms, render: 112ms)
+ GET /products 200 in 117ms (compile: 4ms, render: 113ms)
+ GET /products 200 in 111ms (compile: 4ms, render: 107ms)
+ GET /products 200 in 109ms (compile: 3ms, render: 106ms)
+ GET /products 200 in 162ms (compile: 4ms, render: 157ms)
+ GET /products 200 in 165ms (compile: 4ms, render: 161ms)
+ GET /products 200 in 171ms (compile: 4ms, render: 167ms)
+ GET /products 200 in 263ms (compile: 4ms, render: 259ms)
+ GET /products 200 in 222ms (compile: 10ms, render: 212ms)
+ GET /products 200 in 185ms (compile: 4ms, render: 181ms)
+ GET /products 200 in 156ms (compile: 4ms, render: 152ms)
+ GET /products 200 in 123ms (compile: 4ms, render: 119ms)
+✓ Compiled in 98ms
+ GET /products 200 in 217ms (compile: 93ms, render: 124ms)
+ GET /products 200 in 107ms (compile: 3ms, render: 104ms)
+ GET /products 200 in 108ms (compile: 4ms, render: 104ms)
+ GET /products 200 in 108ms (compile: 3ms, render: 105ms)
+ GET /products 200 in 113ms (compile: 3ms, render: 110ms)
+ GET /products 200 in 111ms (compile: 4ms, render: 108ms)
+ GET /products 200 in 109ms (compile: 3ms, render: 106ms)
+ GET /products 200 in 111ms (compile: 4ms, render: 107ms)
+ GET /products 200 in 107ms (compile: 4ms, render: 103ms)
+ GET /products 200 in 107ms (compile: 4ms, render: 103ms)
+ GET /products 200 in 107ms (compile: 3ms, render: 103ms)
+ GET /products 200 in 106ms (compile: 4ms, render: 102ms)
+ GET /products 200 in 105ms (compile: 4ms, render: 102ms)
+ GET /products 200 in 105ms (compile: 3ms, render: 101ms)
+ GET /products 200 in 111ms (compile: 3ms, render: 108ms)
+ GET /products 200 in 111ms (compile: 3ms, render: 108ms)
+ GET /products 200 in 114ms (compile: 4ms, render: 111ms)
+ GET /products 200 in 120ms (compile: 4ms, render: 116ms)
+ GET /products 200 in 113ms (compile: 6ms, render: 107ms)
+ GET /products 200 in 112ms (compile: 3ms, render: 109ms)
+ GET /products 200 in 110ms (compile: 4ms, render: 106ms)
+ GET /products 200 in 106ms (compile: 3ms, render: 103ms)
+ GET /products 200 in 107ms (compile: 3ms, render: 104ms)
+ GET /products 200 in 83ms (compile: 4ms, render: 79ms)
+ GET /products 200 in 59ms (compile: 4ms, render: 55ms)
+ GET /products 200 in 33ms (compile: 4ms, render: 29ms)
+ GET /products 200 in 214ms (compile: 89ms, render: 125ms)
+ GET /products 200 in 113ms (compile: 3ms, render: 110ms)
+ GET /products 200 in 139ms (compile: 3ms, render: 135ms)
+ GET /products 200 in 142ms (compile: 3ms, render: 139ms)
+ GET /products 200 in 141ms (compile: 4ms, render: 137ms)
+ GET /products 200 in 153ms (compile: 3ms, render: 150ms)
+ GET /products 200 in 130ms (compile: 3ms, render: 126ms)
+ GET /products 200 in 188ms (compile: 4ms, render: 184ms)
+ GET /products 200 in 187ms (compile: 3ms, render: 184ms)
+ GET /products 200 in 175ms (compile: 4ms, render: 171ms)
+ GET /products 200 in 192ms (compile: 4ms, render: 188ms)
+ GET /products 200 in 129ms (compile: 4ms, render: 125ms)
+ GET /products 200 in 129ms (compile: 4ms, render: 126ms)
+ GET /products 200 in 105ms (compile: 4ms, render: 101ms)
+ GET /products 200 in 105ms (compile: 3ms, render: 102ms)
+ GET /products 200 in 105ms (compile: 3ms, render: 102ms)
+ GET /products 200 in 105ms (compile: 3ms, render: 102ms)
+ GET /products 200 in 105ms (compile: 4ms, render: 101ms)
+ GET /products 200 in 106ms (compile: 4ms, render: 102ms)
+ GET /products 200 in 106ms (compile: 4ms, render: 102ms)
+ GET /products 200 in 107ms (compile: 4ms, render: 103ms)
+ GET /products 200 in 108ms (compile: 4ms, render: 104ms)
+ GET /products 200 in 134ms (compile: 4ms, render: 130ms)
+ GET /products 200 in 134ms (compile: 4ms, render: 130ms)
+ GET /products 200 in 108ms (compile: 4ms, render: 105ms)
+ GET /products 200 in 83ms (compile: 4ms, render: 78ms)
+ GET /products 200 in 55ms (compile: 3ms, render: 52ms)
+ GET /products 200 in 29ms (compile: 3ms, render: 26ms)
+ GET /products 200 in 203ms (compile: 86ms, render: 117ms)
+ GET /products 200 in 101ms (compile: 3ms, render: 98ms)
+ GET /products 200 in 102ms (compile: 3ms, render: 99ms)
+ GET /products 200 in 102ms (compile: 4ms, render: 98ms)
+ GET /products 200 in 102ms (compile: 3ms, render: 99ms)
+ GET /products 200 in 107ms (compile: 3ms, render: 104ms)
+ GET /products 200 in 132ms (compile: 3ms, render: 130ms)
+ GET /products 200 in 115ms (compile: 4ms, render: 112ms)
+ GET /products 200 in 113ms (compile: 4ms, render: 109ms)
+ GET /products 200 in 109ms (compile: 4ms, render: 105ms)
+ GET /products 200 in 134ms (compile: 3ms, render: 131ms)
+ GET /products 200 in 135ms (compile: 5ms, render: 131ms)
+ GET /products 200 in 135ms (compile: 4ms, render: 131ms)
+ GET /products 200 in 135ms (compile: 4ms, render: 131ms)
+ GET /products 200 in 128ms (compile: 3ms, render: 125ms)
+ GET /products 200 in 128ms (compile: 3ms, render: 125ms)
+ GET /products 200 in 123ms (compile: 3ms, render: 120ms)
+ GET /products 200 in 123ms (compile: 3ms, render: 120ms)
+ GET /products 200 in 126ms (compile: 3ms, render: 124ms)
+ GET /products 200 in 126ms (compile: 3ms, render: 123ms)
+ GET /products 200 in 132ms (compile: 3ms, render: 129ms)
+ GET /products 200 in 111ms (compile: 3ms, render: 108ms)
+ GET /products 200 in 132ms (compile: 3ms, render: 128ms)
+ GET /products 200 in 128ms (compile: 3ms, render: 125ms)
+ GET /products 200 in 121ms (compile: 3ms, render: 117ms)
+ GET /products 200 in 105ms (compile: 3ms, render: 101ms)
+ GET /products 200 in 107ms (compile: 3ms, render: 103ms)
+ GET /products 200 in 84ms (compile: 3ms, render: 81ms)
+ GET /products 200 in 61ms (compile: 3ms, render: 58ms)
+ GET /products 200 in 32ms (compile: 4ms, render: 27ms)
+✓ Compiled in 86ms
+✓ Compiled in 49ms
+ GET /dashboard 200 in 108ms (compile: 75ms, render: 32ms)
+ GET /login 200 in 30ms (compile: 19ms, render: 12ms)
+ GET / 200 in 198ms (compile: 67ms, render: 131ms)
+ GET /pricing 200 in 89ms (compile: 60ms, render: 29ms)
+ GET / 200 in 9ms (compile: 1633µs, render: 8ms)
+ GET /register 200 in 27ms (compile: 15ms, render: 12ms)
+ GET /login 200 in 12ms (compile: 1729µs, render: 11ms)
+ GET /dashboard 200 in 17ms (compile: 1764µs, render: 15ms)
+ GET /products 200 in 82ms (compile: 57ms, render: 26ms)
+ GET /products/65b3f572-3081-4c45-ac16-04efde55e7c5 200 in 358ms (compile: 100ms, render: 258ms)
+ GET /products/undefined 200 in 38ms (compile: 7ms, render: 32ms)
+ GET / 200 in 85ms (compile: 16ms, render: 69ms)
+ GET /login 200 in 27ms (compile: 8ms, render: 19ms)
+ GET / 200 in 212ms (compile: 38ms, render: 174ms)
+ GET /login 200 in 98ms (compile: 20ms, render: 78ms)
+ GET /dashboard 200 in 38ms (compile: 8ms, render: 30ms)
+ GET /ai-generator 404 in 608ms (compile: 406ms, render: 201ms)
+ GET /ai-generator 404 in 234ms (compile: 14ms, render: 219ms)
+ GET /dashboard 200 in 444ms (compile: 17ms, render: 426ms)

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Etsy Dropship - Dashboard</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f1641e",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221610",
+                        "ai-glow": "#3b82f6",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .ai-shimmer {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-white dark:bg-zinc-900 border-r border-slate-200 dark:border-zinc-800 flex flex-col shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl font-bold">sync_alt</span>
+</div>
+<div>
+<h1 class="text-lg font-bold tracking-tight">EtsySync</h1>
+<p class="text-xs text-slate-500 dark:text-zinc-400">AliExpress Tool</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Products
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-ai-glow">auto_awesome</span>
+                    AI Generator
+                    <span class="ml-auto text-[10px] bg-ai-glow/10 text-ai-glow px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold">Pro</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined">sync</span>
+                    Etsy Sync
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+                    Analytics
+                </a>
+<div class="pt-4 pb-2">
+<p class="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Support</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+                    Help Center
+                </a>
+</nav>
+<div class="p-4 mt-auto">
+<div class="bg-slate-50 dark:bg-zinc-800 p-4 rounded-xl border border-slate-100 dark:border-zinc-700">
+<p class="text-xs font-semibold mb-2">Usage Limit</p>
+<div class="w-full bg-slate-200 dark:bg-zinc-700 h-1.5 rounded-full mb-2">
+<div class="bg-primary h-1.5 rounded-full w-3/4"></div>
+</div>
+<p class="text-[10px] text-slate-500">750 / 1,000 imports used</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex items-center justify-between px-8 shrink-0">
+<div class="flex items-center gap-2">
+<span class="text-slate-400 material-symbols-outlined">cloud_done</span>
+<span class="text-xs font-medium text-slate-500">Etsy API: Connected</span>
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-full relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-white dark:border-zinc-900"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-zinc-700 overflow-hidden border border-slate-300 dark:border-zinc-600">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Avatar icon for the user profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN9UAh-SFUFcvDrHtW4vcNAlhdTb_IVwOvsb53NMGjxmHRru2SvqPZmfnHZEdvBs1Itft4QXy6yDrgDBnN6WFG_UNfLsLumD59rjSv7IZedFPuidz5LbVxn8UMHRQO2zAldCYNTq7kWrmsimBQLiXDU11J2nATDK2fZTyKoV0tLeVShvqmO5BEEe8ZcHz0Q9Rd-299txS1v36AC_SEVL6z0E1gPNc5DXP9waw88jeK1s9K5qNDYF1EHBjwVvzA1bcdYgUOwsTZvJxm"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Welcome & Action -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="text-2xl font-black tracking-tight mb-1">Dashboard Overview</h2>
+<p class="text-slate-500 dark:text-zinc-400">Manage and automate your AliExpress to Etsy flow.</p>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch gap-2 max-w-xl w-full">
+<div class="relative flex-1 group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400 text-xl group-focus-within:text-primary transition-colors">link</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border-slate-200 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary text-sm transition-all shadow-sm" placeholder="Paste AliExpress product URL..." type="text"/>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-95 whitespace-nowrap shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">download</span>
+                            Import Now
+                        </button>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</div>
+<span class="text-green-600 text-xs font-bold bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded">+12%</span>
+</div>
+<p class="text-slate-500 dark:text-zinc-400 text-sm font-medium">Imported Today</p>
+<h3 class="text-2xl font-black mt-1">24</h3>
+</div>
+<div class="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm ai-shimmer">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+<span class="material-symbols-outlined text-ai-glow">auto_awesome</span>
+</div>
+<span class="text-blue-600 text-xs font-bold bg-blue-100 dark:bg-blue-900/30 px-2 py-1 rounded">Active</span>
+</div>
+<p class="text-slate-500 dark:text-zinc-400 text-sm font-medium">Pending AI Optimization</p>
+<h3 class="text-2xl font-black mt-1">12</h3>
+</div>
+<div class="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+<span class="material-symbols-outlined text-green-600">health_and_safety</span>
+</div>
+<span class="text-slate-400 text-xs font-bold">Stable</span>
+</div>
+<p class="text-slate-500 dark:text-zinc-400 text-sm font-medium">Store Health</p>
+<h3 class="text-2xl font-black mt-1 text-green-600">98%</h3>
+</div>
+<div class="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-slate-100 dark:bg-zinc-800 rounded-lg">
+<span class="material-symbols-outlined text-slate-600 dark:text-zinc-400">sync_saved_locally</span>
+</div>
+<span class="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded">89% rate</span>
+</div>
+<p class="text-slate-500 dark:text-zinc-400 text-sm font-medium">Successful Syncs</p>
+<h3 class="text-2xl font-black mt-1">450</h3>
+</div>
+</div>
+<!-- Recent Imports Table -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-200 dark:border-zinc-800 flex items-center justify-between">
+<h3 class="font-bold text-lg">Recent Imports</h3>
+<div class="flex items-center gap-2">
+<button class="text-xs font-semibold px-3 py-1.5 bg-slate-100 dark:bg-zinc-800 rounded-lg hover:bg-slate-200 transition-colors">View All</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-slate-600 cursor-pointer p-1">filter_list</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50/50 dark:bg-zinc-800/50 text-slate-500 dark:text-zinc-400 text-xs uppercase tracking-widest font-bold">
+<th class="px-6 py-4">Product</th>
+<th class="px-6 py-4">Source Link</th>
+<th class="px-6 py-4">Date Added</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-zinc-800">
+<tr class="hover:bg-slate-50/50 dark:hover:bg-zinc-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded bg-slate-100 dark:bg-zinc-800 overflow-hidden border border-slate-200 dark:border-zinc-700">
+<img class="w-full h-full object-cover" data-alt="High quality sunglasses on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBilDmNhwUsm19i2Xut60eJI7C5uL7yz3S2V-Mlc9VWhFdH97YrEBQYzwHr3Eji8gW1Fl8tnLEuiGcJIkNXqchjEG_BR8LzVJzDvYDB91G_LyL7ZM3pzMaNlJs1dAgL1kgvhAJYbmLffP8hzvvyeRdRLplY2avMchjVdIEFraHkIirnU_TzkYzPKoV6sNQ0jmIR--qhQh1t42Gi1za51pKnt9JZqE4_lVZfSmu31i3Mq9hGSVi3EAQk8VKxiPXjK4K8iUjmdOxS2kpJ"/>
+</div>
+<div>
+<p class="text-sm font-bold truncate max-w-[200px]">Retro Wood Polarized Sunglasses</p>
+<p class="text-[10px] text-slate-400">ID: AE-94281</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<a class="text-primary text-xs flex items-center gap-1 hover:underline" href="#">
+                                            AliExpress <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="px-6 py-4">
+<p class="text-xs text-slate-600 dark:text-zinc-400">Oct 24, 2023</p>
+<p class="text-[10px] text-slate-400">14:32 PM</p>
+</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-ai-glow text-[10px] font-black uppercase tracking-wider ai-shimmer">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                                            AI Processing
+                                        </div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined text-lg">sync</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-zinc-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded bg-slate-100 dark:bg-zinc-800 overflow-hidden border border-slate-200 dark:border-zinc-700">
+<img class="w-full h-full object-cover" data-alt="Red running shoe product image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBITX1WmisGKDDRRFKb3AhVAw7VetwcPzIDBjzdNB5tNMbPuMnr8H5-x2vD0FOpSfP8y_iN-c0zNULFVHcyjJe6cJcwdy8HAw63MEKR3owEby1hPmMHrA4cbshuZg2Iid2-cQfV85lNojT2f9yemCu9FNDXzNfY8vJOJ_UnF5vWiwKnOdNNPm3CtNf2W6JSd3pAc07nKb01Vu43Dui3PZ0MNTEY7nfAN4lWVz8xxvhtIe8zW_Q7-63GGZYFCWBlpQdu3-o13hWGMsx_"/>
+</div>
+<div>
+<p class="text-sm font-bold truncate max-w-[200px]">Minimalist Lightweight Runners</p>
+<p class="text-[10px] text-slate-400">ID: AE-88219</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<a class="text-primary text-xs flex items-center gap-1 hover:underline" href="#">
+                                            AliExpress <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="px-6 py-4">
+<p class="text-xs text-slate-600 dark:text-zinc-400">Oct 23, 2023</p>
+<p class="text-[10px] text-slate-400">09:15 AM</p>
+</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 text-[10px] font-black uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                                            Synced
+                                        </div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined text-lg">sync</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-zinc-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded bg-slate-100 dark:bg-zinc-800 overflow-hidden border border-slate-200 dark:border-zinc-700">
+<img class="w-full h-full object-cover" data-alt="Modern minimalist wrist watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVuIPRa8asmj8W8iDAhXh9QoYZL-vqyeitazLuvKyxTyTsU5DBLSCAfqV1-BwtuAQgr5OHNVm_xlTh1tH6dPFX-2EFpZ1cQ-rnVQoJHB-TKc_joFNn_YWW8-pmimZ2T9SM1oJCm_NCOA78JyS4xM4sfMUEBIg0HcupBMyAlKYIH7jxr2tl1fkJXC_yBy9nw5VmW1TEM5V9fy8_xDYF-EHgjICog-e3nzbc3IRcVdPfqwZ6rxZrCf2frpLOQ6l7EuSVw6uXD9jCLFsg"/>
+</div>
+<div>
+<p class="text-sm font-bold truncate max-w-[200px]">Ceramic Bezel Dress Watch</p>
+<p class="text-[10px] text-slate-400">ID: AE-21045</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<a class="text-primary text-xs flex items-center gap-1 hover:underline" href="#">
+                                            AliExpress <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</td>
+<td class="px-6 py-4">
+<p class="text-xs text-slate-600 dark:text-zinc-400">Oct 23, 2023</p>
+<p class="text-[10px] text-slate-400">11:55 AM</p>
+</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-zinc-800 text-slate-500 text-[10px] font-black uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">edit_note</span>
+                                            Draft
+                                        </div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined text-lg">sync</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Footer Section -->
+<div class="flex flex-col md:flex-row gap-6">
+<div class="flex-1 bg-gradient-to-br from-primary to-orange-600 rounded-xl p-6 text-white relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="text-lg font-bold mb-2">Grow your sales with AI</h4>
+<p class="text-white/80 text-sm mb-4 max-w-md">Our new AI description generator can boost conversion by up to 35%. Try it on your draft products now.</p>
+<button class="bg-white text-primary font-bold py-2 px-4 rounded-lg text-sm hover:shadow-lg transition-all active:scale-95">Open AI Suite</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-white/10 text-[120px] rotate-12 transition-transform group-hover:scale-110">auto_awesome</span>
+</div>
+<div class="w-full md:w-80 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 flex flex-col items-center justify-center text-center">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-3xl">api</span>
+</div>
+<h4 class="font-bold text-sm mb-1">Last Sync Check</h4>
+<p class="text-xs text-slate-500 mb-4">Success: October 24, 14:00 PM</p>
+<button class="w-full py-2 border border-slate-200 dark:border-zinc-700 rounded-lg text-xs font-bold hover:bg-slate-50 dark:hover:bg-zinc-800 transition-colors">Force API Refresh</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

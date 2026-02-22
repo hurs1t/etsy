@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ - AI Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f1641e",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen flex-col">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 lg:px-40 py-4">
+<div class="mx-auto flex max-w-[1200px] items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<h2 class="text-xl font-black tracking-tight text-slate-900 dark:text-white leading-none">AI Assistant</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Features</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">FAQ</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+<button class="flex items-center justify-center rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                    Get Started
+                </button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="mx-auto max-w-[800px] px-6 py-16 text-center">
+<h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-4">
+                    Frequently Asked Questions
+                </h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    Everything you need to know about our AI integration for your store. Find answers to common questions about safety, billing, and technical setup.
+                </p>
+</section>
+<!-- Search & Filters -->
+<section class="mx-auto max-w-[800px] px-6 mb-12">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-slate-400 group-focus-within:text-primary">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full rounded-xl border-none bg-white dark:bg-slate-800 py-4 pl-12 pr-4 shadow-sm ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Search for questions..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2 mt-6 justify-center">
+<button class="rounded-full bg-primary px-5 py-1.5 text-sm font-medium text-white shadow-md">All</button>
+<button class="rounded-full bg-white dark:bg-slate-800 px-5 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 hover:ring-primary/50 transition-all">General</button>
+<button class="rounded-full bg-white dark:bg-slate-800 px-5 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 hover:ring-primary/50 transition-all">Safety</button>
+<button class="rounded-full bg-white dark:bg-slate-800 px-5 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 hover:ring-primary/50 transition-all">Billing</button>
+<button class="rounded-full bg-white dark:bg-slate-800 px-5 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 hover:ring-primary/50 transition-all">Technical</button>
+</div>
+</section>
+<!-- Accordion List -->
+<section class="mx-auto max-w-[800px] px-6 space-y-4 pb-20">
+<details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm" open="">
+<summary class="flex cursor-pointer list-none items-center justify-between p-6 focus:outline-none">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">How does the AI work?</span>
+<div class="text-slate-400 group-open:rotate-180 transition-transform duration-300 bg-slate-50 dark:bg-slate-800 p-1 rounded-full group-open:text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-800 pt-4">
+                        Our AI uses advanced machine learning models to analyze your product descriptions and optimize them for search engines and customer engagement. It integrates directly via official APIs to ensure seamless updates and uses natural language processing to understand your brand voice.
+                    </div>
+</details>
+<details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+<summary class="flex cursor-pointer list-none items-center justify-between p-6 focus:outline-none">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Is it safe for my Etsy store?</span>
+<div class="text-slate-400 group-open:rotate-180 transition-transform duration-300 bg-slate-50 dark:bg-slate-800 p-1 rounded-full group-open:text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-800 pt-4">
+                        Yes, absolutely. We use official Etsy API connections and follow all marketplace guidelines regarding automated updates. Your store's integrity is our priority, and we ensure that all AI-generated content adheres to Etsy's seller policies and intellectual property standards.
+                    </div>
+</details>
+<details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+<summary class="flex cursor-pointer list-none items-center justify-between p-6 focus:outline-none">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Can I cancel anytime?</span>
+<div class="text-slate-400 group-open:rotate-180 transition-transform duration-300 bg-slate-50 dark:bg-slate-800 p-1 rounded-full group-open:text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-800 pt-4">
+                        We believe in flexibility. You can cancel your subscription at any time directly from your dashboard. There are no long-term contracts or cancellation fees. Once canceled, you will still have access to your features until the end of your current billing period.
+                    </div>
+</details>
+<details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+<summary class="flex cursor-pointer list-none items-center justify-between p-6 focus:outline-none">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Does it support multiple languages?</span>
+<div class="text-slate-400 group-open:rotate-180 transition-transform duration-300 bg-slate-50 dark:bg-slate-800 p-1 rounded-full group-open:text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-800 pt-4">
+                        Currently, our AI optimization is fully optimized for English, Spanish, French, and German. We are constantly expanding our language models and plan to add support for more languages in the coming months.
+                    </div>
+</details>
+<details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+<summary class="flex cursor-pointer list-none items-center justify-between p-6 focus:outline-none">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">How accurate are the product descriptions?</span>
+<div class="text-slate-400 group-open:rotate-180 transition-transform duration-300 bg-slate-50 dark:bg-slate-800 p-1 rounded-full group-open:text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-50 dark:border-slate-800 pt-4">
+                        Our models achieve a 95%+ accuracy rate in preserving product facts while enhancing marketing appeal. However, we always recommend a quick review before hitting 'publish' to ensure the AI hasn't missed any specific nuances of your handmade items.
+                    </div>
+</details>
+</section>
+</main>
+<!-- Footer / Contact Section -->
+<footer class="bg-white dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 py-20">
+<div class="mx-auto max-w-[800px] px-6">
+<div class="rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-8 md:p-12 text-center">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Still have questions?</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-8 max-w-md mx-auto">
+                        If you couldn't find the answer you were looking for, our support team is available 24/7 to help you out.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="flex items-center gap-2 rounded-lg bg-primary px-8 py-3 font-bold text-white hover:bg-primary/90 transition-all w-full sm:w-auto">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                            Contact Support
+                        </button>
+<button class="flex items-center gap-2 rounded-lg bg-white dark:bg-slate-800 px-8 py-3 font-bold text-slate-900 dark:text-white ring-1 ring-slate-200 dark:ring-slate-700 hover:ring-primary/50 transition-all w-full sm:w-auto">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+                            Live Chat
+                        </button>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3 opacity-50">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+</div>
+<span class="text-sm font-bold">AI Assistant</span>
+</div>
+<div class="flex items-center gap-6 text-sm text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Cookies</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary hover:bg-primary/10 transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary hover:bg-primary/10 transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="mt-8 text-center text-xs text-slate-400">
+                    © 2024 AI Assistant Inc. All rights reserved.
+                </div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -21,6 +21,12 @@ export function ImageEditor({ images, productTitle, productPrice, productDescrip
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [selectedImage, setSelectedImage] = useState<string>(images[0] || "");
     const [texts, setTexts] = useState<Array<{ id: number; text: string; x: number; y: number; fontSize: number; color: string; fontFamily: string }>>([]);
+
+    useEffect(() => {
+        if (images.length > 0 && !selectedImage) {
+            setSelectedImage(images[0]);
+        }
+    }, [images]);
     const [selectedTextId, setSelectedTextId] = useState<number | null>(null);
     const [canvasSize, setCanvasSize] = useState({ width: 800, height: 800 });
 
