@@ -9,6 +9,7 @@ import { AiContentModule } from './modules/ai-content/ai-content.module';
 import { ImagesModule } from './modules/images/images.module';
 import { SupabaseModule } from './modules/supabase/supabase.module';
 import { EtsyModule } from './modules/etsy/etsy.module';
+import { PaymentsModule } from './modules/payments/payments.module';
 
 @Module({
   imports: [
@@ -21,7 +22,8 @@ import { EtsyModule } from './modules/etsy/etsy.module';
     AiContentModule,
     ImagesModule,
     SupabaseModule,
-    EtsyModule
+    EtsyModule,
+    PaymentsModule
   ],
   controllers: [],
   providers: [],

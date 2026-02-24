@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { rawBody: true });
 
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
@@ -16,10 +16,17 @@ async function bootstrap() {
 
   app.use(cookieParser());
   app.enableCors({
-    origin: true, // Echo origin (required for credentials)
+    origin: (origin, callback) => {
+      // Allow all vercel and localhost origins for testing/deployment flexibility
+      if (!origin || origin.includes('vercel.app') || origin.includes('localhost')) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Accept, Authorization',
-    credentials: true, // Allow cookies
+    credentials: true,
   });
   await app.listen(process.env.PORT ?? 3001);
 }
