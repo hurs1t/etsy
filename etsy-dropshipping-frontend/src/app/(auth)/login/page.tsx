@@ -39,13 +39,16 @@ export default function LoginPage() {
     })
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
+        console.log("Attempting login to:", `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/auth/login`);
         try {
             const data = await loginUser(values)
             login(data.user, data.access_token)
             toast.success("Login successful")
             router.push("/dashboard")
         } catch (error: any) {
-            toast.error(error.response?.data?.message || "Login failed")
+            console.error("Login Error:", error);
+            const message = error.response?.data?.message || error.message || "Connection to API failed";
+            toast.error(`Login failed: ${message}`)
         }
     }
 

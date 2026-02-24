@@ -77,22 +77,27 @@ export class PaymentsService {
 
     private getPriceId(planType: string): string {
         let priceId: string | undefined;
-        switch (planType?.toLowerCase()) {
+        const normalizedPlan = planType?.toLowerCase();
+
+        switch (normalizedPlan) {
+            case 'silver':
             case 'starter':
                 priceId = this.configService.get<string>('STRIPE_PRICE_STARTER');
                 break;
+            case 'gold':
             case 'pro':
                 priceId = this.configService.get<string>('STRIPE_PRICE_PRO');
                 break;
+            case 'platinum':
             case 'business':
                 priceId = this.configService.get<string>('STRIPE_PRICE_BUSINESS');
                 break;
             default:
-                throw new InternalServerErrorException('Invalid plan type');
+                throw new InternalServerErrorException(`Invalid plan type: ${planType}`);
         }
 
         if (!priceId) {
-            throw new InternalServerErrorException(`Price ID for ${planType} is not configured`);
+            throw new InternalServerErrorException(`Price ID for ${planType} is not configured in .env`);
         }
         return priceId;
     }

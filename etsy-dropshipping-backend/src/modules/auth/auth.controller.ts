@@ -29,7 +29,8 @@ export class AuthController {
     async googleAuthRedirect(@Req() req, @Res() res) {
         const { access_token } = await this.authService.loginGoogle(req.user);
         // Redirect to frontend with token
-        res.redirect(`http://localhost:3000/auth/callback?token=${access_token}`);
+        const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+        res.redirect(`${frontendUrl}/auth/callback?token=${access_token}`);
     }
 
     @UseGuards(JwtAuthGuard)

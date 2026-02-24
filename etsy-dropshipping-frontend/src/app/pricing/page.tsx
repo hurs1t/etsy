@@ -79,12 +79,12 @@ export default function PricingPage() {
                         <div className="mb-8">
                             <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4">{t('starter')}</h3>
                             <div className="flex items-baseline gap-1 mb-4">
-                                <span className="text-5xl font-black text-slate-900 dark:text-white italic">$19</span>
+                                <span className="text-5xl font-black text-slate-900 dark:text-white italic">$9.99</span>
                                 <span className="text-slate-400 font-bold">/mo</span>
                             </div>
                             <p className="text-sm text-slate-500 font-medium">Perfect for new Etsy sellers just getting started.</p>
                         </div>
-                        <Link href="/checkout?plan=Starter&price=19" className="w-full">
+                        <Link href="/checkout?plan=Silver&price=9.99" className="w-full">
                             <Button className="w-full bg-slate-100 dark:bg-zinc-800 text-slate-900 dark:text-white font-black py-7 rounded-2xl mb-10 hover:bg-slate-200 transition-all uppercase tracking-widest text-xs">
                                 {t('startFreeTrial')}
                             </Button>
@@ -117,12 +117,12 @@ export default function PricingPage() {
                         <div className="mb-8">
                             <h3 className="text-xs font-black text-primary uppercase tracking-[0.2em] mb-4">{t('pro')}</h3>
                             <div className="flex items-baseline gap-1 mb-4">
-                                <span className="text-6xl font-black text-slate-900 dark:text-white italic">$49</span>
+                                <span className="text-6xl font-black text-slate-900 dark:text-white italic">$19.99</span>
                                 <span className="text-slate-400 font-bold">/mo</span>
                             </div>
                             <p className="text-sm text-slate-500 font-medium font-bold">Everything you need to scale your revenue to the moon.</p>
                         </div>
-                        <Link href="/checkout?plan=Pro&price=49" className="w-full">
+                        <Link href="/checkout?plan=Gold&price=19.99" className="w-full">
                             <Button className="w-full bg-primary text-white font-black py-8 rounded-2xl mb-10 hover:bg-primary/90 transition-all shadow-xl shadow-primary/30 uppercase tracking-widest text-xs">
                                 {t('getProAccess')}
                             </Button>
@@ -156,12 +156,12 @@ export default function PricingPage() {
                         <div className="mb-8">
                             <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4">{t('business')}</h3>
                             <div className="flex items-baseline gap-1 mb-4">
-                                <span className="text-5xl font-black text-slate-900 dark:text-white italic">$99</span>
+                                <span className="text-5xl font-black text-slate-900 dark:text-white italic">$29.99</span>
                                 <span className="text-slate-400 font-bold">/mo</span>
                             </div>
                             <p className="text-sm text-slate-500 font-medium">The ultimate toolkit for power sellers running an empire.</p>
                         </div>
-                        <Link href="/checkout?plan=Business&price=99" className="w-full">
+                        <Link href="/checkout?plan=Platinum&price=29.99" className="w-full">
                             <Button className="w-full bg-slate-900 text-white font-black py-7 rounded-2xl mb-10 hover:bg-black transition-all uppercase tracking-widest text-xs">
                                 {t('startScalingNow')}
                             </Button>
