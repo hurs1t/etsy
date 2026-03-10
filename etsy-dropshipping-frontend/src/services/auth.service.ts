@@ -1,20 +1,13 @@
-import axios from 'axios';
+import api from '../lib/axios';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
-export const authApi = axios.create({
-    baseURL: `${API_URL}/auth`,
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
-
 export const loginUser = async (data: any) => {
-    const response = await authApi.post('/login', data);
+    const response = await api.post('/auth/login', data);
     return response.data;
 };
 
 export const registerUser = async (data: any) => {
-    const response = await authApi.post('/register', data);
+    const response = await api.post('/auth/register', data);
     return response.data;
 };

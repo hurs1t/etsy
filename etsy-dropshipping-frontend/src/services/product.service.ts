@@ -1,4 +1,3 @@
-import { authApi } from './auth.service';
 import axios from 'axios';
 import { useAuthStore } from '@/stores/auth-store';
 

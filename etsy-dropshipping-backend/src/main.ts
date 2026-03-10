@@ -18,8 +18,8 @@ async function bootstrap() {
   app.use(cookieParser());
   app.enableCors({
     origin: (origin, callback) => {
-      // Allow all vercel, localhost, and chrome-extension origins
-      if (!origin || origin.includes('vercel.app') || origin.includes('localhost') || origin.startsWith('chrome-extension://')) {
+      // Allow all vercel, localhost, 127.0.0.1, and chrome-extension origins
+      if (!origin || origin.includes('vercel.app') || origin.includes('localhost') || origin.includes('127.0.0.1') || origin.startsWith('chrome-extension://')) {
         callback(null, true);
       } else {
         callback(new Error('Not allowed by CORS'));
