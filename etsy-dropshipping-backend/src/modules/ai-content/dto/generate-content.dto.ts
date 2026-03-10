@@ -16,4 +16,12 @@ export class GenerateContentDto {
     @IsArray()
     @IsOptional()
     fields?: ('title' | 'description' | 'tags')[];
+
+    @IsString()
+    @IsOptional()
+    tone?: string;
+
+    @IsString()
+    @IsOptional()
+    sensitivity?: string;
 }

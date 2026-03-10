@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import cookieParser from 'cookie-parser';
 import { ValidationPipe } from '@nestjs/common';
+import { json, urlencoded } from 'express';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { rawBody: true });
@@ -11,14 +12,14 @@ async function bootstrap() {
     transform: true,
   }));
 
-  // Set FAL_KEY in process.env if not picked up by .env file yet (Nest ConfigService handles logic but library reads process.env)
-  // But ConfigService loads .env to process.env usually.
+  app.use(json({ limit: '50mb' }));
+  app.use(urlencoded({ limit: '50mb', extended: true }));
 
   app.use(cookieParser());
   app.enableCors({
     origin: (origin, callback) => {
-      // Allow all vercel and localhost origins for testing/deployment flexibility
-      if (!origin || origin.includes('vercel.app') || origin.includes('localhost')) {
+      // Allow all vercel, localhost, and chrome-extension origins
+      if (!origin || origin.includes('vercel.app') || origin.includes('localhost') || origin.startsWith('chrome-extension://')) {
         callback(null, true);
       } else {
         callback(new Error('Not allowed by CORS'));

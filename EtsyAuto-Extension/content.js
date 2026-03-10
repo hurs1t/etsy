@@ -193,12 +193,29 @@
           log('runParams found. Parsing...');
           result.variations = parseRunParams(injectedData.runParams, debugInfo);
           debugInfo.strategies.push(`Variations:Injection (Found: ${result.variations.length})`);
+
+          // Try to get shipping from injected data
+          const shipMod = injectedData.runParams?.data?.shippingModule || injectedData.runParams?.shippingModule;
+          if (shipMod) {
+            const fee = shipMod.shippingFeeText || shipMod.generalShippingFeeText;
+            const time = shipMod.deliveryDayText || shipMod.generalDeliveryDayText;
+            if (fee) result.shippingFee = fee;
+            if (time) result.shippingTime = time;
+          }
         } else {
           log('runParams NOT found in injected data.');
         }
       } else {
         debugInfo.injection = "Timeout";
         log('Injection Timeout: No data received from page script.');
+      }
+
+      // Fallback DOM selectors for shipping if not found in injection
+      if (!result.shippingFee) {
+        result.shippingFee = extractWithSelectors(['.shipping-fee', '.delivery-option-item--price', '.product-shipping-info span']) || "Free Shipping";
+      }
+      if (!result.shippingTime) {
+        result.shippingTime = extractWithSelectors(['[data-pl="shipping-delivery-date"]', '.shipping-delivery-day', '.delivery-option-item--delivery-day']) || "15-25 days";
       }
 
       if (!result.variations || result.variations.length === 0) {

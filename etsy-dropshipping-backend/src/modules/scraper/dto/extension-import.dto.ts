@@ -20,4 +20,12 @@ export class ExtensionImportDto {
     @IsArray()
     @IsOptional()
     variations?: any[];
+
+    @IsString()
+    @IsOptional()
+    shippingFee?: string;
+
+    @IsString()
+    @IsOptional()
+    shippingTime?: string;
 }

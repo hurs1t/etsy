@@ -48,7 +48,8 @@ export class EtsyService {
 
         const scopes = [
             'listings_r', 'listings_w', 'listings_d',
-            'shops_r', 'shops_w', 'profile_r', 'email_r'
+            'shops_r', 'shops_w', 'profile_r', 'email_r',
+            'transactions_r'
         ].join(' ');
 
         const url = new URL('https://www.etsy.com/oauth/connect');
@@ -531,7 +532,7 @@ export class EtsyService {
 
     async getTaxonomyProperties(taxonomyId: number, accessToken: string) {
         try {
-            const url = `https://api.etsy.com/v3/application/buyer-taxonomy/nodes/${taxonomyId}/properties`;
+            const url = `https://api.etsy.com/v3/application/seller-taxonomy/nodes/${taxonomyId}/properties`;
             const response = await firstValueFrom(
                 this.httpService.get(url, {
                     headers: {
@@ -547,5 +548,63 @@ export class EtsyService {
             return [];
         }
     }
-}
 
+    async getShopReceipts(shopId: string, accessToken: string, minCreated?: number, maxCreated?: number) {
+        try {
+            let url = `https://api.etsy.com/v3/application/shops/${shopId}/receipts?limit=100`;
+            if (minCreated) url += `&min_created=${minCreated}`;
+            if (maxCreated) url += `&max_created=${maxCreated}`;
+
+            const response = await firstValueFrom(
+                this.httpService.get(url, {
+                    headers: {
+                        'x-api-key': `${this.apiKey}:${this.apiSecret}`,
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                })
+            );
+            return response.data;
+        } catch (error) {
+            this.logger.error('Failed to fetch shop receipts', error.response?.data || error.message);
+            return { count: 0, results: [] };
+        }
+    }
+
+    async getListingsByShop(shopId: string, accessToken: string, state: 'active' | 'draft' = 'active') {
+        try {
+            this.logger.log(`Fetching ${state} listings for Shop: ${shopId}`);
+            const url = `https://api.etsy.com/v3/application/shops/${shopId}/listings?state=${state}&limit=100`;
+            const response = await firstValueFrom(
+                this.httpService.get(url, {
+                    headers: {
+                        'x-api-key': `${this.apiKey}:${this.apiSecret}`,
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                })
+            );
+            return response.data.results || [];
+        } catch (error) {
+            this.logger.error(`Failed to fetch ${state} listings`, error.response?.data || error.message);
+            if (error.response?.status === 401) throw error;
+            return [];
+        }
+    }
+
+    async getListingImages(listingId: number, accessToken: string) {
+        try {
+            const url = `https://api.etsy.com/v3/application/listings/${listingId}/images`;
+            const response = await firstValueFrom(
+                this.httpService.get(url, {
+                    headers: {
+                        'x-api-key': `${this.apiKey}:${this.apiSecret}`,
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                })
+            );
+            return response.data.results || [];
+        } catch (error) {
+            this.logger.error(`Failed to fetch images for listing ${listingId}`, error.response?.data || error.message);
+            return [];
+        }
+    }
+}

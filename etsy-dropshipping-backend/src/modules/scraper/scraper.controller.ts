@@ -60,6 +60,10 @@ export class ScraperController {
             originalDescription: dto.originalDescription,
             price: this.parsePrice(dto.price || ''),
             variations: dto.variations || [],
+            attributes: {
+                shippingFee: dto.shippingFee,
+                shippingTime: dto.shippingTime
+            }
         };
 
         // Generate AI Content
@@ -129,7 +133,17 @@ export class ScraperController {
             // Use upscaled images
             const product = await this.productsService.createWithImages(createProductDto, upscaledImages, token);
             console.log('[ScraperController] Product created successfully');
-            return product;
+
+            // Explicitly return upscaled images in the response so the frontend/extension 
+            // has the same URLs that were just saved to DB.
+            return {
+                ...product,
+                images: upscaledImages.map((url, idx) => ({
+                    image_url: url,
+                    order_index: idx,
+                    is_primary: idx === 0
+                }))
+            };
         } catch (error) {
             console.error('[ScraperController] Product creation failed:', error);
             throw new BadRequestException(`Product creation failed: ${error.message}`);

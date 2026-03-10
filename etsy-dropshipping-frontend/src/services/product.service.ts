@@ -57,7 +57,7 @@ export const scrapeProduct = async (url: string) => {
     return response.data;
 };
 
-export const generateAiContent = async (data: { productTitle: string, productDescription?: string, keywords?: string[], fields?: string[] }) => {
+export const generateAiContent = async (data: { productTitle: string, productDescription?: string, keywords?: string[], fields?: string[], tone?: string, sensitivity?: string }) => {
     const response = await dataApi.post('/ai-content/generate', data);
     return response.data;
 };
@@ -121,5 +121,27 @@ export const disconnectEtsy = async () => {
 };
 export const analyzeSeo = async (data: any) => {
     const response = await dataApi.post('/ai-content/analyze', data);
+    return response.data;
+};
+
+export const getEtsySyncStats = async () => {
+    const response = await dataApi.get('/etsy/sync-stats');
+    return response.data;
+};
+
+export const getAnalytics = async (range?: string, from?: string, to?: string) => {
+    let url = '/etsy/analytics';
+    const params = new URLSearchParams();
+    if (range) params.append('range', range);
+    if (from) params.append('from', from);
+    if (to) params.append('to', to);
+
+    if (params.toString()) url += `?${params.toString()}`;
+    const response = await dataApi.get(url);
+    return response.data;
+};
+
+export const syncAllProducts = async () => {
+    const response = await dataApi.post('/etsy/sync-all');
     return response.data;
 };

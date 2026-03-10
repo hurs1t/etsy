@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useAuthStore } from "@/stores/auth-store";
 import { useLangStore } from "@/stores/lang-store";
 import { Button } from "@/components/ui/button";
+import { getDashboardStats } from "@/services/product.service";
 
 export function Sidebar() {
     const pathname = usePathname();
@@ -15,9 +16,24 @@ export function Sidebar() {
     const { logout } = useAuthStore();
     const { t } = useLangStore();
     const [isMounted, setIsMounted] = useState(false);
+    const [usage, setUsage] = useState({ current: 0, limit: 100 });
 
     useEffect(() => {
         setIsMounted(true);
+        const fetchStats = async () => {
+            try {
+                const stats = await getDashboardStats();
+                if (stats) {
+                    setUsage({
+                        current: (stats as any).monthlyUsage || 0,
+                        limit: (stats as any).monthlyLimit || 100
+                    });
+                }
+            } catch (error) {
+                console.error("Failed to fetch sidebar stats", error);
+            }
+        };
+        fetchStats();
     }, []);
 
     const handleLogout = () => {
@@ -66,12 +82,12 @@ export function Sidebar() {
     return (
         <aside className="w-64 bg-white dark:bg-zinc-900 border-r border-slate-200 dark:border-zinc-800 flex flex-col h-full shrink-0">
             <div className="p-6 flex items-center gap-3">
-                <div className="size-10 rounded-lg bg-primary flex items-center justify-center text-white">
+                <div className="size-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20">
                     <span className="material-symbols-outlined text-2xl font-bold">sync_alt</span>
                 </div>
                 <div>
-                    <h1 className="text-lg font-bold tracking-tight">EtsyAuto</h1>
-                    <p className="text-xs text-slate-500 dark:text-zinc-400">AliExpress Tool</p>
+                    <h1 className="text-lg font-heading font-medium tracking-tight text-slate-900 dark:text-white">EtsyAuto</h1>
+                    <p className="text-xs text-slate-500 dark:text-zinc-400 font-bold uppercase tracking-widest text-[8px]">AliExpress Tool</p>
                 </div>
             </div>
 
@@ -83,49 +99,52 @@ export function Sidebar() {
                             key={route.href}
                             href={route.href}
                             className={cn(
-                                "flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
+                                "flex items-center gap-3 px-3 py-2 text-sm font-semibold rounded-xl transition-all",
                                 isActive
                                     ? "bg-primary/10 text-primary"
-                                    : "text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800"
+                                    : "text-slate-600 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-800"
                             )}
                         >
                             <span className={cn(
-                                "material-symbols-outlined",
+                                "material-symbols-outlined text-[20px]",
                                 route.isPro && !isActive ? "text-ai-glow" : ""
                             )}>
                                 {route.icon}
                             </span>
-                            {route.label}
+                            <span className="tracking-tight">{route.label}</span>
                             {route.isPro && (
-                                <span className="ml-auto text-[10px] bg-ai-glow/10 text-ai-glow px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold">Pro</span>
+                                <span className="ml-auto text-[8px] bg-primary text-white px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold">Pro</span>
                             )}
                         </Link>
                     );
                 })}
 
-                <div className="pt-4 pb-2">
+                <div className="pt-6 pb-2">
                     <p className="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Support</p>
                 </div>
                 <Link
                     href="/help"
-                    className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
+                    className="flex items-center gap-3 px-3 py-2 text-sm font-semibold rounded-xl text-slate-600 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-800 transition-all font-sans"
                 >
-                    <span className="material-symbols-outlined">help_outline</span>
-                    {t('helpCenter')}
+                    <span className="material-symbols-outlined text-[20px]">help_outline</span>
+                    <span className="tracking-tight">{t('helpCenter')}</span>
                 </Link>
             </nav>
 
             <div className="p-4 mt-auto">
-                <div className="bg-slate-50 dark:bg-zinc-800 p-4 rounded-xl border border-slate-100 dark:border-zinc-700 mb-4">
-                    <p className="text-xs font-semibold mb-2">{t('usageLimit')}</p>
-                    <div className="w-full bg-slate-200 dark:bg-zinc-700 h-1.5 rounded-full mb-2">
-                        <div className="bg-primary h-1.5 rounded-full w-3/4"></div>
+                <div className="bg-slate-50 dark:bg-zinc-800/50 p-4 rounded-2xl border border-slate-100 dark:border-zinc-800 mb-4">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">{t('usageLimit')}</p>
+                    <div className="w-full bg-slate-200 dark:bg-zinc-700 h-1.5 rounded-full mb-2 overflow-hidden">
+                        <div
+                            className="bg-primary h-full rounded-full transition-all duration-1000"
+                            style={{ width: `${Math.min(100, Math.round((usage.current / usage.limit) * 100))}%` }}
+                        />
                     </div>
-                    <p className="text-[10px] text-slate-500">750 / 1,000 imports used</p>
+                    <p className="text-[10px] font-bold text-slate-500">{usage.current} / {usage.limit} {t('importsUsed')}</p>
                 </div>
                 <Button
                     variant="ghost"
-                    className="w-full justify-start text-zinc-400 hover:text-white hover:bg-red-500/10 hover:text-red-500 transition-all rounded-lg"
+                    className="w-full justify-start text-zinc-400 hover:text-white hover:bg-red-500/10 hover:text-red-500 transition-all rounded-xl font-bold"
                     onClick={handleLogout}
                 >
                     <span className="material-symbols-outlined mr-3">logout</span>

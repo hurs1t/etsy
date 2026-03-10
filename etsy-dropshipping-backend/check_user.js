@@ -4,7 +4,7 @@ require('dotenv').config();
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 async function checkUser() {
-    const email = 'hursit@gmail.com';
+    const email = 'kursad.basel@gmail.com';
     console.log('Checking user:', email);
 
     const { data: user, error } = await supabase

@@ -4,7 +4,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLangStore } from "@/stores/lang-store";
-import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 export default function TermsPage() {
     const { t } = useLangStore();
@@ -18,24 +19,7 @@ export default function TermsPage() {
 
     return (
         <div className="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100 antialiased font-sans">
-            <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
-                        <Link href="/" className="flex items-center gap-2">
-                            <div className="bg-primary p-1.5 rounded-lg flex items-center justify-center">
-                                <span className="material-symbols-outlined text-white text-xl">magic_button</span>
-                            </div>
-                            <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">EtsyAuto</span>
-                        </Link>
-                        <div className="flex items-center gap-4">
-                            <LanguageSwitcher />
-                            <Link href="/login" className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                                {t('login')}
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <Navbar />
 
             <main className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
                 <div className="bg-white dark:bg-zinc-900 rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-zinc-800">
@@ -72,10 +56,7 @@ export default function TermsPage() {
                 </div>
             </main>
 
-            <footer className="border-t border-slate-200 dark:border-zinc-800 py-8 text-center text-xs text-slate-400">
-                © 2024 EtsyAuto AI. All rights reserved.
-            </footer>
+            <Footer />
         </div>
     );
 }
-

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -6,15 +7,31 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { getEtsyAuthUrl, disconnectEtsy } from "@/services/product.service";
 import { toast } from "sonner";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Loader2 } from "lucide-react";
 import { useAuthStore } from "@/stores/auth-store";
+import { useLangStore } from "@/stores/lang-store";
 import axios from "@/lib/axios";
 
 export default function SettingsPage() {
     const { user } = useAuthStore();
+    const { t } = useLangStore();
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [disconnecting, setDisconnecting] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return (
+            <div className="flex h-[calc(100vh-100px)] items-center justify-center">
+                <Loader2 className="h-12 w-12 animate-spin text-primary" />
+            </div>
+        );
+    }
 
     const handleConnectEtsy = async () => {
         try {
@@ -38,81 +55,124 @@ export default function SettingsPage() {
         setLoading(true);
         try {
             await axios.post('/auth/update-password', { password });
-            toast.success("Şifreniz başarıyla güncellendi/oluşturuldu.");
+            toast.success(t('passwordUpdateSuccess'));
             setPassword("");
         } catch (error: any) {
-            toast.error(error.response?.data?.message || "Şifre güncellenemedi.");
+            toast.error(error.response?.data?.message || t('passwordUpdateError'));
         } finally {
             setLoading(false);
         }
     };
 
-    return (
-        <div className="space-y-4">
-            <h2 className="text-3xl font-bold tracking-tight">Ayarlar</h2>
-            <Card>
-                <CardHeader>
-                    <CardTitle>Hesap Ayarları</CardTitle>
-                    <CardDescription>
-                        Google ile giriş yaptıysanız buradan kendinize bir şifre belirleyebilir ve bu şifre ile Chrome Extension'a giriş yapabilirsiniz.
-                    </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="grid w-full max-w-sm items-center gap-1.5">
-                        <Label htmlFor="email">E-posta</Label>
-                        <Input type="email" id="email" value={user?.email || ''} disabled />
-                    </div>
-                    <div className="grid w-full max-w-sm items-center gap-1.5">
-                        <Label htmlFor="password">Yeni Şifre</Label>
-                        <Input
-                            type="password"
-                            id="password"
-                            placeholder="Yeni şifrenizi girin"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <Button onClick={handleUpdatePassword} disabled={loading}>
-                        {loading ? "Kaydediliyor..." : "Şifreyi Kaydet"}
-                    </Button>
-                </CardContent>
-            </Card>
+    const handleDisconnect = async () => {
+        if (disconnecting) return;
+        setDisconnecting(true);
+        try {
+            await disconnectEtsy();
+            toast.success(t('disconnectSuccess'));
+            window.location.reload();
+        } catch (e: any) {
+            toast.error(e.response?.data?.message || e.message || "Bağlantı kesilemedi.");
+        } finally {
+            setDisconnecting(false);
+        }
+    };
 
-            <Card>
-                <CardHeader>
-                    <CardTitle>API Entegrasyonları</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="flex items-center justify-between border p-4 rounded-lg">
-                        <div>
-                            <p className="font-medium">Etsy Mağazası</p>
-                            <p className="text-sm text-muted-foreground">Ürünleri yayınlamak için Etsy mağazanızı bağlayın.</p>
+    return (
+        <div className="max-w-4xl space-y-12 animate-in fade-in duration-500">
+            <div>
+                <h1 className="text-3xl font-black italic tracking-tight uppercase">{t('settings')}</h1>
+                <p className="text-slate-500 font-medium">Manage your account preferences and integrations.</p>
+            </div>
+
+            <div className="grid gap-8">
+                {/* Account Settings */}
+                <Card className="border-2 border-slate-100 dark:border-zinc-800 shadow-xl overflow-hidden">
+                    <CardHeader className="bg-slate-50 dark:bg-zinc-900 border-b border-slate-100 dark:border-zinc-800 p-8">
+                        <CardTitle className="text-sm font-black uppercase tracking-widest text-primary flex items-center gap-2">
+                            <span className="material-symbols-outlined text-sm">person</span>
+                            {t('accountSettings')}
+                        </CardTitle>
+                        <CardDescription className="font-bold text-slate-400 italic">
+                            {t('accountSettingsDesc')}
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="p-8 space-y-8">
+                        <div className="space-y-3">
+                            <Label htmlFor="email" className="text-xs font-black uppercase tracking-widest text-slate-400">
+                                {t('email')}
+                            </Label>
+                            <Input
+                                type="email"
+                                id="email"
+                                value={user?.email || ''}
+                                disabled
+                                className="h-12 bg-slate-50 dark:bg-zinc-800 border-2 border-transparent font-bold italic text-slate-500"
+                            />
                         </div>
-                        <div className="flex gap-2">
-                            <Button onClick={async () => {
-                                console.log("Disconnect button clicked");
-                                if (disconnecting) return;
-                                setDisconnecting(true);
-                                try {
-                                    console.log("Calling disconnectEtsy...");
-                                    await disconnectEtsy();
-                                    console.log("Disconnect success");
-                                    toast.success("Etsy bağlantısı kesildi.");
-                                    window.location.reload();
-                                } catch (e: any) {
-                                    console.error("Disconnect error:", e);
-                                    toast.error(e.response?.data?.message || e.message || "Bağlantı kesilemedi.");
-                                } finally {
-                                    setDisconnecting(false);
-                                }
-                            }} variant="destructive" size="sm" disabled={disconnecting}>
-                                {disconnecting ? "Kesiliyor..." : "Bağlantıyı Kes"}
-                            </Button>
-                            <Button onClick={handleConnectEtsy} variant="outline">Etsy'ye Bağlan</Button>
+
+                        <div className="space-y-3">
+                            <Label htmlFor="password" className="text-xs font-black uppercase tracking-widest text-slate-400">
+                                {t('newPassword')}
+                            </Label>
+                            <div className="flex gap-4">
+                                <Input
+                                    type="password"
+                                    id="password"
+                                    placeholder={t('passwordPlaceholder')}
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    className="h-12 bg-white dark:bg-zinc-900 border-2 border-slate-100 dark:border-zinc-800 focus:border-primary transition-all font-bold"
+                                />
+                                <Button
+                                    onClick={handleUpdatePassword}
+                                    disabled={loading}
+                                    className="h-12 px-8 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black font-black uppercase tracking-widest text-[10px] shadow-lg shrink-0"
+                                >
+                                    {loading ? t('saving') : t('savePassword')}
+                                </Button>
+                            </div>
                         </div>
-                    </div>
-                </CardContent>
-            </Card>
+                    </CardContent>
+                </Card>
+
+                {/* API Integrations */}
+                <Card className="border-2 border-slate-100 dark:border-zinc-800 shadow-xl overflow-hidden">
+                    <CardHeader className="bg-slate-50 dark:bg-zinc-900 border-b border-slate-100 dark:border-zinc-800 p-8">
+                        <CardTitle className="text-sm font-black uppercase tracking-widest text-primary flex items-center gap-2">
+                            <span className="material-symbols-outlined text-sm">hub</span>
+                            {t('apiIntegrations')}
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                        <div className="p-8 flex items-center justify-between group">
+                            <div className="space-y-1">
+                                <div className="flex items-center gap-2">
+                                    <p className="font-black italic text-lg uppercase">{t('etsyShop')}</p>
+                                    <div className="size-2 rounded-full bg-green-500 animate-pulse" />
+                                </div>
+                                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest italic">{t('etsyShopDesc')}</p>
+                            </div>
+                            <div className="flex gap-4">
+                                <Button
+                                    onClick={handleDisconnect}
+                                    variant="ghost"
+                                    className="h-12 px-6 font-black uppercase tracking-widest text-[10px] text-red-500 hover:bg-red-50 transition-all underline underline-offset-4 decoration-2"
+                                    disabled={disconnecting}
+                                >
+                                    {disconnecting ? t('disconnecting') : t('disconnect')}
+                                </Button>
+                                <Button
+                                    onClick={handleConnectEtsy}
+                                    className="h-12 px-8 bg-primary hover:bg-primary/90 text-white font-black uppercase tracking-widest text-[10px] shadow-lg shadow-primary/20"
+                                >
+                                    {t('connectEtsy')}
+                                </Button>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
         </div>
     );
 }

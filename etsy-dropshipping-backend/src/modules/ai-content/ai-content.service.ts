@@ -36,7 +36,7 @@ export class AiContentService {
                         
                         STRICT RULES:
                         ${!dto.fields || dto.fields.includes('title') ? '1. **Title**: MUST be long and keyword-rich (Etsy SEO optimized). Contains main keywords. English only.' : ''}
-                        ${!dto.fields || dto.fields.includes('description') ? '2. **Description**: Playful, engaging tone with EMOJIS! 🎨✨. Natural language. **DO NOT INCLUDE PRICE**. English only.' : ''}
+                        ${!dto.fields || dto.fields.includes('description') ? `2. **Description**: ${dto.tone ? `Use a **${dto.tone}** tone.` : 'Playful, engaging tone with EMOJIS! 🎨✨.'} Natural language. **DO NOT INCLUDE PRICE**. English only. ${dto.sensitivity === 'Aggressive Ranking' ? 'Focus on high-volume, competitive keywords.' : ''}` : ''}
                         ${!dto.fields || dto.fields.includes('tags') ? '3. **Tags**: Generate EXACTLY 13 tags. Each tag MUST be 20 characters or less. No hashtags. Return as a JSON Array of strings.' : ''}
                         
                         Return strictly a JSON object with ONLY the keys requested: ${dto.fields ? dto.fields.join(', ') : "'title', 'description', 'tags'"}. Do not include any markdown formatting.`

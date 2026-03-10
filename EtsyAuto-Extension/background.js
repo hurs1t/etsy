@@ -62,6 +62,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       .catch(error => sendResponse({ error: error.message }));
     return true;
   }
+
+  if (message.type === 'GET_STATS') {
+    handleGetStats().then(sendResponse);
+    return true;
+  }
 });
 
 async function handleLogin(credentials) {
@@ -112,8 +117,10 @@ async function handleGenerateListing(data) {
 
     console.log('[EtsyAuto Background] Sending import request with data:', {
       urlLength: data.sourceUrl?.length,
-      originalImagesCount: data.originalImages?.length,
-      variationsCount: data.variations?.length,
+      originalImages: data.originalImages,
+      variations: data.variations,
+      shippingFee: data.shippingFee,
+      shippingTime: data.shippingTime,
       fullBodySample: JSON.stringify(data).substring(0, 200) + '...'
     });
 
@@ -173,4 +180,25 @@ async function handleProxyImages(imageUrls) {
   }
 
   return result;
+}
+
+async function handleGetStats() {
+  try {
+    const API_URL = await getApiBase();
+    const { etsyAutoToken } = await chrome.storage.local.get(['etsyAutoToken']);
+
+    if (!etsyAutoToken) return { error: "No session found" };
+
+    const response = await fetch(`${API_URL}/products/stats`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${etsyAutoToken}`
+      }
+    });
+
+    if (!response.ok) throw new Error("Stats request failed");
+    return await response.json();
+  } catch (error) {
+    return { error: error.message };
+  }
 }

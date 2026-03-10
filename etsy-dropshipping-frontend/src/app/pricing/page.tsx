@@ -3,7 +3,8 @@
 
 import { useLangStore } from "@/stores/lang-store";
 import { Button } from "@/components/ui/button";
-import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -21,29 +22,7 @@ export default function PricingPage() {
 
     return (
         <div className="bg-background-light dark:bg-background-dark min-h-screen font-display">
-            {/* Header */}
-            <header className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-slate-200 dark:border-zinc-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
-                        <Link href="/" className="flex items-center gap-2">
-                            <div className="text-primary">
-                                <span className="material-symbols-outlined text-3xl">auto_fix_high</span>
-                            </div>
-                            <span className="text-xl font-black tracking-tight text-slate-900 dark:text-white italic">EtsyAuto</span>
-                        </Link>
-
-                        <div className="flex items-center gap-4">
-                            <LanguageSwitcher />
-                            <Link href="/login">
-                                <Button variant="ghost" className="text-sm font-bold">{t('login')}</Button>
-                            </Link>
-                            <Link href="/register">
-                                <Button className="bg-primary hover:bg-primary/90 text-white font-bold">{t('startTrial')}</Button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <Navbar />
 
             <main className="py-16 lg:py-24">
                 {/* Hero */}
@@ -200,11 +179,7 @@ export default function PricingPage() {
                 </div>
             </main>
 
-            <footer className="py-20 border-t border-slate-100 dark:border-zinc-800">
-                <div className="max-w-7xl mx-auto px-4 text-center">
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">© 2024 EtsyAuto AI Optimization System</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

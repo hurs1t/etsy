@@ -97,6 +97,7 @@ export default function ProductEditPage() {
                 generatedDescription: product.generatedDescription,
                 generatedTags: Array.isArray(product.generatedTags) ? product.generatedTags : [],
                 price: isNaN(price) ? 0 : price,
+                purchasePrice: product.purchasePrice ? parseFloat(String(product.purchasePrice)) : 0,
                 shippingProfileId: product.shippingProfileId,
                 taxonomyId: (taxonomyId && !isNaN(taxonomyId)) ? taxonomyId : undefined,
                 attributes: product.attributes
@@ -177,7 +178,7 @@ export default function ProductEditPage() {
                             <img
                                 className="h-full w-full object-cover"
                                 alt="Main Product"
-                                src={product.images?.[0]?.url || product.originalImages?.[0] || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop"}
+                                src={(product.images && product.images.length > 0) ? product.images[0].image_url : (product.originalImages?.[0] || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop")}
                             />
                         </div>
 
@@ -263,12 +264,21 @@ export default function ProductEditPage() {
                                 </div>
 
                                 {/* Price & Shipping */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <div className="space-y-3">
-                                        <Label className="text-sm font-black text-slate-700 dark:text-slate-300 uppercase tracking-wider">Price (USD)</Label>
+                                        <Label className="text-sm font-black text-slate-700 dark:text-slate-300 uppercase tracking-wider">Purchase Price (Alış)</Label>
                                         <Input
                                             type="number"
-                                            className="h-14 rounded-2xl border-2 border-slate-100 dark:border-zinc-800 bg-slate-50/30 dark:bg-zinc-900/50 font-black text-lg focus:border-primary"
+                                            className="h-14 rounded-2xl border-2 border-slate-100 dark:border-zinc-800 bg-slate-50/30 dark:bg-zinc-900/50 font-black text-lg focus:border-primary text-red-500"
+                                            value={product.purchasePrice || ""}
+                                            onChange={(e) => setProduct({ ...product, purchasePrice: e.target.value })}
+                                        />
+                                    </div>
+                                    <div className="space-y-3">
+                                        <Label className="text-sm font-black text-slate-700 dark:text-slate-300 uppercase tracking-wider">Selling Price (Satış)</Label>
+                                        <Input
+                                            type="number"
+                                            className="h-14 rounded-2xl border-2 border-slate-100 dark:border-zinc-800 bg-slate-50/30 dark:bg-zinc-900/50 font-black text-lg focus:border-primary text-green-600"
                                             value={product.price || ""}
                                             onChange={(e) => setProduct({ ...product, price: e.target.value })}
                                         />
@@ -412,7 +422,7 @@ export default function ProductEditPage() {
 
                             <TabsContent value="studio" className="animate-in fade-in duration-300">
                                 <ImageEditor
-                                    images={product.images?.length > 0 ? product.images.map((img: any) => img.url) : (product.originalImages || [])}
+                                    images={product.images?.length > 0 ? product.images.map((img: any) => img.image_url) : (product.originalImages || [])}
                                     productTitle={product.generatedTitle || ""}
                                     productPrice={product.price || ""}
                                     productDescription={product.generatedDescription || ""}
@@ -430,7 +440,7 @@ export default function ProductEditPage() {
                     <div className="flex -space-x-3">
                         {product.images?.slice(0, 3).map((img: any, i: number) => (
                             <div key={i} className="w-10 h-10 rounded-full border-2 border-white dark:border-zinc-900 bg-slate-200 overflow-hidden shadow-sm">
-                                <img src={img.url} className="h-full w-full object-cover" alt="Preview" />
+                                <img src={img.image_url} className="h-full w-full object-cover" alt="Preview" />
                             </div>
                         ))}
                         {product.images?.length > 3 && (

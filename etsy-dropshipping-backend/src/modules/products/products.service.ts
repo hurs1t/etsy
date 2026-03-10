@@ -7,13 +7,43 @@ import { UpdateProductDto } from './dto/update-product.dto';
 export class ProductsService {
     constructor(private readonly supabaseService: SupabaseService) { }
 
+    private normalizeUrl(url: string): string {
+        try {
+            if (!url) return url;
+            const parsed = new URL(url);
+            // AliExpress: strip query params and normalize host
+            let host = parsed.host.replace(/^(?:[a-z]{2}\.)?aliexpress\.com$/, 'www.aliexpress.com');
+            // Remove trailing slashes and normalize path
+            let pathname = parsed.pathname.replace(/\/$/, "");
+            return `${parsed.protocol}//${host}${pathname}`;
+        } catch (e) {
+            return url;
+        }
+    }
+
     async create(createProductDto: CreateProductDto, token?: string) {
         // Use Admin Client to bypass RLS since we validated the user in the Controller
         const supabase = this.supabaseService.getAdminClient();
 
+        // Normalize URL for consistency
+        const normalizedUrl = this.normalizeUrl(createProductDto.sourceUrl);
+
+        // Check for duplicates - using .ilike or just exact match on normalized URL
+        const { data: existing } = await supabase
+            .from('products')
+            .select('id')
+            .eq('user_id', createProductDto.userId)
+            .ilike('source_url', `%${normalizedUrl}%`) // Partial match to be safer with protocol/host shifts
+            .maybeSingle();
+
+        if (existing) {
+            console.warn(`[ProductsService] Duplicate product import attempted for user ${createProductDto.userId}: ${normalizedUrl}`);
+            throw new InternalServerErrorException('Bu ürün zaten mağazanıza eklenmiş.');
+        }
+
         const productData = {
             user_id: createProductDto.userId,
-            source_url: createProductDto.sourceUrl,
+            source_url: normalizedUrl, // Save normalized URL
             source_platform: createProductDto.sourcePlatform,
             original_title: createProductDto.originalTitle,
             original_description: createProductDto.originalDescription,
@@ -24,7 +54,10 @@ export class ProductsService {
             status: 'draft',
             shipping_profile_id: createProductDto.shippingProfileId,
             taxonomy_id: createProductDto.taxonomyId,
-            attributes: createProductDto.attributes || {},
+            attributes: {
+                ...(createProductDto.attributes || {}),
+                purchase_price: createProductDto.purchasePrice
+            },
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString(),
         };
@@ -139,6 +172,67 @@ export class ProductsService {
         return this.mapEntity(data);
     }
 
+    async findByEtsyListingId(etsyListingId: string) {
+        const supabase = this.supabaseService.getClient();
+        const { data } = await supabase
+            .from('products')
+            .select('*, product_images(*)')
+            .eq('etsy_listing_id', etsyListingId)
+            .maybeSingle();
+
+        return data;
+    }
+
+    async syncListing(userId: string, etsyListing: any, images: any[] = []) {
+        const supabase = this.supabaseService.getAdminClient();
+
+        const productData: any = {
+            user_id: userId,
+            source_platform: 'etsy',
+            original_title: etsyListing.title,
+            generated_title: etsyListing.title,
+            original_description: etsyListing.description,
+            generated_description: etsyListing.description,
+            price: etsyListing.price?.amount ? etsyListing.price.amount / etsyListing.price.divisor : etsyListing.price,
+            status: etsyListing.state === 'active' ? 'connected' : 'draft',
+            etsy_listing_id: String(etsyListing.listing_id),
+            taxonomy_id: etsyListing.taxonomy_id,
+            shipping_profile_id: etsyListing.shipping_profile_id,
+            attributes: {
+                purchase_price: (etsyListing.price?.amount ? (etsyListing.price.amount / etsyListing.price.divisor) * 0.71 : (etsyListing.price || 0) * 0.71).toFixed(2)
+            },
+            created_at: new Date(etsyListing.creation_timestamp * 1000).toISOString(),
+            updated_at: new Date(etsyListing.last_modified_timestamp * 1000).toISOString(),
+        };
+
+        const { data: product, error } = await supabase
+            .from('products')
+            .insert(productData)
+            .select()
+            .single();
+
+        if (error) {
+            console.error('[ProductsService] Sync Insert Error:', error);
+            return null;
+        }
+
+        if (images && images.length > 0) {
+            const imageRecords = images.map((img, index) => ({
+                product_id: product.id,
+                image_url: img.url_fullxf || img.url_570xN || img.url_570x || img.url_170x135 || img.url_170x,
+                order_index: index,
+                is_primary: index === 0,
+                created_at: new Date().toISOString()
+            }));
+
+            await supabase
+                .from('product_images')
+                .insert(imageRecords);
+        }
+
+        return product;
+    }
+
     async update(id: string, updateProductDto: UpdateProductDto) {
         const supabase = this.supabaseService.getClient();
 
@@ -206,21 +300,75 @@ export class ProductsService {
 
     async getStats(userId: string) {
         const supabase = this.supabaseService.getClient();
+
+        // Calculate Monthly Usage
+        const now = new Date();
+        const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+
+        const { count: monthlyUsage } = await supabase
+            .from('products')
+            .select('*', { count: 'exact', head: true })
+            .eq('user_id', userId)
+            .gte('created_at', startOfMonth);
+
         const { count: total } = await supabase.from('products').select('*', { count: 'exact', head: true }).eq('user_id', userId);
         const { count: drafts } = await supabase.from('products').select('*', { count: 'exact', head: true }).eq('user_id', userId).eq('status', 'draft');
         const { count: published } = await supabase.from('products').select('*', { count: 'exact', head: true }).eq('user_id', userId).eq('status', 'connected');
-        const { data: recent } = await supabase.from('products').select('*').eq('user_id', userId).order('created_at', { ascending: false }).limit(5);
+        const { data: recent } = await supabase.from('products').select('*, product_images(*)').eq('user_id', userId).order('created_at', { ascending: false }).limit(5);
 
         return {
             total: total || 0,
             drafts: drafts || 0,
             published: published || 0,
+            monthlyUsage: monthlyUsage || 0,
+            monthlyLimit: 100, // Default limit
             recent: recent ? recent.map(r => this.mapEntity(r)) : []
+        };
+    }
+
+    async getSyncStats(userId: string) {
+        const supabase = this.supabaseService.getClient();
+
+        // 1. Total Products
+        const { count: totalCount } = await supabase
+            .from('products')
+            .select('*', { count: 'exact', head: true })
+            .eq('user_id', userId);
+
+        // 2. Connected Products (have Etsy Listing ID)
+        const { count: connectedCount } = await supabase
+            .from('products')
+            .select('*', { count: 'exact', head: true })
+            .eq('user_id', userId)
+            .not('etsy_listing_id', 'is', null);
+
+        // 3. Draft Products
+        const { count: draftCount } = await supabase
+            .from('products')
+            .select('*', { count: 'exact', head: true })
+            .eq('user_id', userId)
+            .eq('status', 'draft');
+
+        // 4. Activity
+        const { data: recentActivity } = await supabase
+            .from('products')
+            .select('id, original_title, generated_title, status, updated_at, price, product_images(image_url)')
+            .eq('user_id', userId)
+            .not('etsy_listing_id', 'is', null)
+            .order('updated_at', { ascending: false })
+            .limit(5);
+
+        return {
+            totalCount: totalCount || 0,
+            connectedCount: connectedCount || 0,
+            draftCount: draftCount || 0,
+            recentActivity: recentActivity || []
         };
     }
 
     private mapEntity(record: any) {
         return {
+            ...record,
             id: record.id,
             userId: record.user_id,
             sourceUrl: record.source_url,
@@ -229,16 +377,16 @@ export class ProductsService {
             generatedTitle: record.generated_title,
             originalDescription: record.original_description,
             generatedDescription: record.generated_description,
-            generatedTags: record.generated_tags, // Explicit mapping
+            generatedTags: record.generated_tags,
             price: record.price,
+            purchasePrice: record.purchase_price || record.attributes?.purchase_price || 0,
             status: record.status,
             shippingProfileId: record.shipping_profile_id,
             taxonomyId: record.taxonomy_id,
             attributes: record.attributes || {},
             createdAt: record.created_at,
             images: record.product_images || [],
-            variations: record.product_variations || [],
-            ...record
+            variations: record.product_variations || []
         };
     }
 }

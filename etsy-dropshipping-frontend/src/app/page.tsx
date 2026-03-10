@@ -4,7 +4,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLangStore } from "@/stores/lang-store";
-import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 export default function LandingPage() {
   const { t } = useLangStore();
@@ -20,36 +21,7 @@ export default function LandingPage() {
 
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-sans">
-      {/* Top Navigation Bar */}
-      <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
-              <div className="bg-primary p-1.5 rounded-lg flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-xl">magic_button</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">EtsyAuto</span>
-            </div>
-            <nav className="hidden md:flex items-center gap-8">
-              <a className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#features">{t('features')}</a>
-              <a className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#how-it-works">{t('howItWorks')}</a>
-              <Link className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="/pricing">{t('pricing')}</Link>
-              <a className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#testimonials">{t('testimonials')}</a>
-            </nav>
-            <div className="flex items-center gap-4">
-              <LanguageSwitcher />
-              <Link href="/login">
-                <button className="hidden sm:block text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 px-4 py-2 rounded-lg transition-all">{t('login')}</button>
-              </Link>
-              <Link href="/register">
-                <button className="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:brightness-110 transition-all shadow-md shadow-primary/20">
-                  {t('startTrial')}
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
@@ -229,52 +201,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
-            <div className="col-span-2 lg:col-span-2">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="bg-primary p-1.5 rounded-lg flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-xl">magic_button</span>
-                </div>
-                <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">EtsyAuto</span>
-              </div>
-              <p className="text-slate-500 text-sm leading-relaxed max-w-xs mb-6">
-                {t('footerTagline')}
-              </p>
-            </div>
-            <div>
-              <h5 className="font-bold text-slate-900 dark:text-white mb-4">{t('product')}</h5>
-              <ul className="space-y-3 text-sm text-slate-500">
-                <li><a className="hover:text-primary transition-colors" href="#features">{t('features')}</a></li>
-                <li><Link className="hover:text-primary transition-colors" href="/pricing">{t('pricing')}</Link></li>
-                <li><a className="hover:text-primary transition-colors" href="#">{t('extensions')}</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">{t('updates')}</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-bold text-slate-900 dark:text-white mb-4">{t('company')}</h5>
-              <ul className="space-y-3 text-sm text-slate-500">
-                <li><Link className="hover:text-primary transition-colors" href="/about">{t('aboutUs')}</Link></li>
-                <li><a className="hover:text-primary transition-colors" href="#">{t('careers')}</a></li>
-                <li><a className="hover:text-primary transition-colors" href="#">{t('blog')}</a></li>
-                <li><Link className="hover:text-primary transition-colors" href="/contact">{t('contact')}</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-bold text-slate-900 dark:text-white mb-4">{t('legal')}</h5>
-              <ul className="space-y-3 text-sm text-slate-500">
-                <li><Link className="hover:text-primary transition-colors" href="/privacy">{t('privacyPolicy')}</Link></li>
-                <li><Link className="hover:text-primary transition-colors" href="/terms">{t('termsOfService')}</Link></li>
-                <li><Link className="hover:text-primary transition-colors" href="/cookies">{t('cookiePolicy')}</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-400">
-            © 2024 EtsyAuto AI. All rights reserved. Built for professional sellers.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
