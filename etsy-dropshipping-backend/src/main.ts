@@ -17,18 +17,11 @@ async function bootstrap() {
 
   app.use(cookieParser());
   app.enableCors({
-    origin: (origin, callback) => {
-      // Allow all vercel, localhost, 127.0.0.1, and chrome-extension origins
-      if (!origin || origin.includes('vercel.app') || origin.includes('localhost') || origin.includes('127.0.0.1') || origin.startsWith('chrome-extension://')) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
+    origin: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Accept, Authorization',
     credentials: true,
   });
-  await app.listen(process.env.PORT ?? 3001);
+  await app.listen(process.env.PORT ?? 3001, '0.0.0.0');
 }
 bootstrap();
