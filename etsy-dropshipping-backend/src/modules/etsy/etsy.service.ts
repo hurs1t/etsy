@@ -273,7 +273,8 @@ export class EtsyService {
                 readiness_state_id: readinessStateId,
                 type: 'physical',
                 non_taxable: false,
-                state: 'draft'
+                state: 'draft',
+                tags: Array.isArray(product.generatedTags) ? product.generatedTags.slice(0, 13) : undefined // Etsy allows max 13 tags
             };
 
             this.logger.log(`Creating Etsy Listing with Payload: ${JSON.stringify(payload)}`);

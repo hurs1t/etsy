@@ -370,7 +370,28 @@ export default function ProductEditPage() {
                                 <div className="space-y-3">
                                     <div className="flex items-center justify-between">
                                         <Label className="text-sm font-black text-slate-700 dark:text-slate-300 uppercase tracking-wider">Search Tags (SEO)</Label>
-                                        <button className="text-[10px] font-bold text-primary hover:underline uppercase tracking-widest" onClick={() => handleRegenerateField('tags')}>{t('magicCopy')}</button>
+                                        <div className="flex items-center gap-4">
+                                            <button
+                                                className="text-[10px] font-bold text-primary hover:underline uppercase tracking-widest flex items-center gap-1.5"
+                                                onClick={() => {
+                                                    if (Array.isArray(product.generatedTags) && product.generatedTags.length > 0) {
+                                                        navigator.clipboard.writeText(product.generatedTags.join(', '));
+                                                        toast.success("Tags copied to clipboard");
+                                                    } else {
+                                                        toast.error("No tags to copy");
+                                                    }
+                                                }}
+                                            >
+                                                <span className="material-symbols-outlined text-[16px]">content_copy</span> {t('magicCopy')}
+                                            </button>
+                                            <button
+                                                className="text-[10px] font-bold text-slate-500 hover:text-primary hover:underline uppercase tracking-widest flex items-center gap-1.5"
+                                                onClick={() => handleRegenerateField('tags')}
+                                                disabled={generating === 'tags'}
+                                            >
+                                                <span className={cn("material-symbols-outlined text-[16px]", generating === 'tags' && "animate-spin")}>autorenew</span> Regenerate
+                                            </button>
+                                        </div>
                                     </div>
                                     <div className="flex flex-wrap gap-2 p-5 rounded-2xl border-2 border-slate-100 dark:border-zinc-800 bg-slate-50/30 dark:bg-zinc-900/50 min-h-[100px]">
                                         {Array.isArray(product.generatedTags) && product.generatedTags.map((tag: string, i: number) => (
