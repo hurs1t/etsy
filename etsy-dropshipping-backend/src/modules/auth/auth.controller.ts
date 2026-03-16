@@ -6,9 +6,14 @@ import { UpdatePasswordDto } from './dto/update-password.dto';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { AuthGuard } from '@nestjs/passport';
 
+import { UsersService } from '../users/users.service';
+
 @Controller('auth')
 export class AuthController {
-    constructor(private authService: AuthService) { }
+    constructor(
+        private authService: AuthService,
+        private usersService: UsersService
+    ) { }
 
     @Post('login')
     async login(@Body() loginDto: LoginDto) {
@@ -33,10 +38,21 @@ export class AuthController {
         res.redirect(`${frontendUrl}/auth/callback?token=${access_token}`);
     }
 
+    @Get('stats/users')
+    async getUserStats() {
+        const total = await this.usersService.getTotalUsers();
+        return { total, limit: 100 };
+    }
+
     @UseGuards(JwtAuthGuard)
     @Get('profile')
-    getProfile(@Req() req) {
-        return req.user;
+    async getProfile(@Req() req) {
+        const userId = req.user.sub || req.user.userId || req.user.id;
+        const rank = await this.usersService.getUserRank(userId);
+        return {
+            ...req.user,
+            registrationRank: rank
+        };
     }
 
     @UseGuards(JwtAuthGuard)

@@ -10,9 +10,14 @@ import { Footer } from "@/components/layout/footer";
 export default function LandingPage() {
   const { t } = useLangStore();
   const [isMounted, setIsMounted] = useState(false);
+  const [userStats, setUserStats] = useState({ total: 0, limit: 100 });
 
   useEffect(() => {
     setIsMounted(true);
+    fetch(process.env.NEXT_PUBLIC_API_URL + '/auth/stats/users')
+      .then(res => res.json())
+      .then(data => setUserStats(data))
+      .catch(err => console.error("Failed to fetch user stats", err));
   }, []);
 
   if (!isMounted) {
@@ -40,7 +45,21 @@ export default function LandingPage() {
                 </button>
               </Link>
             </div>
-            <p className="mt-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">{t('noCardRequired')}</p>
+
+            <div className="mt-8 flex flex-col items-center justify-center">
+              {userStats.total >= userStats.limit ? (
+                <p className="text-xs font-bold text-red-500 uppercase tracking-widest bg-red-500/10 px-4 py-2 rounded-full border border-red-500/20">
+                  Registration Limit Reached ({userStats.total}/{userStats.limit} Users)
+                </p>
+              ) : (
+                <div className="flex flex-col items-center gap-2">
+                  <p className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                    Beta Access: {userStats.total} / {userStats.limit} Spots Claimed
+                  </p>
+                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">{t('noCardRequired')}</p>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Dashboard Mockup */}

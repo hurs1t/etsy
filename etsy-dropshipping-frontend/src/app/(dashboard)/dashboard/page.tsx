@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getDashboardStats } from "@/services/product.service";
+import { getDashboardStats, getUserProfile } from "@/services/product.service";
 import { useLangStore } from "@/stores/lang-store";
 import { Loader2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,24 +18,31 @@ interface DashboardStats {
 
 export default function DashboardPage() {
     const [stats, setStats] = useState<DashboardStats | null>(null);
+    const [userRank, setUserRank] = useState<number | null>(null);
     const [loading, setLoading] = useState(true);
     const [isMounted, setIsMounted] = useState(false);
     const { t } = useLangStore();
 
     useEffect(() => {
         setIsMounted(true);
-        const fetchStats = async () => {
+        const fetchData = async () => {
             try {
-                const data = await getDashboardStats();
-                setStats(data);
+                const [statsData, profileData] = await Promise.all([
+                    getDashboardStats(),
+                    getUserProfile()
+                ]);
+                setStats(statsData);
+                if (profileData?.registrationRank) {
+                    setUserRank(profileData.registrationRank);
+                }
             } catch (error) {
-                console.error("Failed to fetch dashboard stats", error);
+                console.error("Failed to fetch dashboard data", error);
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchStats();
+        fetchData();
     }, []);
 
     if (!isMounted) {
@@ -62,7 +69,14 @@ export default function DashboardPage() {
             {/* Welcome Section */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                    <h1 className="text-3xl font-heading font-bold tracking-tight uppercase">{t('dashboard')} Overview</h1>
+                    <div className="flex items-center gap-3 mb-1">
+                        <h1 className="text-3xl font-heading font-bold tracking-tight uppercase">{t('dashboard')} Overview</h1>
+                        {userRank && (
+                            <span className="bg-primary/10 text-primary border border-primary/20 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full whitespace-nowrap">
+                                User #{userRank} / 100
+                            </span>
+                        )}
+                    </div>
                     <p className="text-slate-500 dark:text-zinc-400 font-medium tracking-tight">Manage and automate your AliExpress to Etsy flow.</p>
                 </div>
                 <div className="flex gap-3">

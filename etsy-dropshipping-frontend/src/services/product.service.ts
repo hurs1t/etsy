@@ -58,6 +58,11 @@ export const scrapeProduct = async (url: string) => {
     return response.data;
 };
 
+export const getUserProfile = async () => {
+    const response = await dataApi.get('/auth/profile');
+    return response.data;
+};
+
 export const generateAiContent = async (data: { productTitle: string, productDescription?: string, keywords?: string[], fields?: string[], tone?: string, sensitivity?: string }) => {
     const response = await dataApi.post('/ai-content/generate', data);
     return response.data;

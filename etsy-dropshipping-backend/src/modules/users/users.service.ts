@@ -165,6 +165,28 @@ export class UsersService {
     }
 
 
+    async getTotalUsers(): Promise<number> {
+        const supabase = this.supabaseService.getClient();
+        const { count } = await supabase
+            .from('users')
+            .select('*', { count: 'exact', head: true });
+        return count || 0;
+    }
+
+    async getUserRank(userId: string): Promise<number> {
+        const supabase = this.supabaseService.getClient();
+
+        const { data: user } = await supabase.from('users').select('created_at').eq('id', userId).single();
+        if (!user) return 0;
+
+        const { count } = await supabase
+            .from('users')
+            .select('*', { count: 'exact', head: true })
+            .lte('created_at', user.created_at);
+
+        return count || 0;
+    }
+
     async updatePassword(userId: string, password: string) {
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt);
