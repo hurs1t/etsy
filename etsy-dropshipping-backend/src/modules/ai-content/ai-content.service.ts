@@ -97,28 +97,28 @@ export class AiContentService {
         try {
             this.logger.log(`Upscaling image: ${imageUrl}. Checking Fal Key: ${falKey ? 'Present' : 'Missing'}`);
 
-            // Dynamic import because @fal-ai/serverless-client is ESM
-            const fal = await import('@fal-ai/serverless-client');
+            // Dynamic import because @fal-ai/client is ESM
+            const { fal } = await import('@fal-ai/client');
 
             fal.config({
                 credentials: falKey
             });
 
-            const { result } = await fal.subscribe('fal-ai/esrgan', {
+            const { data } = await fal.subscribe('fal-ai/esrgan', {
                 input: {
                     image_url: imageUrl,
                     scale: 2
                 },
                 logs: true,
                 onQueueUpdate: (update) => {
-                    if (update.status === 'IN_PROGRESS') {
+                    if (update.status === 'IN_PROGRESS' && update.logs) {
                         update.logs.map((log) => log.message).forEach(console.log);
                     }
                 },
             }) as any;
 
-            if (result && result.image && result.image.url) {
-                return result.image.url;
+            if (data && data.image && data.image.url) {
+                return data.image.url;
             }
 
             throw new Error('No image URL in result');

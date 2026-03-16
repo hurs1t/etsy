@@ -1,4 +1,4 @@
-import { Injectable, ConflictException, InternalServerErrorException } from '@nestjs/common';
+import { Injectable, ConflictException, InternalServerErrorException, ForbiddenException } from '@nestjs/common';
 import { SupabaseService } from '../supabase/supabase.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import * as bcrypt from 'bcrypt';
@@ -20,6 +20,16 @@ export class UsersService {
 
         if (existingUser) {
             throw new ConflictException('User with this email already exists');
+        }
+
+        // Check 100 user registration limit
+        const { count, error: countError } = await supabase
+            .from('users')
+            .select('*', { count: 'exact', head: true });
+
+        if (countError) throw new InternalServerErrorException('Failed to verify registration limits');
+        if (count !== null && count >= 100) {
+            throw new ForbiddenException('Platform registration limit (100 users) has been reached. No new accounts can be created at this time.');
         }
 
         // Hash password if provided
@@ -119,6 +129,16 @@ export class UsersService {
                 .update({ google_id: googleId, avatar_url: picture })
                 .eq('id', user.id);
             return this.mapUser({ ...user, google_id: googleId, avatar_url: picture });
+        }
+
+        // Check 100 user registration limit before creating a new Google user
+        const { count, error: countError } = await supabase
+            .from('users')
+            .select('*', { count: 'exact', head: true });
+
+        if (countError) throw new InternalServerErrorException('Failed to verify registration limits');
+        if (count !== null && count >= 100) {
+            throw new ForbiddenException('Platform registration limit (100 users) has been reached. No new accounts can be created at this time.');
         }
 
         // 3. Create new user

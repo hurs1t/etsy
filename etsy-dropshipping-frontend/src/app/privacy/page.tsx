@@ -1,70 +1,34 @@
-
-"use client";
-
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { useLangStore } from "@/stores/lang-store";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-
-export default function PrivacyPage() {
-    const { t } = useLangStore();
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
-    if (!isMounted) return null;
-
+export default function PrivacyPolicy() {
     return (
-        <div className="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100 antialiased font-sans">
-            <Navbar />
+        <div className="max-w-4xl mx-auto py-16 px-4">
+            <h1 className="text-3xl font-black mb-6 text-slate-900 dark:text-white">Privacy Policy</h1>
+            <p className="text-slate-500 mb-8 font-medium">Last Updated: {new Date().toLocaleDateString()}</p>
 
-            <main className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-                <div className="bg-white dark:bg-zinc-900 rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-zinc-800">
-                    <h1 className="text-4xl font-black mb-8 tracking-tight uppercase italic">{t('privacyPolicy')}</h1>
-                    <div className="prose prose-slate dark:prose-invert max-w-none space-y-6 text-slate-600 dark:text-slate-400">
-                        <p className="text-lg leading-relaxed">
-                            At EtsyAuto, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our services.
-                        </p>
+            <div className="space-y-8 text-slate-700 dark:text-zinc-300 leading-relaxed font-medium">
+                <section className="bg-slate-50 dark:bg-zinc-900 p-6 rounded-2xl border border-slate-100 dark:border-zinc-800">
+                    <h2 className="text-xl font-bold mb-3 text-primary">1. Information We Collect</h2>
+                    <p>We only collect the information necessary to provide our services. This includes your account information (email, name) and the data required to connect to your Etsy store securely.</p>
+                </section>
 
-                        <section className="space-y-4">
-                            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">1. Information We Collect</h2>
-                            <p>We collect information that you provide directly to us when you create an account, use our extension, or communicate with us.</p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li><strong>Account Information:</strong> Name, email address, and password.</li>
-                                <li><strong>Shop Data:</strong> If linked, we access your Etsy shop data via API to facilitate uploads.</li>
-                                <li><strong>Usage Data:</strong> Information about how you interact with our platform and extension.</li>
-                            </ul>
-                        </section>
+                <section className="bg-slate-50 dark:bg-zinc-900 p-6 rounded-2xl border border-slate-100 dark:border-zinc-800">
+                    <h2 className="text-xl font-bold mb-3 text-primary">2. How We Use Your Information</h2>
+                    <p>We use your information exclusively to operate the EtsySync service, manage your platform usage, and facilitate the generation and synchronization of product listings to your Etsy account using our AI models.</p>
+                </section>
 
-                        <section className="space-y-4">
-                            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">2. How We Use Your Information</h2>
-                            <p>We use the collected data to provide, maintain, and improve our services, including:</p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Optimizing your product listings with AI.</li>
-                                <li>Synchronizing data between AliExpress and Etsy.</li>
-                                <li>Providing customer support and technical assistance.</li>
-                            </ul>
-                        </section>
+                <section className="bg-slate-50 dark:bg-zinc-900 p-6 rounded-2xl border border-slate-100 dark:border-zinc-800">
+                    <h2 className="text-xl font-bold mb-3 text-primary">3. Third-Party Access</h2>
+                    <p>We use trusted third-party services like OpenAI and Fal.ai to generate optimized listings (text) and enhance images. We do not sell your personal data to any third party.</p>
+                </section>
 
-                        <section className="space-y-4">
-                            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">3. Data Security</h2>
-                            <p>We implement robust security measures to protect your data. Your Etsy API tokens are encrypted and handled with extreme care. We never store your payment information on our servers; all transactions are handled by PCI-compliant partners like Stripe.</p>
-                        </section>
+                <section className="bg-slate-50 dark:bg-zinc-900 p-6 rounded-2xl border border-slate-100 dark:border-zinc-800">
+                    <h2 className="text-xl font-bold mb-3 text-primary">4. Data Security</h2>
+                    <p>We implement industry-standard security measures, including bcrypt password hashing and token-based authentication, to protect your account. However, no absolute guarantee of transmission security over the Internet can be provided.</p>
+                </section>
+            </div>
 
-                        <section className="space-y-4">
-                            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">4. Your Rights</h2>
-                            <p>You have the right to access, update, or delete your personal information at any time through your account settings or by contacting our support team.</p>
-                        </section>
-
-                        <p className="pt-8 text-sm italic">Last updated: October 2024</p>
-                    </div>
-                </div>
-            </main>
-
-            <Footer />
+            <div className="mt-12 text-sm font-bold">
+                <a href="/" className="text-primary hover:underline hover:text-orange-600 transition-colors uppercase tracking-widest">&larr; Back to Home</a>
+            </div>
         </div>
     );
 }

@@ -38,14 +38,6 @@ export default function AIGeneratorPage() {
         fetchProducts();
     }, []);
 
-    if (!isMounted) {
-        return (
-            <div className="flex h-[calc(100vh-100px)] items-center justify-center">
-                <Loader2 className="h-12 w-12 animate-spin text-primary" />
-            </div>
-        );
-    }
-
     useEffect(() => {
         if (selectedProductId) {
             const p = products.find(prod => String(prod.id) === selectedProductId);
@@ -53,6 +45,14 @@ export default function AIGeneratorPage() {
             setResult(null); // Reset result when changing product
         }
     }, [selectedProductId, products]);
+
+    if (!isMounted) {
+        return (
+            <div className="flex h-[calc(100vh-100px)] items-center justify-center">
+                <Loader2 className="h-12 w-12 animate-spin text-primary" />
+            </div>
+        );
+    }
 
     const handleGenerate = async () => {
         if (!selectedProduct) {
@@ -133,7 +133,11 @@ export default function AIGeneratorPage() {
                                                         <SelectItem key={p.id} value={String(p.id)}>
                                                             <div className="flex items-center gap-2">
                                                                 <div className="w-6 h-6 rounded bg-slate-100 overflow-hidden flex-shrink-0">
-                                                                    <img src={p.images?.[0]?.image_url || p.originalImages?.[0] || ""} className="w-full h-full object-cover" />
+                                                                    {p.images?.[0]?.image_url || p.originalImages?.[0] ? (
+                                                                        <img src={p.images?.[0]?.image_url || p.originalImages?.[0]} className="w-full h-full object-cover" />
+                                                                    ) : (
+                                                                        <span className="material-symbols-outlined text-[10px] m-auto flex text-slate-300">image</span>
+                                                                    )}
                                                                 </div>
                                                                 <span className="truncate max-w-[300px]">{p.originalTitle || p.generatedTitle}</span>
                                                             </div>

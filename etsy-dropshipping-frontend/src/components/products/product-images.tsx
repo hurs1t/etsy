@@ -52,69 +52,86 @@ export function ProductImages({ images, onUpdate, selectedIds, onToggleSelection
     // Simple Grid View for MVP
     return (
         <div className="space-y-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-4">
                 {images.sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).map((image, index) => (
-                    <div key={image.id} className={`relative group border rounded-lg overflow-hidden aspect-square ${selectedIds && selectedIds.includes(image.id) ? 'ring-2 ring-orange-500' : ''}`}>
-                        <img
-                            src={image.image_url}
-                            alt="Product"
-                            className="w-full h-full object-cover"
-                            onLoad={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.setAttribute('data-dims', `${target.naturalWidth}x${target.naturalHeight}`);
-                                // Force update to show dimensions? No, just use a ref or data attribute and read it? 
-                                // Actually, React state is better.
-                                // Let's try a simpler approach: adding a small overlay that just renders based on state? 
-                                // Or we can just use state map. 
-                            }}
-                        />
-                        {/* Improved Dimension Display without per-image state complexity */}
-                        <div className="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-1.5 py-0.5 rounded backdrop-blur-sm pointer-events-none">
-                            {/* We can't easily get natural dimensions without state. Let's use a state map. */}
-                            <ImageDimensions src={image.image_url} />
-                        </div>
+                    <div key={image.id} className={`flex flex-col border rounded-xl overflow-hidden bg-white dark:bg-zinc-900 shadow-sm transition-all relative group ${selectedIds && selectedIds.includes(image.id) ? 'ring-2 ring-primary border-transparent shadow-md' : 'border-slate-200 dark:border-zinc-800'}`}>
+                        {/* Image Container */}
+                        <div className="relative aspect-square bg-slate-100 dark:bg-zinc-800 cursor-pointer" onClick={() => onToggleSelection && onToggleSelection(image.id)}>
+                            <img
+                                src={image.image_url}
+                                alt={`Product ${index + 1}`}
+                                className="w-full h-full object-cover"
+                            />
 
-                        {onToggleSelection && (
-                            <div className="absolute top-2 left-2 z-10 bg-white/80 hover:bg-white rounded p-1 shadow-sm transition-all" onClick={(e) => e.stopPropagation()}>
-                                <input
-                                    type="checkbox"
-                                    className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-600 cursor-pointer"
-                                    checked={selectedIds?.includes(image.id)}
-                                    onChange={() => onToggleSelection(image.id)}
-                                />
-                            </div>
-                        )}
+                            {/* Main Badge */}
+                            {index === 0 && (
+                                <div className="absolute bottom-2 left-2 bg-black/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm pointer-events-none">
+                                    Main
+                                </div>
+                            )}
 
-                        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
-                            <Button
-                                variant="secondary"
-                                size="icon"
-                                className="h-8 w-8 bg-white/80 hover:bg-white text-purple-600"
-                                onClick={() => handleUpscale(image.id)}
-                                disabled={loading === image.id}
-                                title="Upscale Image (AI)"
-                            >
-                                {loading === image.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
-                            </Button>
+                            {/* Checkbox Overlay */}
+                            {onToggleSelection && (
+                                <div
+                                    className={`absolute top-2 left-2 z-10 flex items-center justify-center p-1.5 rounded-md shadow-sm transition-all ${selectedIds?.includes(image.id) ? 'bg-white opacity-100' : 'bg-white/90 hover:bg-white opacity-0 group-hover:opacity-100'}`}
+                                >
+                                    <input
+                                        type="checkbox"
+                                        className="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary cursor-pointer"
+                                        checked={selectedIds?.includes(image.id)}
+                                        readOnly
+                                    />
+                                </div>
+                            )}
+
+                            {/* Delete Button (Hover) */}
                             <Button
                                 variant="destructive"
                                 size="icon"
-                                className="h-8 w-8"
-                                onClick={() => handleDelete(image.id)}
-                                disabled={loading === image.id}
+                                className="absolute top-2 right-2 h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity shadow-sm"
+                                onClick={(e) => { e.stopPropagation(); handleDelete(image.id); }}
+                                disabled={loading !== null}
+                                title="Delete Image"
                             >
-                                <X className="h-4 w-4" />
+                                <Trash2 className="h-3.5 w-3.5" />
                             </Button>
                         </div>
-                        {index === 0 && (
-                            <div className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                                Main
-                            </div>
-                        )}
+
+                        {/* Minimal AI Action Footer */}
+                        <div className="p-1 border-t border-slate-100 dark:border-zinc-800 flex items-center justify-center bg-slate-50/50 dark:bg-zinc-900/50 h-8 relative overflow-hidden">
+                            {loading === image.id ? (
+                                <div className="flex w-full h-full items-center justify-center gap-1.5 text-primary">
+                                    <Wand2 className="h-3 w-3 animate-pulse" />
+                                    <span className="text-[9px] font-bold uppercase tracking-widest animate-pulse">Upscaling...</span>
+
+                                    {/* Indeterminate Loading Bar Line */}
+                                    <div className="absolute bottom-0 left-0 w-full h-[3px] bg-primary/10">
+                                        <div className="h-full bg-primary relative w-[50%] animate-[bounce_1s_infinite_ease-in-out_alternate]" style={{ left: '0%' }}></div>
+                                        <style>{`
+                                            @keyframes bounce {
+                                                0% { left: 0%; transform: translateX(0%); }
+                                                100% { left: 100%; transform: translateX(-100%); }
+                                            }
+                                        `}</style>
+                                    </div>
+                                </div>
+                            ) : (
+                                <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    className="h-full w-full flex items-center justify-center gap-1.5 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-md transition-all text-[9.5px] font-bold uppercase tracking-widest group-hover:text-slate-600 dark:group-hover:text-slate-300"
+                                    onClick={(e) => { e.stopPropagation(); handleUpscale(image.id); }}
+                                    disabled={loading !== null}
+                                >
+                                    <Wand2 className="h-3 w-3" />
+                                    AI Upscale
+                                </Button>
+                            )}
+                        </div>
                     </div>
                 ))}
                 {images.length === 0 && (
-                    <div className="col-span-full text-center py-10 text-muted-foreground">
+                    <div className="col-span-full text-center py-12 text-slate-500 font-medium">
                         No images found.
                     </div>
                 )}

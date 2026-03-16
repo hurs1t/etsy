@@ -41,6 +41,15 @@ export default function ProductEditPage() {
                     getProduct(params.id as string),
                     getShippingProfiles().catch(() => [])
                 ]);
+                const originalPrice = parseFloat(String(productData.price));
+                const currentPurchasePrice = parseFloat(String(productData.purchasePrice));
+
+                // Set purchase price from original price if not already set, and calculate 40% margin for selling price
+                if (!isNaN(originalPrice) && (isNaN(currentPurchasePrice) || currentPurchasePrice === 0)) {
+                    productData.purchasePrice = originalPrice;
+                    productData.price = (originalPrice * 1.40).toFixed(2);
+                }
+
                 setProduct(productData);
                 if (productData.images) {
                     setSelectedImageIds(productData.images.map((img: any) => img.id));
@@ -266,7 +275,7 @@ export default function ProductEditPage() {
                                 {/* Price & Shipping */}
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <div className="space-y-3">
-                                        <Label className="text-sm font-black text-slate-700 dark:text-slate-300 uppercase tracking-wider">Purchase Price (Alış)</Label>
+                                        <Label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Purchase Price (Alış)</Label>
                                         <Input
                                             type="number"
                                             className="h-14 rounded-2xl border-2 border-slate-100 dark:border-zinc-800 bg-slate-50/30 dark:bg-zinc-900/50 font-black text-lg focus:border-primary text-red-500"
@@ -275,7 +284,7 @@ export default function ProductEditPage() {
                                         />
                                     </div>
                                     <div className="space-y-3">
-                                        <Label className="text-sm font-black text-slate-700 dark:text-slate-300 uppercase tracking-wider">Selling Price (Satış)</Label>
+                                        <Label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Selling Price (Satış)</Label>
                                         <Input
                                             type="number"
                                             className="h-14 rounded-2xl border-2 border-slate-100 dark:border-zinc-800 bg-slate-50/30 dark:bg-zinc-900/50 font-black text-lg focus:border-primary text-green-600"
@@ -284,7 +293,7 @@ export default function ProductEditPage() {
                                         />
                                     </div>
                                     <div className="space-y-3">
-                                        <Label className="text-sm font-black text-slate-700 dark:text-slate-300 uppercase tracking-wider">Shipping Profile</Label>
+                                        <Label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Shipping Profile</Label>
                                         <Select
                                             value={product.shippingProfileId ? String(product.shippingProfileId) : undefined}
                                             onValueChange={(val) => setProduct({ ...product, shippingProfileId: val })}
