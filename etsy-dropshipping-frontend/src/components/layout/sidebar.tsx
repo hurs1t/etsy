@@ -87,7 +87,7 @@ export function Sidebar() {
                 </div>
                 <div>
                     <h1 className="text-lg font-heading font-medium tracking-tight text-slate-900 dark:text-white">EtsyAuto</h1>
-                    <p className="text-xs text-slate-500 dark:text-zinc-400 font-bold uppercase tracking-widest text-[8px]">AliExpress Tool</p>
+                    <p className="text-xs text-slate-500 dark:text-zinc-400 font-bold uppercase tracking-widest text-[8px]">Etsy AI Tool</p>
                 </div>
             </div>
 
