@@ -89,42 +89,37 @@ export class AiContentService {
     }
 
     async upscaleImage(imageUrl: string): Promise<string> {
-        const falKey = this.configService.get<string>('FAL_KEY');
-        if (!falKey) {
-            throw new InternalServerErrorException('FAL_KEY is not configured');
-        }
+        this.logger.log(`Upscaling image locally using Sharp: ${imageUrl}`);
 
         try {
-            this.logger.log(`Upscaling image: ${imageUrl}. Checking Fal Key: ${falKey ? 'Present' : 'Missing'}`);
+            // 1. Fetch the image buffer
+            const axios = await import('axios');
+            const response = await axios.default.get(imageUrl, { responseType: 'arraybuffer' });
+            const buffer = Buffer.from(response.data);
 
-            // Dynamic import because @fal-ai/client is ESM
-            const { fal } = await import('@fal-ai/client');
+            // 2. Process with Sharp (2x upscale with Lanczos3 + Sharpen)
+            const sharp = await import('sharp');
+            const metadata = await sharp.default(buffer).metadata();
+            const processedBuffer = await sharp.default(buffer)
+                .resize({
+                    width: metadata.width ? metadata.width * 2 : undefined,
+                    height: metadata.height ? metadata.height * 2 : undefined,
+                    kernel: 'lanczos3'
+                })
+                .sharpen({
+                    sigma: 1.0,
+                    m1: 1.0,
+                    m2: 1.0
+                })
+                .toBuffer();
 
-            fal.config({
-                credentials: falKey
-            });
+            // 3. Return as Base64 Data URI (Free, Local, No API Keys needed)
+            const base64 = processedBuffer.toString('base64');
+            return `data:image/png;base64,${base64}`;
 
-            const { data } = await fal.subscribe('fal-ai/esrgan', {
-                input: {
-                    image_url: imageUrl,
-                    scale: 2
-                },
-                logs: true,
-                onQueueUpdate: (update) => {
-                    if (update.status === 'IN_PROGRESS' && update.logs) {
-                        update.logs.map((log) => log.message).forEach(console.log);
-                    }
-                },
-            }) as any;
-
-            if (data && data.image && data.image.url) {
-                return data.image.url;
-            }
-
-            throw new Error('No image URL in result');
         } catch (error) {
-            this.logger.error(`Fal.ai Upscaling failed: ${error.message}`, error.stack);
-            throw new InternalServerErrorException('Failed to upscale image');
+            this.logger.error(`Local Upscaling failed: ${error.message}`, error.stack);
+            throw new InternalServerErrorException('Failed to upscale image locally');
         }
     }
 
@@ -186,6 +181,62 @@ export class AiContentService {
         } catch (error) {
             this.logger.error(`SEO Analysis failed: ${error.message}`, error.stack);
             throw new InternalServerErrorException('Failed to analyze SEO');
+        }
+    }
+
+    async translateListing(product: { title: string, description: string, tags: string[] }, targetLanguage: string) {
+        if (!this.openai) {
+            throw new InternalServerErrorException('OpenAI API Key not configured');
+        }
+
+        const languageNames: Record<string, string> = {
+            'nl': 'Dutch',
+            'fr': 'French',
+            'de': 'German',
+            'it': 'Italian',
+            'es': 'Spanish'
+        };
+
+        const langName = languageNames[targetLanguage] || targetLanguage;
+
+        try {
+            const completion = await this.openai.chat.completions.create({
+                messages: [
+                    {
+                        role: "system",
+                        content: `You are an expert translator specializing in Etsy SEO listings. 
+                        Translate the following product title, description, and tags into ${langName}.
+                        
+                        RULES:
+                        1. **Title**: SEO optimized, natural, < 140 chars.
+                        2. **Description**: Maintain the tone and emojis. NO PRICE.
+                        3. **Tags**: Translate each tag. Each tag MUST be 20 characters or less. Maximum 13 tags.
+                        
+                        Return strictly a JSON object with keys: 'title', 'description', 'tags'.`
+                    },
+                    {
+                        role: "user",
+                        content: `Title: ${product.title}\n\nDescription: ${product.description}\n\nTags: ${product.tags.join(', ')}`
+                    }
+                ],
+                model: "gpt-4o-mini",
+                response_format: { type: "json_object" },
+            });
+
+            const content = completion.choices[0].message.content;
+            if (!content) throw new Error('No content generated');
+
+            const result = JSON.parse(content);
+            if (result.tags) {
+                result.tags = this.validateAndFixTags(result.tags);
+            }
+            if (result.title && result.title.length > 140) {
+                result.title = result.title.substring(0, 137) + '...';
+            }
+            return result;
+        } catch (error) {
+            this.logger.error(`Translation to ${langName} failed: ${error.message}`);
+            throw new InternalServerErrorException(`Failed to translate content to ${langName}`);
         }
     }
 

@@ -26,6 +26,7 @@ export default function ProductsPage() {
     const [selectedIds, setSelectedIds] = useState<string[]>([]);
     const [isDeleting, setIsDeleting] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
+    const [filterDate, setFilterDate] = useState<string>("");
 
     const fetchProducts = async () => {
         try {
@@ -53,12 +54,19 @@ export default function ProductsPage() {
     }
 
     const toggleSelectAll = () => {
-        if (selectedIds.length === products.length && products.length > 0) {
+        if (selectedIds.length === filteredProducts.length && filteredProducts.length > 0) {
             setSelectedIds([]);
         } else {
-            setSelectedIds(products.map(p => p.id));
+            setSelectedIds(filteredProducts.map(p => p.id));
         }
     };
+
+    const filteredProducts = products.filter(product => {
+        if (!filterDate) return true;
+        if (!product.createdAt) return false;
+        const productDate = new Date(product.createdAt).toISOString().split('T')[0];
+        return productDate === filterDate;
+    });
 
     const toggleSelectOne = (id: string) => {
         if (selectedIds.includes(id)) {
@@ -90,9 +98,28 @@ export default function ProductsPage() {
                     <h1 className="text-3xl font-heading font-bold tracking-tight uppercase">{t('products')}</h1>
                     <p className="text-slate-500 font-medium tracking-tight">Manage and optimize your AliExpress product library.</p>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
+                    <div className="flex flex-col gap-1">
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Filter by Date</span>
+                        <input
+                            type="date"
+                            value={filterDate}
+                            onChange={(e) => setFilterDate(e.target.value)}
+                            className="h-10 px-4 rounded-xl border-2 border-slate-100 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-xs font-bold outline-none focus:border-primary/50 transition-all cursor-pointer"
+                        />
+                    </div>
+                    {filterDate && (
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => setFilterDate("")}
+                            className="h-10 px-4 rounded-xl font-bold uppercase tracking-widest text-[9px] mt-5"
+                        >
+                            Clear
+                        </Button>
+                    )}
                     {selectedIds.length > 0 && (
-                        <div className="flex items-center gap-2 animate-in slide-in-from-right-2">
+                        <div className="flex items-center gap-2 animate-in slide-in-from-right-2 mt-5">
                             <Button
                                 variant="destructive"
                                 size="sm"
@@ -114,7 +141,7 @@ export default function ProductsPage() {
                         <TableRow className="bg-slate-50/50 dark:bg-zinc-800/50 border-b-2 border-slate-100 dark:border-zinc-800">
                             <TableHead className="w-[80px] px-6 py-6">
                                 <Checkbox
-                                    checked={products.length > 0 && selectedIds.length === products.length}
+                                    checked={filteredProducts.length > 0 && selectedIds.length === filteredProducts.length}
                                     onCheckedChange={toggleSelectAll}
                                 />
                             </TableHead>
@@ -125,6 +152,7 @@ export default function ProductsPage() {
                             <TableHead className="px-6 py-6 text-[10px] font-bold uppercase tracking-widest">{t('shippingTime')}</TableHead>
                             <TableHead className="px-6 py-6 text-[10px] font-bold uppercase tracking-widest">{t('suggestedPrice')}</TableHead>
                             <TableHead className="px-6 py-6 text-[10px] font-bold uppercase tracking-widest">Status</TableHead>
+                            <TableHead className="px-6 py-6 text-[10px] font-bold uppercase tracking-widest">Source</TableHead>
                             <TableHead className="px-6 py-6 text-right text-[10px] font-bold uppercase tracking-widest">Actions</TableHead>
                         </TableRow>
                     </TableHeader>
@@ -138,17 +166,19 @@ export default function ProductsPage() {
                                     </div>
                                 </TableCell>
                             </TableRow>
-                        ) : products.length === 0 ? (
+                        ) : filteredProducts.length === 0 ? (
                             <TableRow>
                                 <TableCell colSpan={9} className="text-center h-48">
                                     <div className="flex flex-col items-center gap-2">
                                         <span className="material-symbols-outlined text-4xl text-slate-200">inventory_2</span>
-                                        <span className="text-sm font-medium text-slate-400">No products imported yet.</span>
+                                        <span className="text-sm font-medium text-slate-400">
+                                            {filterDate ? "No products found for this date." : "No products imported yet."}
+                                        </span>
                                     </div>
                                 </TableCell>
                             </TableRow>
                         ) : (
-                            products.map((product) => (
+                            filteredProducts.map((product) => (
                                 <TableRow key={product.id} className="group hover:bg-slate-50/50 dark:hover:bg-zinc-800/50 transition-colors border-b border-slate-100 dark:border-zinc-800">
                                     <TableCell className="px-6 py-4">
                                         <Checkbox
@@ -214,6 +244,22 @@ export default function ProductsPage() {
                                                 <span className="material-symbols-outlined text-xs">check_circle</span>
                                                 Published
                                             </div>
+                                        )}
+                                    </TableCell>
+                                    <TableCell className="px-6 py-6">
+                                        {product.sourceUrl ? (
+                                            <a
+                                                href={product.sourceUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 text-[10px] font-bold uppercase tracking-wider hover:bg-primary/10 hover:text-primary transition-all"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                <span className="material-symbols-outlined text-xs">open_in_new</span>
+                                                AliExpress
+                                            </a>
+                                        ) : (
+                                            <span className="text-[10px] font-bold text-slate-300 uppercase italic">N/A</span>
                                         )}
                                     </TableCell>
                                     <TableCell className="px-6 py-6 text-right">

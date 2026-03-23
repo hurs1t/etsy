@@ -100,6 +100,10 @@ export const upscaleProductImage = async (imageId: string) => {
     const response = await dataApi.post(`/images/${imageId}/upscale`, {});
     return response.data;
 };
+export const bulkUpscaleProductImages = async (ids: string[]) => {
+    const response = await dataApi.post('/images/bulk-upscale', { ids });
+    return response.data;
+};
 
 export const getShippingProfiles = async () => {
     const response = await dataApi.get('/etsy/shipping-profiles');
@@ -149,5 +153,15 @@ export const getAnalytics = async (range?: string, from?: string, to?: string) =
 
 export const syncAllProducts = async () => {
     const response = await dataApi.post('/etsy/sync-all');
+    return response.data;
+};
+
+export const translateProduct = async (id: string, languages: string[]) => {
+    const response = await dataApi.post(`/products/${id}/translate`, { languages });
+    return response.data;
+};
+
+export const getOrders = async () => {
+    const response = await dataApi.get('/etsy/orders');
     return response.data;
 };

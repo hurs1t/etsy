@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { getProduct, updateProduct, getShippingProfiles, publishProduct, deleteProductImage, deleteProduct, generateAiContent, getTaxonomyProperties, analyzeSeo } from "@/services/product.service";
+import { getProduct, updateProduct, getShippingProfiles, publishProduct, deleteProductImage, deleteProduct, generateAiContent, getTaxonomyProperties, analyzeSeo, translateProduct } from "@/services/product.service";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -33,6 +33,15 @@ export default function ProductEditPage() {
     const [seoAnalysis, setSeoAnalysis] = useState<any>(null);
     const [analyzingSeo, setAnalyzingSeo] = useState(false);
     const [generating, setGenerating] = useState<string | null>(null);
+    const [translating, setTranslating] = useState(false);
+
+    const LANGUAGES = [
+        { code: 'nl', name: 'Dutch', flag: '🇳🇱' },
+        { code: 'fr', name: 'French', flag: '🇫🇷' },
+        { code: 'de', name: 'German', flag: '🇩🇪' },
+        { code: 'it', name: 'Italian', flag: '🇮🇹' },
+        { code: 'es', name: 'Spanish', flag: '🇪🇸' }
+    ];
 
     useEffect(() => {
         const fetchData = async () => {
@@ -109,7 +118,8 @@ export default function ProductEditPage() {
                 purchasePrice: product.purchasePrice ? parseFloat(String(product.purchasePrice)) : 0,
                 shippingProfileId: product.shippingProfileId,
                 taxonomyId: (taxonomyId && !isNaN(taxonomyId)) ? taxonomyId : undefined,
-                attributes: product.attributes
+                attributes: product.attributes,
+                translations: product.translations
             });
             toast.success("Product updated");
         } catch (error: any) {
@@ -163,6 +173,26 @@ export default function ProductEditPage() {
         }
     };
 
+    const handleTranslate = async () => {
+        setTranslating(true);
+        try {
+            const result = await translateProduct(params.id as string, LANGUAGES.map(l => l.code));
+            setProduct(result);
+            toast.success("Translations generated successfully!");
+        } catch (error) {
+            toast.error("Failed to generate translations");
+        } finally {
+            setTranslating(false);
+        }
+    };
+
+    const updateTranslationField = (lang: string, field: string, value: any) => {
+        const updatedTranslations = { ...product.translations };
+        if (!updatedTranslations[lang]) updatedTranslations[lang] = {};
+        updatedTranslations[lang][field] = value;
+        setProduct({ ...product, translations: updatedTranslations });
+    };
+
     if (loading) return (
         <div className="flex h-full items-center justify-center p-20">
             <Loader2 className="h-10 w-10 animate-spin text-primary" />
@@ -201,9 +231,15 @@ export default function ProductEditPage() {
                             </div>
                             <div>
                                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2 block">Source URL</label>
-                                <a href={product.sourceUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-primary font-bold hover:underline">
-                                    <span className="material-symbols-outlined text-sm">link</span>
-                                    AliExpress Item Page
+                                <a
+                                    href={product.sourceUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-3 w-full p-4 rounded-xl bg-primary/10 text-primary font-black text-xs hover:bg-primary hover:text-white transition-all shadow-sm border border-primary/20 group/link"
+                                >
+                                    <span className="material-symbols-outlined text-base group-hover/link:animate-pulse">shopping_cart</span>
+                                    <span>VIEW ON ALIEXPRESS</span>
+                                    <span className="material-symbols-outlined text-sm">open_in_new</span>
                                 </a>
                             </div>
                         </div>
@@ -246,6 +282,7 @@ export default function ProductEditPage() {
                                 <TabsTrigger value="details" className="rounded-lg px-6 py-2 font-bold uppercase text-[10px] tracking-widest">{t('details')}</TabsTrigger>
                                 <TabsTrigger value="images" className="rounded-lg px-6 py-2 font-bold uppercase text-[10px] tracking-widest">Images</TabsTrigger>
                                 <TabsTrigger value="optimization" className="rounded-lg px-6 py-2 font-bold uppercase text-[10px] tracking-widest">SEO Score</TabsTrigger>
+                                <TabsTrigger value="translations" className="rounded-lg px-6 py-2 font-bold uppercase text-[10px] tracking-widest">Translations</TabsTrigger>
                                 <TabsTrigger value="studio" className="rounded-lg px-6 py-2 font-bold uppercase text-[10px] tracking-widest">Studio</TabsTrigger>
                             </TabsList>
 
@@ -444,6 +481,72 @@ export default function ProductEditPage() {
                                     }}
                                     onUpdate={() => getProduct(product.id).then(setProduct)}
                                 />
+                            </TabsContent>
+
+                            <TabsContent value="translations" className="space-y-8 animate-in fade-in duration-300">
+                                <div className="flex items-center justify-between p-6 rounded-2xl bg-primary/5 border border-primary/10">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                            <span className="material-symbols-outlined text-2xl">translate</span>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-sm font-black uppercase italic">AI Multi-language Translation</h3>
+                                            <p className="text-xs text-slate-500">Automatically translate your listing to 5 languages for Etsy Global.</p>
+                                        </div>
+                                    </div>
+                                    <Button
+                                        onClick={handleTranslate}
+                                        disabled={translating}
+                                        className="rounded-xl bg-primary font-bold uppercase text-[10px] tracking-widest px-6 h-12"
+                                    >
+                                        {translating ? <Loader2 className="animate-spin mr-2 h-4 w-4" /> : <span className="material-symbols-outlined mr-2">magic_button</span>}
+                                        AI Auto-Translate All
+                                    </Button>
+                                </div>
+
+                                <div className="grid gap-8">
+                                    {LANGUAGES.map((lang) => (
+                                        <div key={lang.code} className="space-y-4 p-6 rounded-2xl border-2 border-slate-100 dark:border-zinc-800 bg-slate-50/20 dark:bg-zinc-900/50">
+                                            <div className="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-4">
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-2xl">{lang.flag}</span>
+                                                    <span className="font-black uppercase tracking-widest text-xs">{lang.name}</span>
+                                                </div>
+                                                <span className="text-[10px] font-bold text-slate-400">Target: Etsy {lang.name}</span>
+                                            </div>
+
+                                            <div className="space-y-4 mt-4">
+                                                <div className="space-y-2">
+                                                    <Label className="text-[10px] font-black text-slate-400 uppercase">Title ({lang.code})</Label>
+                                                    <Input
+                                                        className="rounded-xl border-slate-200 dark:border-zinc-700 font-bold"
+                                                        value={product.translations?.[lang.code]?.title || ""}
+                                                        onChange={(e) => updateTranslationField(lang.code, 'title', e.target.value)}
+                                                        placeholder={`Product title in ${lang.name}...`}
+                                                    />
+                                                </div>
+                                                <div className="space-y-2">
+                                                    <Label className="text-[10px] font-black text-slate-400 uppercase">Description ({lang.code})</Label>
+                                                    <Textarea
+                                                        className="rounded-xl border-slate-200 dark:border-zinc-700 text-sm min-h-[120px]"
+                                                        value={product.translations?.[lang.code]?.description || ""}
+                                                        onChange={(e) => updateTranslationField(lang.code, 'description', e.target.value)}
+                                                        placeholder={`Product description in ${lang.name}...`}
+                                                    />
+                                                </div>
+                                                <div className="space-y-2">
+                                                    <Label className="text-[10px] font-black text-slate-400 uppercase">Tags ({lang.code})</Label>
+                                                    <Input
+                                                        className="rounded-xl border-slate-200 dark:border-zinc-700 text-xs text-primary font-bold"
+                                                        value={Array.isArray(product.translations?.[lang.code]?.tags) ? product.translations[lang.code].tags.join(', ') : ""}
+                                                        onChange={(e) => updateTranslationField(lang.code, 'tags', e.target.value.split(',').map((t: string) => t.trim()))}
+                                                        placeholder="tag1, tag2, tag3..."
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </TabsContent>
 
                             <TabsContent value="optimization" className="animate-in fade-in duration-300">

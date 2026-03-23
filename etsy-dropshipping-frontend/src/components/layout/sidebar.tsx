@@ -57,6 +57,11 @@ export function Sidebar() {
             href: "/products",
         },
         {
+            label: t('ordersNav'),
+            icon: "shopping_bag",
+            href: "/orders",
+        },
+        {
             label: t('aiGenerator'),
             icon: "auto_awesome",
             href: "/ai-generator",

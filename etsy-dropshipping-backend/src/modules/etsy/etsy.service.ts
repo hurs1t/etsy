@@ -244,6 +244,36 @@ export class EtsyService {
         }
     }
 
+    async createListingTranslation(shopId: string, listingId: number, language: string, translation: { title: string, description: string, tags: string[] }, accessToken: string) {
+        try {
+            this.logger.log(`Creating translation for listing ${listingId} in ${language} for shop ${shopId}`);
+            const url = `https://openapi.etsy.com/v3/application/shops/${shopId}/listings/${listingId}/translations/${language}`;
+
+            const payload = {
+                title: translation.title.substring(0, 140),
+                description: translation.description.substring(0, 5000),
+                tags: Array.isArray(translation.tags) ? translation.tags.slice(0, 13) : undefined
+            };
+
+            this.logger.log(`Payload for ${language}: ${JSON.stringify(payload)}`);
+
+            const response = await firstValueFrom(
+                this.httpService.post(url, payload, {
+                    headers: {
+                        'x-api-key': `${this.apiKey}:${this.apiSecret}`,
+                        'Authorization': `Bearer ${accessToken}`,
+                        'Content-Type': 'application/json'
+                    }
+                })
+            );
+            this.logger.log(`Translation for ${language} pushed to Etsy. Response: ${JSON.stringify(response.data)}`);
+            return true;
+        } catch (error) {
+            this.logger.error(`Failed to push translation for ${language}`, error.response?.data || error.message);
+            return false;
+        }
+    }
+
     async createDraftListing(shopId: string, product: any, accessToken: string) {
         try {
             // 1. Get or Create Readiness State ID
@@ -258,7 +288,7 @@ export class EtsyService {
 
             this.logger.log(`Using Readiness State ID: ${readinessStateId}`);
 
-            const url = `https://api.etsy.com/v3/application/shops/${shopId}/listings`;
+            const url = `https://openapi.etsy.com/v3/application/shops/${shopId}/listings`;
 
             // Basic mapping
             const payload = {

@@ -53,4 +53,28 @@ export class ImagesController {
             throw new BadRequestException(`Upscaling failed: ${error.message}`);
         }
     }
+
+    @Post('bulk-upscale')
+    async bulkUpscaleImages(@Body('ids') ids: string[]) {
+        if (!ids || !Array.isArray(ids) || ids.length === 0) {
+            throw new BadRequestException('No image IDs provided');
+        }
+
+        const results: any[] = [];
+        for (const id of ids) {
+            try {
+                const image = await this.imagesService.getImage(id);
+                if (image && image.image_url) {
+                    const newUrl = await this.aiContentService.upscaleImage(image.image_url);
+                    await this.imagesService.updateImageUrl(id, newUrl);
+                    results.push({ id, url: newUrl, success: true });
+                }
+            } catch (error) {
+                Logger.error(`Failed to upscale image ${id} in bulk: ${error.message}`);
+                results.push({ id, success: false, error: error.message });
+            }
+        }
+
+        return results;
+    }
 }

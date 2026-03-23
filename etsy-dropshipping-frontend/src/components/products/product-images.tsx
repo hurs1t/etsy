@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { deleteProductImage, reorderProductImage, upscaleProductImage } from "@/services/product.service";
-import { X, GripVertical, Wand2, Loader2, CheckSquare, Square, Trash2 } from "lucide-react";
+import { deleteProductImage, reorderProductImage, upscaleProductImage, bulkUpscaleProductImages } from "@/services/product.service";
+import { X, GripVertical, Wand2, Loader2, CheckSquare, Square, Trash2, Sparkles } from "lucide-react";
 
 interface ProductImagesProps {
     images: any[];
@@ -44,6 +44,32 @@ export function ProductImages({ images, onUpdate, selectedIds, onToggleSelection
         } catch (error) {
             console.error(error);
             toast.error("Failed to upscale image");
+        } finally {
+            setLoading(null);
+        }
+    };
+
+    const handleBulkUpscale = async () => {
+        if (!selectedIds || selectedIds.length === 0) return;
+
+        setLoading("bulk");
+        try {
+            toast.info(`Upscaling ${selectedIds.length} images... This may take a minute.`);
+            const results = await bulkUpscaleProductImages(selectedIds);
+
+            const successCount = results.filter((r: any) => r.success).length;
+            const failCount = results.length - successCount;
+
+            if (failCount === 0) {
+                toast.success(`Success! All ${successCount} images upscaled.`);
+            } else {
+                toast.warning(`${successCount} upscaled, ${failCount} failed.`);
+            }
+
+            onUpdate();
+        } catch (error) {
+            console.error(error);
+            toast.error("Bulk upscale failed");
         } finally {
             setLoading(null);
         }
@@ -143,17 +169,33 @@ export function ProductImages({ images, onUpdate, selectedIds, onToggleSelection
                         {selectedIds.length} image{selectedIds.length !== 1 ? 's' : ''} selected
                     </div>
                     {onSelectAll && (
-                        <Button variant="outline" size="sm" onClick={onSelectAll}>
+                        <Button variant="outline" size="sm" onClick={onSelectAll} disabled={loading !== null}>
                             <CheckSquare className="mr-2 h-4 w-4" /> Select All
                         </Button>
                     )}
+                    {selectedIds.length > 0 && (
+                        <Button
+                            variant="default"
+                            size="sm"
+                            className="bg-primary/90 hover:bg-primary"
+                            onClick={handleBulkUpscale}
+                            disabled={loading !== null}
+                        >
+                            {loading === "bulk" ? (
+                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            ) : (
+                                <Sparkles className="mr-2 h-4 w-4 text-orange-200" />
+                            )}
+                            Bulk AI Upscale
+                        </Button>
+                    )}
                     {selectedIds.length > 0 && onDeselectAll && (
-                        <Button variant="outline" size="sm" onClick={onDeselectAll}>
+                        <Button variant="outline" size="sm" onClick={onDeselectAll} disabled={loading !== null}>
                             <Square className="mr-2 h-4 w-4" /> Deselect All
                         </Button>
                     )}
                     {selectedIds.length > 0 && onDeleteSelected && (
-                        <Button variant="destructive" size="sm" onClick={onDeleteSelected}>
+                        <Button variant="destructive" size="sm" onClick={onDeleteSelected} disabled={loading !== null}>
                             <Trash2 className="mr-2 h-4 w-4" /> Delete ({selectedIds.length})
                         </Button>
                     )}

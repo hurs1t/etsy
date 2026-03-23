@@ -151,6 +151,7 @@ export default function EtsySyncPage() {
                                     <th className="px-8 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Etsy ID</th>
                                     <th className="px-8 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">State</th>
                                     <th className="px-8 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Price Point</th>
+                                    <th className="px-8 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Source</th>
                                     <th className="px-8 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Last Synced</th>
                                 </tr>
                             </thead>
@@ -185,6 +186,22 @@ export default function EtsySyncPage() {
                                                 <span className="text-[9px] font-bold uppercase px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 border border-blue-500/20 whitespace-nowrap">
                                                     {item.status}
                                                 </span>
+                                            </td>
+                                            <td className="px-8 py-4">
+                                                {item.source_url ? (
+                                                    <a
+                                                        href={item.source_url}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 text-[9px] font-bold uppercase tracking-wider hover:bg-primary/10 hover:text-primary transition-all border border-slate-100 dark:border-zinc-700"
+                                                        onClick={(e) => e.stopPropagation()}
+                                                    >
+                                                        <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                                                        Source
+                                                    </a>
+                                                ) : (
+                                                    <span className="text-[9px] font-bold text-slate-300 uppercase">N/A</span>
+                                                )}
                                             </td>
                                             <td className="px-8 py-4 text-sm font-heading font-bold text-slate-900 dark:text-white">${item.price}</td>
                                             <td className="px-8 py-4 text-[10px] font-bold text-slate-400 uppercase whitespace-nowrap">{new Date(item.updated_at).toLocaleString()}</td>

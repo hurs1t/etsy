@@ -45,4 +45,9 @@ export class ProductsController {
     removeBulk(@Body() body: { ids: string[] }, @Request() req) {
         return this.productsService.removeBulk(body.ids, req.user.userId);
     }
+
+    @Post(':id/translate')
+    translate(@Param('id') id: string, @Body() body: { languages: string[] }) {
+        return this.productsService.translateProduct(id, body.languages);
+    }
 }

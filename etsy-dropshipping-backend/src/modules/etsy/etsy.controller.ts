@@ -200,13 +200,44 @@ export class EtsyController {
                 await this.etsyService.updateInventory(user.shop_id, listingId.toString(), product.variations, parseFloat(product.price), accessToken);
             }
 
-            // 6. Save State
+            // 6. Push Translations if they exist
+            let translations = product.translations;
+            if (typeof translations === 'string') {
+                try {
+                    translations = JSON.parse(translations);
+                } catch (e) {
+                    this.logger.error(`Failed to parse translations string: ${translations}`);
+                    translations = {};
+                }
+            }
+
+            const translationResults: { lang: string, success: boolean }[] = [];
+            if (translations && typeof translations === 'object' && Object.keys(translations).length > 0) {
+                this.logger.log(`Pushing ${Object.keys(translations).length} translations to Etsy...`);
+                for (const [lang, translation] of Object.entries(translations)) {
+                    this.logger.log(`Pushing translation for: ${lang}`);
+                    const success = await this.etsyService.createListingTranslation(user.shop_id, listingId, lang, translation as any, accessToken);
+                    translationResults.push({ lang, success });
+                }
+            } else {
+                this.logger.log('No translations found to push.');
+            }
+
+            // 7. Save State
             await this.productsService.update(id, {
-                etsyListingId: listingId.toString(),
-                status: 'published' // or 'draft' on Etsy side, but 'published' here means synced
+                status: 'published',
+                attributes: {
+                    ...product.attributes,
+                    etsy_listing_id: listingId,
+                    last_published_at: new Date().toISOString()
+                }
             });
 
-            return { success: true, listingId, url: draft.url };
+            return {
+                message: 'Listing published successfully',
+                listingId,
+                translationResults
+            };
         });
     }
 
@@ -255,6 +286,40 @@ export class EtsyController {
             draftCount: productStats.draftCount,
             recentActivity: productStats.recentActivity
         };
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Get('orders')
+    async getOrders(@Req() req) {
+        return this.executeWithRefresh(req, async (accessToken) => {
+            const user = await this.usersService.findOne(req.user.email);
+            if (!user.shop_id) return { stats: { revenue: 0, count: 0, pending: 0 }, results: [] };
+
+            const data = await this.etsyService.getShopReceipts(user.shop_id, accessToken);
+
+            // Calculate basic stats for the dashboard
+            let totalRevenue = 0;
+            let pendingShipments = 0;
+            const currency = data.results?.[0]?.total_price?.currency_code || 'USD';
+
+            if (data.results) {
+                data.results.forEach(receipt => {
+                    const price = receipt.total_price.amount / receipt.total_price.divisor;
+                    totalRevenue += price;
+                    if (!receipt.is_shipped) pendingShipments++;
+                });
+            }
+
+            return {
+                stats: {
+                    revenue: totalRevenue.toFixed(2),
+                    count: data.count || 0,
+                    pending: pendingShipments,
+                    currency
+                },
+                results: data.results || []
+            };
+        });
     }
 
     @UseGuards(JwtAuthGuard)

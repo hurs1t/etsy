@@ -1,11 +1,16 @@
-import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+import { Injectable, InternalServerErrorException, NotFoundException, Logger } from '@nestjs/common';
 import { SupabaseService } from '../supabase/supabase.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { AiContentService } from '../ai-content/ai-content.service';
 
 @Injectable()
 export class ProductsService {
-    constructor(private readonly supabaseService: SupabaseService) { }
+    private readonly logger = new Logger(ProductsService.name);
+    constructor(
+        private readonly supabaseService: SupabaseService,
+        private readonly aiContentService: AiContentService
+    ) { }
 
     private normalizeUrl(url: string): string {
         try {
@@ -298,6 +303,34 @@ export class ProductsService {
         return { success: true, count: ids.length };
     }
 
+
+    async translateProduct(id: string, languages: string[]) {
+        const product = await this.findOne(id);
+        const translations = product.translations || {};
+
+        for (const lang of languages) {
+            this.logger.log(`Translating product ${id} to ${lang}`);
+            const result = await this.aiContentService.translateListing({
+                title: product.generatedTitle || product.originalTitle,
+                description: product.generatedDescription || product.originalDescription,
+                tags: product.generatedTags || []
+            }, lang);
+
+            translations[lang] = result;
+        }
+
+        const supabase = this.supabaseService.getClient();
+        const { data, error } = await supabase
+            .from('products')
+            .update({ translations })
+            .eq('id', id)
+            .select()
+            .single();
+
+        if (error) throw new InternalServerErrorException(`Failed to save translations: ${error.message}`);
+        return this.mapEntity(data);
+    }
+
     async getStats(userId: string) {
         const supabase = this.supabaseService.getClient();
 
@@ -352,7 +385,7 @@ export class ProductsService {
         // 4. Activity
         const { data: recentActivity } = await supabase
             .from('products')
-            .select('id, original_title, generated_title, status, updated_at, price, product_images(image_url)')
+            .select('id, original_title, generated_title, status, updated_at, price, source_url, source_platform, product_images(image_url)')
             .eq('user_id', userId)
             .not('etsy_listing_id', 'is', null)
             .order('updated_at', { ascending: false })
@@ -384,6 +417,7 @@ export class ProductsService {
             shippingProfileId: record.shipping_profile_id,
             taxonomyId: record.taxonomy_id,
             attributes: record.attributes || {},
+            translations: record.translations || {},
             createdAt: record.created_at,
             images: record.product_images || [],
             variations: record.product_variations || []
