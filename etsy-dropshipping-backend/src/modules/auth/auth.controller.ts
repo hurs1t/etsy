@@ -22,7 +22,15 @@ export class AuthController {
 
     @Post('register')
     async register(@Body() createUserDto: CreateUserDto) {
-        return this.authService.register(createUserDto);
+        console.log('[AuthController] Received registration request:', createUserDto.email);
+        try {
+            const result = await this.authService.register(createUserDto);
+            console.log('[AuthController] Registration successful for:', createUserDto.email);
+            return result;
+        } catch (error) {
+            console.error('[AuthController] Registration failed for:', createUserDto.email, error.message);
+            throw error;
+        }
     }
 
     @Get('google')
