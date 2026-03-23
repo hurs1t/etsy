@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "EtsyAuto - Etsy Listing Generator",
-  "version": "1.0.2",
-  "description": "Scrape products from any website and generate optimized Etsy listings with AI",
+  "version": "1.0.3",
+  "description": "Scrape products and generate optimized Etsy listings with AI",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -15,7 +15,11 @@
     "downloads"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "*://*.aliexpress.com/*",
+    "*://*.aliexpress.us/*",
+    "*://*.amazon.com/*",
+    "*://*.ebay.com/*",
+    "*://*.etsy.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -28,7 +32,13 @@
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "*://*.aliexpress.com/*",
+        "*://*.aliexpress.us/*",
+        "*://*.amazon.com/*",
+        "*://*.ebay.com/*",
+        "*://*.etsy.com/*",
+        "*://*.trendyol.com/*",
+        "*://*.hepsiburada.com/*"
       ],
       "js": [
         "content.js"
