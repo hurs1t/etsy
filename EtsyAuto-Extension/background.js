@@ -1,5 +1,5 @@
 // Background service worker for EtsyAuto Extension
-const DEFAULT_API_BASE = "http://127.0.0.1:3001";
+const DEFAULT_API_BASE = "https://etsy-production-a9ef.up.railway.app";
 
 async function getApiBase() {
   const { etsyAutoApiUrl } = await chrome.storage.local.get(['etsyAutoApiUrl']);

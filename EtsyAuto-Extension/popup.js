@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', init);
 
 let scrapedData = null;
-const DEFAULT_API_URL = "http://127.0.0.1:3001";
+const DEFAULT_API_URL = "https://etsy-production-a9ef.up.railway.app";
 
 const i18n = {
   en: {
